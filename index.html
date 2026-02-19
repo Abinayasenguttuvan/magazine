@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEWZ/MAGAZINE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* HERO SECTION */
+
+    .hero{
+position:relative;
+width:100%;
+height:100vh;
+top:0;
+left:0;
+margin:0;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+
+/* VIDEO */
+
+.hero-video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+
+/* OVERLAY */
+
+.hero-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:-1;
+}
+
+/* CONTENT */
+
+.hero-content{
+text-align:center;
+color:#fff;
+padding:20px;
+max-width:800px;
+}
+
+.hero-content h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-content h2{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.hero-content p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.hero-btns a{
+padding:12px 25px;
+margin:5px;
+background:#00d4ff;
+color:#000;
+text-decoration:none;
+border-radius:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:35px;
+}
+
+.hero-content h2{
+font-size:18px;
+}
+
+.hero-content p{
+font-size:14px;
+}
+
+.hero{
+height:80vh;
+}
+
+}
+
+/* TABLET */
+
+@media(min-width:769px) and (max-width:1024px){
+
+.hero-content h1{
+font-size:45px;
+}
+
+.hero-content h2{
+font-size:22px;
+}
+
+}
+
+/* LAPTOP */
+
+@media(min-width:1025px) and (max-width:1440px){
+
+.hero-content h1{
+font-size:55px;
+}
+
+}
+
+/* DESKTOP */
+
+@media(min-width:1441px){
+
+.hero-content h1{
+font-size:70px;
+}
+
+}
+
+
+
+.popular-articles{
+padding:80px 20px;
+background:#ecb66a;
+color:#fff;
+text-align:center;
+}
+
+.slider-container{
+position:relative;
+overflow:hidden;
+}
+
+.slider{
+display:flex;
+gap:20px;
+overflow-x:auto;
+scroll-behavior:smooth;
+}
+
+.slide-card{
+min-width:300px;
+background:#1e1e1e;
+padding:15px;
+border-radius:10px;
+text-align:left;
+}
+
+.slide-card img{
+width:100%;
+border-radius:10px;
+}
+
+.slide-card span{
+display:inline-block;
+background:#00d4ff;
+color:#000;
+padding:5px 10px;
+margin-top:10px;
+font-size:12px;
+}
+
+.slide-card h3{
+margin:10px 0;
+font-size:18px;
+}
+
+.slide-card a{
+color:#00d4ff;
+text-decoration:none;
+}
+
+.prev,.next{
+position:absolute;
+top:40%;
+background:#00d4ff;
+border:none;
+padding:10px;
+cursor:pointer;
+}
+
+.prev{left:0;}
+.next{right:0;}
+
+/* MOBILE */
+
+@media(max-width:768px){
+.slide-card{
+min-width:250px;
+}
+}
+
+/* TABLET */
+
+@media(min-width:769px) and (max-width:1024px){
+.slide-card{
+min-width:280px;
+}
+}
+
+
+</style>
+<body>
+
+    <header class="header">
+
+        <div class="navbar">
+      
+          <!-- LOGO -->
+          <!-- <div class="logo">Plexify</div> -->
+          <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          
+
+      
+          <!-- NAV -->
+          <nav class="nav-menu" id="navMenu">
+            <ul>
+      
+              <li class="dropdown">
+                <a href="#">Home ▾</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Home 1</a></li>
+                  <li><a href="#">Home 2</a></li>
+                </ul>
+              </li>
+      
+              <li class="dropdown">
+                <a href="#">Category ▾</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Article 1</a></li>
+                  <li><a href="#">Article 2</a></li>
+                  <li><a href="#">Article 3</a></li>
+                </ul>
+              </li>
+      
+              <li><a href="#">Latest</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Dashboard</a></li>
+      
+            </ul>
+          </nav>
+      
+          <!-- LOGIN / SIGNUP -->
+          <div class="auth-buttons">
+            <a href="./login.html" class="circle-btn">Login</a>
+            <a href="./signup.html" class="circle-btn signup">Signup</a>
+          </div>
+      
+          <!-- HAMBURGER -->
+          <div class="menu-toggle" id="menuToggle">☰</div>
+      
+        </div>
+      
+      </header>
+
+
+
+
+      <section class="hero">
+
+        <!-- BACKGROUND VIDEO -->
+        <video autoplay muted loop playsinline class="hero-video">
+        <source src="./maga.mp4" type="video/mp4">
+        </video>
+        
+        <!-- OVERLAY -->
+        <div class="hero-overlay"></div>
+        
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+        
+        <h1>Stackly Magazine</h1>
+        
+        <h2>Your Daily Dose of Stories, Trends & Insights</h2>
+        
+        <p>
+        Explore the latest articles, inspiring interviews, business insights, 
+        technology trends, lifestyle stories and global updates curated by experts.
+        </p>
+        
+        <div class="hero-btns">
+        <a href="#">Read Articles</a>
+        <a href="#">Subscribe Now</a>
+        </div>
+        
+        </div>
+        
+        </section>
+        
+      
+
+        <section class="popular-articles">
+
+            <h2 class="section-title">Popular Articles</h2>
+            
+            <div class="slider-container">
+            
+            <button class="prev" onclick="slideLeft()">&#10094;</button>
+            
+            <div class="slider" id="slider">
+            
+            <div class="slide-card">
+            <img src="p1.jpg">
+            <span>Technology</span>
+            <h3>AI Changing The World Of Publishing</h3>
+            <a href="#">Read More</a>
+            </div>
+            
+            <div class="slide-card">
+            <img src="p2.jpg">
+            <span>Business</span>
+            <h3>Future Of Digital Marketing Trends</h3>
+            <a href="#">Read More</a>
+            </div>
+            
+            <div class="slide-card">
+            <img src="p3.jpg">
+            <span>Startup</span>
+            <h3>Top Startup Ideas In 2026</h3>
+            <a href="#">Read More</a>
+            </div>
+            
+            <div class="slide-card">
+            <img src="p4.jpg">
+            <span>Lifestyle</span>
+            <h3>Modern Lifestyle Tips</h3>
+            <a href="#">Read More</a>
+            </div>
+            
+            <div class="slide-card">
+            <img src="p5.jpg">
+            <span>Innovation</span>
+            <h3>Innovations That Changed Industries</h3>
+            <a href="#">Read More</a>
+            </div>
+            
+            </div>
+            
+            <button class="next" onclick="slideRight()">&#10095;</button>
+            
+            </div>
+            
+            </section>
+            
+
+<script src="script.js"></script>
+</body>
+</html>

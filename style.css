@@ -1,0 +1,201 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI;
+  }
+  
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    
+    body,html{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    }
+    
+  body{
+    /* background:#000; */
+    min-height:200vh;
+  }
+  
+  /* CAPSULE HEADER */
+  
+
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;   /* THIS CENTERS EVERYTHING */
+    align-items: center;
+    padding: 20px 0;
+    z-index: 10;
+  }
+  
+  
+  .navbar{
+    width:90%;
+    padding:12px 30px;
+    background:linear-gradient(to top, hwb(33 38% 13%), transparent); 
+    backdrop-filter:blur(10px);
+    border-radius:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+  }
+  
+  /* LOGO */
+  
+  .logo{
+    font-size:24px;
+    font-weight:bold;
+    color: burlywood;
+  }
+  
+  /* NAV */
+  
+  .nav-menu ul{
+    display:flex;
+    list-style:none;
+  }
+  
+  .nav-menu ul li{
+    position:relative;
+  }
+  
+  .nav-menu ul li a{
+    padding:10px 16px;
+    color:#fff;
+    text-decoration:none;
+    display:block;
+  }
+  
+  /* DROPDOWN CLOSED BY DEFAULT */
+  
+  .dropdown-menu{
+    position:absolute;
+    top:50px;
+    left:0;
+    background: rgb(160, 94, 2);
+    border-radius:10px;
+    min-width:180px;
+  
+    /* THIS FIXES ROW ISSUE */
+    display:flex;
+    flex-direction:column;
+  
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s ease;
+  }
+  
+  .dropdown-menu li a{
+    padding:10px 15px;
+    white-space:nowrap;
+  }
+  
+  /* OPEN ON CLICK */
+  
+  .dropdown.active .dropdown-menu{
+    max-height:300px;
+    padding:10px 0;
+  }
+  
+  /* AUTH BUTTON */
+  
+  .auth-buttons{
+    display:flex;
+    gap:10px;
+  }
+  
+  .circle-btn{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background: rgb(160, 94, 2);
+    color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+  }
+  
+  /* HAMBURGER */
+  
+  .menu-toggle{
+    display:none;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+  }
+  
+  /* ================= MOBILE ================= */
+  
+  @media(max-width:768px){
+  
+    .menu-toggle{
+      display:block;
+    }
+  
+    .nav-menu{
+      position:absolute;
+      top:70px;
+      left:-110%;
+      width:100%;
+      background:#111;
+      border-radius:20px;
+      transition:0.4s;
+    }
+  
+    .nav-menu.active{
+      left:0;
+    }
+  
+    .nav-menu ul{
+      flex-direction:column;
+    }
+  
+    .dropdown-menu{
+        position:static;
+        display:flex;
+        flex-direction:column;
+        background:#333;
+      }
+      
+  
+    .auth-buttons{
+      display:none;
+    }
+  
+  }
+  
+  /* ================= TABLET ================= */
+  
+  @media(min-width:769px) and (max-width:1024px){
+    .navbar{
+      width:95%;
+    }
+  }
+  
+  /* ================= LAPTOP ================= */
+  
+  @media(min-width:1025px) and (max-width:1440px){
+    .navbar{
+      width:85%;
+    }
+  }
+  
+  /* ================= DESKTOP ================= */
+  
+  @media(min-width:1441px){
+    .navbar{
+      width:75%;
+    }
+  }
+  
