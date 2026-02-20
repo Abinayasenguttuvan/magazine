@@ -363,6 +363,10 @@ font-size:17px;
 }
 }
 
+.extra-links{display:flex;justify-content:space-between;align-items:center;margin-top:8px;}
+.extra-links a{color:#fff;text-decoration:none;}
+
+
 
 </style>
 
@@ -477,14 +481,19 @@ z-index:-1;
     
     <input type="email" id="email" placeholder="Enter Email">
     
-    <!-- PASSWORD FIELD WITH EYE ICON -->
-    
     <div class="password-box">
     <input type="password" id="password" placeholder="Enter Password">
     <i class="fa-solid fa-eye-slash eye-icon" onclick="togglePassword()"></i>
     </div>
     
     <button onclick="validateLogin()">Submit</button>
+    
+    <!-- FORGOT PASSWORD + SIGNUP -->
+    
+    <div class="extra-links">
+    <a href="signup.html">Signup</a>
+    <a href="404.html">Forgot Password?</a>
+    </div>
     
     <p id="error"></p>
     
