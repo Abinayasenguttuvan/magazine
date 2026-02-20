@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWZ/MAGAZINE</title>
+<link rel="stylesheet" href="style.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -9,84 +12,101 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 </head>
 <style>
-    .signup-box{
+    /* ================= BODY ================= */
+
+body{
+margin:0;
+
+font-family:Arial, Helvetica, sans-serif;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1504711434969-e33886168f5c');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* ================= CONTAINER ================= */
+
+.signup-container{
+    padding-top: 100px;;
 width:90%;
-max-width:350px;
-padding:30px;
-/* background:rgba(255,255,255,0.1); */
-backdrop-filter:blur(10px);
-border-radius:15px;
+max-width:400px;
 text-align:center;
+}
+
+/* ================= BOX ================= */
+
+.signup-box{
+padding:30px;
+background:linear-gradient(to top, hwb(32 16% 74%), transparent); 
+backdrop-filter:blur(15px);
+border-radius:15px;
 color:#fff;
 }
 
-.logo{
-width:80px;
-margin-bottom:10px;
-}
+/* ================= INPUT ================= */
 
 .signup-box input{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
 border:none;
 outline:none;
+border-radius:5px;
 }
+
+/* ================= BUTTON ================= */
 
 .signup-box button{
 width:100%;
-padding:10px;
-background:linear-gradient(to top, hwb(33 38% 13%), transparent); 
-border:none;
+padding:12px;
 margin-top:10px;
+border:none;
 cursor:pointer;
+border-radius:5px;
 }
 
+/* ================= SOCIAL ================= */
+
 .social-btn{
-background:#333;
+background:linear-gradient(to top, hwb(33 38% 13%), transparent); 
 color:#fff;
 }
 
-.or{
-margin:10px 0;
-}
-
-.login-text{
-margin-top:10px;
-
-
-}
-
-.login-text a{
-color:linear-gradient(to top, hwb(33 38% 13%), transparent); 
-text-decoration:none;
-color:#000;
-font-size: medium;
-}
+/* ================= ERROR ================= */
 
 #error{
 color: white;
 font-size:14px;
+margin-top:5px;
 }
 
-.home-btn{
-position:absolute;
-top:20px;
-left:20px;
-background:linear-gradient(to top, hwb(33 38% 13%), transparent); ;
-padding:8px 15px;
-border-radius:20px;
+/* ================= LOGIN LINK ================= */
+
+.login-text{
+margin-top:10px;
+}
+
+.login-text a{
+color:#fff;
 text-decoration:none;
-color:#000;
 }
 
-/* LOGOS */
+/* ================= LOGOS ================= */
 
 .logos{
-position:absolute;
-bottom:20px;
+margin-top:20px;
 display:flex;
+justify-content:center;
 gap:15px;
+flex-wrap:wrap;
 }
 
 .logos img{
@@ -97,14 +117,14 @@ background:#fff;
 padding:8px;
 opacity:0;
 transform:scale(0);
-animation:pop 0.5s forwards;
+cursor:pointer;
 }
 
-.logos img:nth-child(1){animation-delay:0.2s;}
-.logos img:nth-child(2){animation-delay:0.4s;}
-.logos img:nth-child(3){animation-delay:0.6s;}
-.logos img:nth-child(4){animation-delay:0.8s;}
-.logos img:nth-child(5){animation-delay:1s;}
+/* ANIMATION */
+
+.logos img.show{
+animation:pop 0.4s forwards;
+}
 
 @keyframes pop{
 to{
@@ -113,37 +133,129 @@ transform:scale(1);
 }
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
-@media(max-width:768px){
-.logos{
-flex-wrap:wrap;
-justify-content:center;
-}
-}
+@media(max-width:600px){
 
-/* TABLET */
-
-@media(min-width:769px) and (max-width:1024px){
 .signup-box{
-max-width:400px;
-}
+padding:20px;
 }
 
-/* LAPTOP */
+.logos img{
+width:35px;
+height:35px;
+padding:6px;
+}
 
-@media(min-width:1025px) and (max-width:1440px){
-.signup-box{
+}
+
+/* ================= TABLET ================= */
+
+@media(min-width:601px) and (max-width:992px){
+
+.signup-container{
 max-width:450px;
 }
+
+.logos img{
+width:40px;
+height:40px;
 }
 
-/* DESKTOP */
-
-@media(min-width:1441px){
-.signup-box{
-max-width:500px;
 }
+
+/* ================= LAPTOP ================= */
+
+@media(min-width:993px) and (max-width:1200px){
+
+.signup-container{
+max-width:420px;
+}
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:1201px){
+
+.signup-container{
+max-width:450px;
+}
+
+}
+
+
+/* PASSWORD BOX */
+
+.password-box{
+position:relative;
+width:100%;
+}
+
+.password-box input{
+width:100%;
+padding:12px 40px 12px 12px;
+margin:10px 0;
+border:none;
+outline:none;
+border-radius:5px;
+}
+
+/* EYE ICON */
+
+.eye-icon{
+position:absolute;
+top:50%;
+right:15px;
+transform:translateY(-50%);
+cursor:pointer;
+color:#000;
+font-size:16px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+.eye-icon{
+font-size:14px;
+right:10px;
+}
+
+.password-box input{
+padding:10px 35px 10px 10px;
+}
+
+}
+
+/* ================= TABLET ================= */
+
+@media(min-width:601px) and (max-width:992px){
+
+.eye-icon{
+font-size:15px;
+}
+
+}
+
+/* ================= LAPTOP ================= */
+
+@media(min-width:993px) and (max-width:1200px){
+
+.eye-icon{
+font-size:16px;
+}
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:1201px){
+
+.eye-icon{
+font-size:17px;
+}
+
 }
 
 </style>
@@ -154,7 +266,7 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:url('magazine.webp') no-repeat center center/cover;
+background:url('magaz1.webp') no-repeat center center/cover;
 position:relative;
 ">
 
@@ -170,22 +282,86 @@ z-index:-1;">
 </div>
 
 <!-- BACK HOME -->
-<a href="index.html" class="home-btn">
-<i class="fa fa-home"></i> Home
-</a>
+<!-- <div class="top-bar">
 
-<!-- SIGNUP BOX -->
-<div class="signup-box">
+    <a href="./index.html" class="home-btn">
+        <i class="fa fa-home"></i> Home
+    </a> -->
 
-<!-- <img src="./white.webp" class="logo"> -->
+    <header class="header">
+    
+            <div class="navbar">
+          
+              <!-- LOGO -->
+              <!-- <div class="logo">Plexify</div> -->
+              <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+              
+    
+          
+              <!-- NAV -->
+              <nav class="nav-menu" id="navMenu">
+                <ul>
+          
+                  <li class="dropdown">
+                    <a href="#">Home ▾</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Home 1</a></li>
+                      <li><a href="#">Home 2</a></li>
+                    </ul>
+                  </li>
+          
+                  <li class="dropdown">
+                    <a href="#">Category ▾</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Article 1</a></li>
+                      <li><a href="#">Article 2</a></li>
+                      <li><a href="#">Article 3</a></li>
+                    </ul>
+                  </li>
+          
+                  <li><a href="#">Latest</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="./login.html">Login</a></li>
+                  <li><a href="./signup.html">Signup</a></li>
+          
+                </ul>
+              </nav>
+          
+              <!-- LOGIN / SIGNUP -->
+              <!-- <div class="auth-buttons">
+                <a href="./login.html" class="circle-btn">Login</a>
+                <a href="./signup.html" class="circle-btn signup">Signup</a>
+              </div>
+           -->
+              <!-- HAMBURGER -->
+              <div class="menu-toggle" id="menuToggle">☰</div>
+          
+            </div>
+          
+          </header>
+     
 
-<h2>Welcome Stackly Magazine</h2>
+<div class="signup-container">
+    <div class="signup-box">
+
+<!-- <h2>Welcome Stackly Magazine</h2> -->
 <h2>Create Account</h2>
 
 <input type="text" id="name" placeholder="Enter Full Name">
 <input type="email" id="email" placeholder="Enter Mail ID">
-<input type="password" id="password" placeholder="Enter Password">
-<input type="password" id="confirm" placeholder="Confirm Password">
+<div class="password-box">
+    <input type="password" id="password" placeholder="Enter Password">
+    <i class="fa-solid fa-eye-slash eye-icon" onclick="togglePassword('password',this)"></i>
+    </div>
+    
+    <div class="password-box">
+    <input type="password" id="confirm" placeholder="Confirm Password">
+    <i class="fa-solid fa-eye-slash eye-icon" onclick="togglePassword('confirm',this)"></i>
+    </div>
+    
 
 <p id="error"></p>
 
@@ -222,22 +398,63 @@ Already have an account?
 </div>
 
 <script >
-    function signup(){
+    
 
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let pass=document.getElementById("password").value;
-let confirm=document.getElementById("confirm").value;
-let error=document.getElementById("error");
+function signup(){
 
-if(name==="" || email==="" || pass==="" || confirm===""){
-error.innerHTML="Please fill details";
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+let confirm = document.getElementById("confirm").value;
+let error = document.getElementById("error");
+
+if(name === "" || email === "" || password === "" || confirm === ""){
+error.innerHTML = "Please fill the details";
 }
-else if(pass!==confirm){
-error.innerHTML="Passwords do not match";
+else if(password !== confirm){
+error.innerHTML = "Password does not match";
 }
 else{
-window.location.href="404.html";
+window.location.href = "404.html";
+}
+
+}
+
+/* LOGOS LOAD ONE BY ONE */
+
+window.onload = function(){
+
+let logos = document.querySelectorAll(".logos img");
+
+logos.forEach((logo,index)=>{
+setTimeout(()=>{
+logo.classList.add("show");
+}, index * 300);
+
+/* CLICK → 404 PAGE */
+
+logo.onclick = function(){
+window.location.href = "404.html";
+}
+
+});
+
+}
+
+
+function togglePassword(id,icon){
+
+let input = document.getElementById(id);
+
+if(input.type === "password"){
+input.type = "text";
+icon.classList.remove("fa-eye-slash");
+icon.classList.add("fa-eye");
+}
+else{
+input.type = "password";
+icon.classList.remove("fa-eye");
+icon.classList.add("fa-eye-slash");
 }
 
 }
