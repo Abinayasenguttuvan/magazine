@@ -20,10 +20,6 @@ document.querySelectorAll(".dropdown > a").forEach(item=>{
     parent.classList.toggle("active");
   })
 });
-
-
-
-
 let slider=document.getElementById("slider");
 
 function slideLeft(){
