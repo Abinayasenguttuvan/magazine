@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEWZ/MAGAZINE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+    
+
+    <header class="header">
+
+        <div class="navbar">
+      
+          <!-- LOGO -->
+          <!-- <div class="logo">Plexify</div> -->
+          <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          
+
+      
+          <!-- NAV -->
+          <nav class="nav-menu" id="navMenu">
+            <ul>
+      
+              <li class="dropdown">
+                <a href="index.html">Home ▾</a>
+                <ul class="dropdown-menu">
+                  <li><a href="./index.html">Home 1</a></li>
+                  <li><a href="#">Home 2</a></li>
+                </ul>
+              </li>
+      
+              <!-- <li class="dropdown">
+                <a href="./worldnews.html"> Trending news</a> -->
+                <!-- <ul class="dropdown-menu">
+                  <li><a href="#">LIFESTYLE</a></li>
+                  <li><a href="#">ENTERTAINMENT</a></li>
+                  <li><a href="#">SPORTS</a></li>
+                </ul> -->
+              <!-- </li> -->
+      
+              <li><a href="./latest.html">Latest</a></li>
+              <li><a href="./worldnews.html"> Trending news</a> 
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./dashboard.html">Dashboard</a></li>
+              <li><a href="./login.html">Login</a></li>
+              <li><a href="./signup.html">Signup</a></li>
+      
+            </ul>
+          </nav>
+          <!-- HAMBURGER -->
+          <div class="menu-toggle" id="menuToggle">☰</div>
+      
+        </div>
+      
+      </header>
+        </div>
+
+
+
+
+        
+<style>
+
+/* ===============================
+   GENERAL
+=================================*/
+
+
+
+.pwNX-section{
+  max-width:1400px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.pwNX-heading{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* ===============================
+   VIDEO GRID
+=================================*/
+
+.pwNX-videoGrid{
+  display:grid;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.pwNX-videoBox{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  text-decoration:none;
+  color:white;
+}
+
+.pwNX-videoBox video{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.pwNX-videoBox:hover video{
+  transform:scale(1.1);
+}
+
+.pwNX-videoBox p{
+  position:absolute;
+  bottom:15px;
+  left:15px;
+  background:rgba(0,0,0,0.6);
+  padding:6px 12px;
+  border-radius:6px;
+}
+
+/* Responsive Video */
+
+@media(min-width:992px){
+  .pwNX-videoGrid{grid-template-columns:repeat(3,1fr);}
+}
+@media(min-width:600px) and (max-width:991px){
+  .pwNX-videoGrid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:599px){
+  .pwNX-videoGrid{grid-template-columns:1fr;}
+}
+
+/* ===============================
+   BREAKING BAR
+=================================*/
+
+.pwNX-breaking{
+  background:#e53935;
+  color:white;
+  padding:10px;
+  margin:30px 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.pwNX-breaking p{
+  display:inline-block;
+  animation:scroll 15s linear infinite;
+}
+
+@keyframes scroll{
+  from{transform:translateX(100%);}
+  to{transform:translateX(-100%);}
+}
+
+/* ===============================
+   NEWS GRID
+=================================*/
+
+.pwNX-worldGrid{
+  display:grid;
+  gap:25px;
+}
+
+@media(min-width:1200px){
+  .pwNX-worldGrid{grid-template-columns:repeat(4,1fr);}
+}
+@media(min-width:992px) and (max-width:1199px){
+  .pwNX-worldGrid{grid-template-columns:repeat(3,1fr);}
+}
+@media(min-width:600px) and (max-width:991px){
+  .pwNX-worldGrid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:599px){
+  .pwNX-worldGrid{grid-template-columns:1fr;}
+}
+
+/* ===============================
+   CARD
+=================================*/
+
+.pwNX-newsCard{
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+  text-decoration:none;
+  color:black;
+}
+
+.pwNX-newsCard:hover{
+  transform:translateY(-8px);
+}
+
+/* Image Shapes */
+
+.pwNX-imgBox{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+}
+
+.rectangle{height:220px;}
+.square{aspect-ratio:1/1;}
+.vertical{aspect-ratio:3/4;}
+.horizontal{aspect-ratio:16/9;}
+
+.pwNX-imgBox img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.pwNX-newsCard:hover img{
+  transform:scale(1.1);
+}
+
+/* Badge */
+
+.pwNX-badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:12px;
+  color:white;
+  animation:pulse 2s infinite;
+}
+
+.breaking{background:#e53935;}
+.trending{background:#ff9800;}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* Card Content */
+
+.pwNX-cardBody{
+  padding:18px;
+}
+
+.pwNX-cardBody p{
+  font-size:14px;
+  color:#555;
+}
+
+.pwNX-info{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  color:#777;
+  margin-top:10px;
+}
+
+/* ===============================
+   REVIEW BOX
+=================================*/
+
+.pwNX-reviewBox{
+  margin-top:50px;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.pwNX-reviewBox textarea{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+}
+
+.pwNX-reviewBox button{
+  padding:8px 15px;
+  background:#007bff;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+/* ===============================
+   ANIMATION
+=================================*/
+
+.pwNX-reveal{
+  opacity:0;
+  transition:all 0.8s ease;
+}
+
+.from-left{transform:translateX(-80px);}
+.from-right{transform:translateX(80px);}
+.from-top{transform:translateY(-80px);}
+.from-bottom{transform:translateY(80px);}
+
+.pwNX-reveal.active{
+  opacity:1;
+  transform:translate(0);
+}
+
+</style>
+</head>
+<body>
+
+<section class="pwNX-section">
+
+<h2 class="pwNX-heading">🌍 LIVE WORLD NEWS</h2>
+
+<!-- VIDEOS -->
+
+<div class="pwNX-videoGrid">
+
+<a href="404.html" class="pwNX-videoBox pwNX-reveal">
+<video src="./ukraine.mp4" muted loop autoplay></video>
+<p>Ukraine Conflict Updates</p>
+</a>
+
+<a href="404.html" class="pwNX-videoBox pwNX-reveal">
+<video src="./global.mp4" muted loop autoplay></video>
+<p>Global Economic Crisis</p>
+</a>
+
+<a href="404.html" class="pwNX-videoBox pwNX-reveal">
+<video src="./climate.mp4" muted loop autoplay></video>
+<p>Climate Change Impact</p>
+</a>
+
+</div>
+
+<!-- BREAKING -->
+
+<div class="pwNX-breaking">
+<p>🔴 Breaking: Global Tensions Rising | Earthquake Hits Asia | AI Regulations | Market Crash | Pandemic Alert</p>
+</div>
+
+<!-- NEWS GRID -->
+
+<div class="pwNX-worldGrid">
+
+<a href="404.html" class="pwNX-newsCard pwNX-reveal">
+<div class="pwNX-imgBox rectangle">
+<img src="./tsunami.webp">
+<span class="pwNX-badge breaking">BREAKING</span>
+</div>
+<div class="pwNX-cardBody">
+<h4>Floods in Brazil Affect Thousands</h4>
+<p>Heavy rainfall triggered massive floods affecting infrastructure.</p>
+<div class="pwNX-info">
+<span>👁 2.5K</span>
+<span>💬 32</span>
+<span>⏱ 3 min</span>
+</div>
+</div>
+</a>
+
+<a href="404.html" class="pwNX-newsCard pwNX-reveal">
+<div class="pwNX-imgBox square">
+<img src="./market.webp">
+<span class="pwNX-badge trending">TRENDING</span>
+</div>
+<div class="pwNX-cardBody">
+<h4>Market Faces Slowdown</h4>
+<p>European stocks dip amid inflation concerns.</p>
+<div class="pwNX-info">
+<span>👁 2.9K</span>
+<span>💬 22</span>
+<span>⏱ 4 min</span>
+</div>
+</div>
+</a>
+
+<a href="404.html" class="pwNX-newsCard pwNX-reveal">
+<div class="pwNX-imgBox vertical">
+<img src="./earthquake.webp">
+<span class="pwNX-badge breaking">BREAKING</span>
+</div>
+<div class="pwNX-cardBody">
+<h4>Major Earthquake Hits Japan</h4>
+<p>Thousands evacuated after strong tremors.</p>
+<div class="pwNX-info">
+<span>👁 5.6K</span>
+<span>💬 68</span>
+<span>⏱ 4 min</span>
+</div>
+</div>
+</a>
+
+<a href="404.html" class="pwNX-newsCard pwNX-reveal">
+<div class="pwNX-imgBox horizontal">
+<img src="./nasa.webp">
+<span class="pwNX-badge trending">TRENDING</span>
+</div>
+<div class="pwNX-cardBody">
+<h4>NASA Moon Mission</h4>
+<p>Scientists prepare for new lunar exploration.</p>
+<div class="pwNX-info">
+<span>👁 3.8K</span>
+<span>💬 37</span>
+<span>⏱ 5 min</span>
+</div>
+</div>
+</a>
+
+
+<a href="404.html" class="pwNX-newsCard pwNX-reveal">
+    <div class="pwNX-imgBox horizontal">
+    <img src="./fuel.webp">
+    <span class="pwNX-badge trending">TRENDING</span>
+    </div>
+    <div class="pwNX-cardBody">
+    <h4>GLOBAL FUEL CRISIS</h4>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="pwNX-info">
+    <span>👁 3.8K</span>
+    <span>💬 37</span>
+    <span>⏱ 5 min</span>
+    </div>
+    </div>
+    </a>
+
+
+    <a href="404.html" class="pwNX-newsCard pwNX-reveal">
+        <div class="pwNX-imgBox horizontal">
+        <img src="./ice.webp">
+        <span class="pwNX-badge trending">TRENDING</span>
+        </div>
+        <div class="pwNX-cardBody">
+        <h4>ANTARTICA ICE MELTING</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <div class="pwNX-info">
+        <span>👁 3.8K</span>
+        <span>💬 37</span>
+        <span>⏱ 5 min</span>
+        </div>
+        </div>
+        </a>
+
+
+
+
+
+            <a href="404.html" class="pwNX-newsCard pwNX-reveal">
+                <div class="pwNX-imgBox horizontal">
+                <img src="./russia.webp">
+                <span class="pwNX-badge trending">TRENDING</span>
+                </div>
+                <div class="pwNX-cardBody">
+                <h4>RUSSIA IN DANGER</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, at!</p>
+                <div class="pwNX-info">
+                <span>👁 3.8K</span>
+                <span>💬 37</span>
+                <span>⏱ 5 min</span>
+                </div>
+                </div>
+                </a>
+
+</div>
+
+<!-- REVIEW BOX -->
+
+<!-- =============================
+ SCROLLING COMMENTS
+============================= -->
+
+<div class="comment-scroll-box">
+    <div class="comment-scroll">
+        <p>⭐⭐⭐⭐ Great news coverage!</p>
+        <p>⭐⭐⭐⭐⭐ Very Informative</p>
+        <p>⭐⭐⭐⭐ Live updates are useful</p>
+        <p>⭐⭐⭐⭐⭐ Love this platform</p>
+        <p>⭐⭐⭐⭐ Good reporting</p>
+    </div>
+</div>
+
+
+<!-- =============================
+ COMMENT FORM
+============================= -->
+
+<div class="comment-section">
+
+    <h2>Leave a Comment</h2>
+
+    <p id="errorMsg"></p>
+
+    <form id="commentForm">
+
+        <textarea id="comment" placeholder="Comment"></textarea>
+
+        <div class="form-row">
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+        </div>
+
+        <input type="text" id="website" placeholder="Website">
+
+        <button type="submit">Post Comment</button>
+
+    </form>
+
+</div>
+</section>
+<style>
+    /* =========================
+ SCROLLING COMMENT BOX
+========================= */
+
+.comment-scroll-box{
+    height:150px;
+    overflow:hidden;
+    background:#f1f1f1;
+    border-radius:10px;
+    margin-bottom:30px;
+    position:relative;
+}
+
+.comment-scroll{
+    position:absolute;
+    width:100%;
+    animation:scrollDown 10s linear infinite;
+}
+
+.comment-scroll p{
+    padding:10px;
+    margin:0;
+    background:white;
+    border-bottom:1px solid #ddd;
+}
+
+/* TOP → BOTTOM SCROLL */
+
+@keyframes scrollDown{
+    0%{top:-100%;}
+    100%{top:100%;}
+}
+
+
+/* =========================
+ COMMENT FORM
+========================= */
+
+.comment-section{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.comment-section h2{
+    margin-bottom:20px;
+}
+
+.comment-section textarea{
+    width:100%;
+    height:120px;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+.form-row{
+    display:flex;
+    gap:15px;
+}
+
+.comment-section input{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+.comment-section button{
+    padding:10px 20px;
+    background:red;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#errorMsg{
+    color:red;
+    margin-bottom:10px;
+}
+
+/* =========================
+ RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+    .form-row{
+        flex-direction:column;
+    }
+}
+    </style>
+
+
+<script>
+
+/* Direction Animation */
+const elements=document.querySelectorAll(".pwNX-reveal");
+const directions=["from-left","from-right","from-top","from-bottom"];
+
+elements.forEach((el,index)=>{
+  el.classList.add(directions[index%4]);
+});
+
+function revealOnScroll(){
+  elements.forEach(el=>{
+    const windowHeight=window.innerHeight;
+    const elementTop=el.getBoundingClientRect().top;
+    if(elementTop<windowHeight-100){
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll",revealOnScroll);
+window.addEventListener("load",revealOnScroll);
+
+
+
+
+
+document.getElementById("commentForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let comment=document.getElementById("comment").value.trim();
+let error=document.getElementById("errorMsg");
+
+if(name==="" || email==="" || comment==="")
+{
+    error.innerHTML="⚠ Please fill details";
+}
+else
+{
+    window.location.href="404.html";
+}
+
+});
+
+
+
+</script>
+<script src="./script.js"></script>
+<!-- <footer> -->
+    <footer class="footer">
+        <div class="footer-container">
+    
+            <!-- Logo / About -->
+            <div class="footer-box">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+   
+               
+                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
+    
+                <!-- Social Icons -->
+                <div class="footer-social">
+                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+    
+            <!-- Quick Links -->
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./latest.html">Latest</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+    
+            <!-- Address -->
+            <div class="footer-box">
+                <h3>Our Address</h3>
+                <p>
+                    MMR complex.<br>
+                    chinna tirupathi kovil street,<br>
+                    salem,Tamil nadu-636008<br>
+                    <!-- Bengaluru, Karnataka – 560066<br> -->
+                    India<br><br>
+    
+                    <strong>Phone:</strong> +91 98765 43210<br>
+                    <strong>Email:</strong> support@thestackly.com
+                </p>
+            </div>
+    
+            <!-- Google Map -->
+            <div class="footer-box">
+                <h3>Location</h3>
+                <iframe 
+                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+    
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 stackly | All Rights Reserved</p>
+        </div>
+    </footer>
+  
+  
+
+</body>
+</html>

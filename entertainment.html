@@ -7,62 +7,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css" media="print"
-onload="this.media='all'">
 
 </head>
 <body>
-<!-- PRELOAD MAIN HERO IMAGE -->
-<link rel="preload" as="image" href="./magaz1.webp">
 
-<!-- ENABLE LAZY LOADING FOR ALL IMAGES -->
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-document.querySelectorAll("img").forEach(img=>{
-img.setAttribute("loading","lazy");
-});
-});
-window.addEventListener("load",function(){
-document.body.classList.add("loaded");
-});
-</script>
-<style>
-  /* PAGE LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background: black ;
-top:0;
-left:0;
-z-index:9999;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.spinner{
-width:50px;
-height:50px;
-border:5px solid #ccc;
-border-top:5px solid #000;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg);}
-}
-
-/* FADE AFTER LOAD */
-
-body.loaded #loader{
-opacity:0;
-visibility:hidden;
-transition:0.5s;
-}
-</style>
     
 
     <header class="header">
@@ -87,20 +35,20 @@ transition:0.5s;
                 </ul>
               </li>
       
-              <!-- <li class="dropdown">
-                <a href="./worldnews.html"> Trending news</a> -->
-                <!-- <ul class="dropdown-menu">
+              <li class="dropdown">
+                <a href="#">Category ▾</a>
+                <ul class="dropdown-menu">
                   <li><a href="#">LIFESTYLE</a></li>
                   <li><a href="#">ENTERTAINMENT</a></li>
                   <li><a href="#">SPORTS</a></li>
-                </ul> -->
-              <!-- </li> -->
+                </ul>
+              </li>
       
-              <li><a href="./latest.html">Latest</a></li>
-              <li><a href="./worldnews.html"> Trending news</a> 
-              <li><a href="./about.html">About</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-              <li><a href="./dashboard.html">Dashboard</a></li>
+              <li><a href="./worldnews.html">Latest</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Dashboard</a></li>
               <li><a href="./login.html">Login</a></li>
               <li><a href="./signup.html">Signup</a></li>
       
@@ -113,9 +61,6 @@ transition:0.5s;
       
       </header>
         </div>
-        <div id="loader">
-          <div class="spinner"></div>
-          </div>
 
 <section class="featured-news">
 
@@ -475,7 +420,31 @@ window.addEventListener("load",()=>{
                 <!-- REPEAT THIS CARD 9 TIMES -->
                 <div class="wns-card" onclick="wnsGo404()">
                     <div class="wns-media">
-                        <img src="./global stock.webp">
+                        <img src="image1.jpg">
+                        <span class="wns-tag">LIFE</span>
+                    </div>
+                    <div class="wns-text">
+                        <h4>Global Events Reshaping the Future</h4>
+                        <p>Discover the most impactful world changes happening today.</p>
+                    </div>
+                </div>
+    
+                <div class="wns-card" onclick="wnsGo404()">
+                    <div class="wns-media">
+                        <video autoplay muted loop playsinline>
+                            <source src="video1.mp4">
+                        </video>
+                        <span class="wns-tag dark">VIDEO</span>
+                    </div>
+                    <div class="wns-text">
+                        <h4>Inside the biggest international summit</h4>
+                        <p>What leaders discussed behind the scenes.</p>
+                    </div>
+                </div>
+
+                <div class="wns-card" onclick="wnsGo404()">
+                    <div class="wns-media">
+                        <img src="image1.jpg">
                         <span class="wns-tag">LIFE</span>
                     </div>
                     <div class="wns-text">
@@ -488,30 +457,6 @@ window.addEventListener("load",()=>{
                     <div class="wns-media">
                         <video autoplay muted loop playsinline>
                             <source src="./business.mp4">
-                        </video>
-                        <span class="wns-tag dark">VIDEO</span>
-                    </div>
-                    <div class="wns-text">
-                        <h4>Inside the biggest international summit</h4>
-                        <p>What leaders discussed behind the scenes.</p>
-                    </div>
-                </div>
-
-                <div class="wns-card" onclick="wnsGo404()">
-                    <div class="wns-media">
-                        <img src="./busi.webp">
-                        <span class="wns-tag">LIFE</span>
-                    </div>
-                    <div class="wns-text">
-                        <h4>Global Events Reshaping the Future</h4>
-                        <p>Discover the most impactful world changes happening today.</p>
-                    </div>
-                </div>
-    
-                <div class="wns-card" onclick="wnsGo404()">
-                    <div class="wns-media">
-                        <video autoplay muted loop playsinline>
-                            <source src="./climate.mp4">
                         </video>
                         <span class="wns-tag dark">VIDEO</span>
                     </div>
@@ -545,7 +490,7 @@ window.addEventListener("load",()=>{
     
         <!-- MAIN IMAGE -->
         <div class="wns-head-main">
-            <img id="wnsMainImg" src="./ai2.webp">
+            <img id="wnsMainImg" src="img1.jpg">
             <div class="wns-head-overlay">
                 <span>FEATURED</span>
                 <h5 id="wnsMainText">How thinking about future can build a happy life</h5>
@@ -555,11 +500,11 @@ window.addEventListener("load",()=>{
         <!-- SIDE THUMBNAILS -->
         <div class="wns-head-thumbs">
     
-            <img src="./blogs.webp" onclick="wnsChangeSlide(0)">
-            <img src="./busi.webp" onclick="wnsChangeSlide(1)">
-            <img src="./cybersecurity.webp" onclick="wnsChangeSlide(2)">
-            <img src="./digi.webp" onclick="wnsChangeSlide(3)">
-            <img src="./tax.webp" onclick="wnsChangeSlide(4)">
+            <img src="img1.jpg" onclick="wnsChangeSlide(0)">
+            <img src="img2.jpg" onclick="wnsChangeSlide(1)">
+            <img src="img3.jpg" onclick="wnsChangeSlide(2)">
+            <img src="img4.jpg" onclick="wnsChangeSlide(3)">
+            <img src="img5.jpg" onclick="wnsChangeSlide(4)">
     
         </div>
     
@@ -670,11 +615,11 @@ height:200px;
     </STYLE>
     <SCRIPT>
         let wnsImages=[
-"blogs.webp",
-"busi.webp",
-"cybersecurity.webp",
-"digi.webp",
-"tax.webp"
+"img1.jpg",
+"img2.jpg",
+"img3.jpg",
+"img4.jpg",
+"img5.jpg"
 ];
 
 let wnsTexts=[
@@ -909,9 +854,8 @@ card.classList.add("wns-show");
 
       <div class="wns2-big-card">
         <div class="wns2-thumb">
-          <img src="./world.webp" alt="">
-          <a href="./404.html">
-          <span class="wns2-play">▶</span></a>
+          <img src="video1.jpg" alt="">
+          <span class="wns2-play">▶</span>
           <span class="wns2-time">07:47</span>
         </div>
         <div class="wns2-content" onclick="wns2Go404()">
@@ -922,9 +866,8 @@ card.classList.add("wns-show");
 
       <div class="wns2-big-card">
         <div class="wns2-thumb">
-          <img src="./corp1.webp" alt="">
-          <a href="./404.html">
-          <span class="wns2-play">▶</span></a>
+          <img src="video2.jpg" alt="">
+          <span class="wns2-play">▶</span>
           <span class="wns2-watch">Watch</span>
         </div>
         <div class="wns2-content" onclick="wns2Go404()">
@@ -938,135 +881,32 @@ card.classList.add("wns-show");
     <!-- RIGHT LIST -->
     <div class="wns2-right">
 
-        <div class="wns2-list-card" onclick="wns2Go404()">
-          <span class="wns2-count">8</span>
-          <img src="./debate.webp" alt="news">
-          <h5>19 Times Women Were Total Bosses While Lifting Each Other Up</h5>
-        </div>
-      
-        <div class="wns2-list-card" onclick="wns2Go404()">
-          <span class="wns2-count">9</span>
-          <img src="./diet.webp" alt="news">
-          <h5>5 Breathtaking Hot Springs You Need To Visit</h5>
-        </div>
-      
-        <div class="wns2-list-card" onclick="wns2Go404()">
-          <span class="wns2-count">10</span>
-          <img src="./doctor.webp" alt="news">
-          <h5>Strange Human Behaviors Scientists Still Can't Explain</h5>
-        </div>
-      
+      <div class="wns2-list-card" onclick="wns2Go404()">
+        <span class="wns2-count">8</span>
+        <img src="small1.jpg" alt="">
+        <h5>19 Times Women Were Total Bosses While Lifting Each Other Up</h5>
       </div>
+
+      <div class="wns2-list-card" onclick="wns2Go404()">
+        <span class="wns2-count">9</span>
+        <img src="small2.jpg" alt="">
+        <h5>5 Breathtaking Hot Springs You Need To Visit</h5>
+      </div>
+
+      <div class="wns2-list-card" onclick="wns2Go404()">
+        <span class="wns2-count">10</span>
+        <img src="small3.jpg" alt="">
+        <h5>Strange Human Behaviors Scientists Still Can't Explain</h5>
+      </div>
+
     </div>
 
   </div>
 
 </section>
-<script>
-    const wns2Cards = document.querySelectorAll(".wns2-list-card");
-
-const wns2Observer = new IntersectionObserver(entries => {
-  entries.forEach((entry,index)=>{
-    if(entry.isIntersecting){
-      setTimeout(()=>{
-        entry.target.classList.add("show");
-      }, index*200);
-    }
-  });
-},{threshold:0.2});
-
-wns2Cards.forEach(card=>{
-  wns2Observer.observe(card);
-});
-</script>
 
 
 <style>
-
-    /* RIGHT SIDE LIST */
-.wns2-right{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-
-/* CARD */
-.wns2-list-card{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  cursor:pointer;
-  opacity:0;
-  transform:translateY(40px);
-  transition:.6s ease;
-}
-
-/* IMAGE SMALL SIZE */
-.wns2-list-card img{
-  width:80px;
-  height:65px;
-  object-fit:cover;
-  border-radius:6px;
-  transition:.4s;
-}
-
-/* HOVER ZOOM */
-.wns2-list-card:hover img{
-  transform:scale(1.08);
-}
-
-/* TEXT */
-.wns2-list-card h5{
-  font-size:14px;
-  line-height:1.3;
-}
-
-/* COUNT BADGE */
-.wns2-count{
-  background:#ff3d3d;
-  color:#fff;
-  padding:5px 8px;
-  font-size:12px;
-  border-radius:3px;
-}
-
-/* SHOW ANIMATION */
-.wns2-list-card.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* TABLET */
-@media(max-width:1024px){
-  .wns2-list-card img{
-    width:70px;
-    height:60px;
-  }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .wns2-list-card img{
-    width:60px;
-    height:55px;
-  }
-
-  .wns2-list-card h5{
-    font-size:13px;
-  }
-
-}
-
-/* SMALL MOBILE */
-@media(max-width:480px){
-
-  .wns2-list-card img{
-    width:55px;
-    height:50px;
-  }
-
-}
 .wns2-latest-wrap *{
   box-sizing:border-box;
 }
@@ -1221,45 +1061,45 @@ function wns2Go404(){
 
       <div class="wns3-card" onclick="wns3Go404()">
         <div class="wns3-img shape1">
-          <img src="./busi.webp">
+          <img src="news1.jpg">
         </div>
         <div class="wns3-content">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, autem eum animi corrupti porro ullam culpa dicta distinctio aliquid maxime!</p>
+          <h3>19 Strange, Subconscious Things Every Human Does...</h3>
+          <p>From duck boats to sports stadiums, these tourist activities are popular for a reason.</p>
           <span class="wns3-tag business">Business</span>
         </div>
       </div>
 
       <div class="wns3-card" onclick="wns3Go404()">
         <div class="wns3-img shape2">
-          <img src="./jogging.webp">
+          <img src="news2.jpg">
         </div>
         <div class="wns3-content">
-          <h3>Lorem ipsum, dolor sit amet consectetur adipisicing.</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, consequuntur illo at labore perspiciatis placeat, odit, dolor ut praesentium exercitationem corrupti assumenda sunt rerum. Excepturi..</p>
+          <h3>19 Brilliant Tweets That Prove Women Are the Funniest...</h3>
+          <p>Discover the most hilarious moments trending online.</p>
           <span class="wns3-tag entertainment">Entertainment</span>
         </div>
       </div>
 
       <div class="wns3-card" onclick="wns3Go404()">
         <div class="wns3-img shape3">
-          <img src="./digi.webp">
+          <img src="news3.jpg">
         </div>
         <div class="wns3-content">
-          <h3>Lorem ipsum dolor sit amet consectetur </h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fugit iste consequatur, atque maxime nobis fuga iure distinctio suscipit temporibus fugiat tempora porro voluptate necessitatibus?</p>
+          <h3>We Found the 20 Best GIFs on the Whole Internet</h3>
+          <p>These viral moments are breaking the internet.</p>
           <span class="wns3-tag latest">Latest</span>
         </div>
       </div>
 
       <div class="wns3-card" onclick="wns3Go404()">
         <div class="wns3-img shape3">
-          <img src="./diet.webp">
+          <img src="news3.jpg">
         </div>
         <div class="wns3-content">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quae, et mollitia dolorem sit alias ipsam deleniti accusantium nisi quam sint labore? Accusantium, modi pariatur!</p>
-          <span class="wns3-tag latest">Healthy</span>
+          <h3>We Found the 20 Best GIFs on the Whole Internet</h3>
+          <p>These viral moments are breaking the internet.</p>
+          <span class="wns3-tag latest">Latest</span>
         </div>
       </div>
 
@@ -1534,68 +1374,4 @@ function wns3UpdateTime(){
 setInterval(wns3UpdateTime,1000);
 wns3UpdateTime();
 </script>
-<script src="./script.js"></script>
-<!-- <footer> -->
-    <footer class="footer">
-        <div class="footer-container">
-    
-            <!-- Logo / About -->
-            <div class="footer-box">
-                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
-   
-               
-                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
-    
-                <!-- Social Icons -->
-                <div class="footer-social">
-                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
-    
-            <!-- Quick Links -->
-            <div class="footer-box">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="./latest.html">Latest</a></li>
-              <li><a href="./about.html">About</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-              <li><a href="./dashboard.html">Dashboard</a></li>
-                </ul>
-            </div>
-    
-            <!-- Address -->
-            <div class="footer-box">
-                <h3>Our Address</h3>
-                <p>
-                    MMR complex.<br>
-                    chinna tirupathi kovil street,<br>
-                    salem,Tamil nadu-636008<br>
-                    <!-- Bengaluru, Karnataka – 560066<br> -->
-                    India<br><br>
-    
-                    <strong>Phone:</strong> +91 98765 43210<br>
-                    <strong>Email:</strong> support@thestackly.com
-                </p>
-            </div>
-    
-            <!-- Google Map -->
-            <div class="footer-box">
-                <h3>Location</h3>
-                <iframe 
-                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-    
-        </div>
-    
-        <div class="footer-bottom">
-            <p>© 2025 stackly | All Rights Reserved</p>
-        </div>
-    </footer>
-  
-  
+
