@@ -11,58 +11,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 onload="this.media='all'">
 
 </head>
+
 <body>
-<!-- PRELOAD MAIN HERO IMAGE -->
-<link rel="preload" as="image" href="./magaz1.webp">
 
-<!-- ENABLE LAZY LOADING FOR ALL IMAGES -->
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-document.querySelectorAll("img").forEach(img=>{
-img.setAttribute("loading","lazy");
-});
-});
-window.addEventListener("load",function(){
-document.body.classList.add("loaded");
-});
-</script>
-<style>
-  /* PAGE LOADER */
 
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background: black ;
-top:0;
-left:0;
-z-index:9999;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.spinner{
-width:50px;
-height:50px;
-border:5px solid #ccc;
-border-top:5px solid #000;
-border-radius:50%;
-animation:spin 1s linear infinite;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg);}
-}
-
-/* FADE AFTER LOAD */
-
-body.loaded #loader{
-opacity:0;
-visibility:hidden;
-transition:0.5s;
-}
-</style>
+  
     
 
     <header class="header">
@@ -71,7 +24,9 @@ transition:0.5s;
       
           <!-- LOGO -->
           <!-- <div class="logo">Plexify</div> -->
-          <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          <a href="index.html">
+            <img src="./white.webp" alt="Stackly Logo" style="height:60px;">
+          </a>
           
 
       
@@ -112,10 +67,101 @@ transition:0.5s;
         </div>
       
       </header>
-        </div>
-        <div id="loader">
-          <div class="spinner"></div>
-          </div>
+       <!-- ======== Magazine Preloader Section ======== -->
+<div id="preloader">
+  <div class="magazine" style="left:5%; animation-delay:0s; background-image:url('magaz1.webp');"></div>
+  <div class="magazine" style="left:25%; animation-delay:0.3s; background-image:url('magaz1.webp');"></div>
+  <div class="magazine" style="left:45%; animation-delay:0.6s; background-image:url('magaz1.webp');"></div>
+  <div class="magazine" style="left:65%; animation-delay:0.9s; background-image:url('magaz1.webp');"></div>
+  <div class="magazine" style="left:85%; animation-delay:1.2s; background-image:url('magaz1.webp');"></div>
+  <div id="preloader-text">Loading Magazines...</div>
+</div>
+
+<style>
+/* ======== Preloader Styles ======== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.magazine {
+  width: 60px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  position: absolute;
+  top: -100px;
+  animation: fall 2s linear infinite;
+  transform-origin: center;
+}
+
+/* Falling and rotating animation */
+@keyframes fall {
+  0% {
+    top: -120px;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    top: 100%;
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#preloader-text {
+  position: absolute;
+  bottom: 40px;
+  font-size: 18px;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 768px) {
+  .magazine {
+    width: 40px;
+    height: 55px;
+  }
+  #preloader-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .magazine {
+    width: 30px;
+    height: 42px;
+  }
+  #preloader-text {
+    font-size: 14px;
+  }
+}
+</style>
+
+<script>
+// Hide preloader after 2 seconds
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    document.getElementById('preloader').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }, 2000);
+});
+</script>
 
 <section class="featured-news">
 

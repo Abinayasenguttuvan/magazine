@@ -10,6 +10,17 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<!-- <div class="mag-loader">
+
+    <div class="mag mag1"></div>
+    <div class="mag mag2"></div>
+    <div class="mag mag3"></div>
+    <div class="mag mag4"></div>
+    
+    <h2 class="loading-text">Loading Travel Stories...</h2>
+    
+    </div> -->
+
 <body>
 
   
@@ -64,7 +75,7 @@ font-family: 'Poppins', sans-serif;
 .travel-cover{
 width:100%;
 height:100vh;
-background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')
+background:url('./bali.webp')
 no-repeat center/cover;
 position:relative;
 display:flex;
@@ -207,7 +218,7 @@ flex-direction:column;
 .mag{
 width:120px;
 height:160px;
-background:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff')
+background:url('./image1.webp')
 center/cover;
 position:absolute;
 top:-200px;
@@ -349,27 +360,96 @@ width:180px;
 height:120px;
 }
 }
-</style>
 
+.center-content{
+text-align:center;
+padding:40px 20px;
+}
+
+.center-content h2,
+.center-content h3{
+margin:10px 0;
+}
+
+.quote{
+display:block;
+margin-top:10px;
+color:#ff9800;
+font-style:italic;
+}
+
+/* Cursor Blinking */
+
+.type-line1::after,
+.type-line2::after,
+.type-line3::after{
+content:"|";
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+</style>
+<script>
+    
+
+function typeWriter(el, text, speed, callback){
+let i=0;
+
+function typing(){
+if(i < text.length){
+el.innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, speed);
+}
+else if(callback){
+callback();
+}
+}
+
+typing();
+}
+
+window.onload = function(){
+
+let line1 = document.querySelector(".type-line1");
+let line2 = document.querySelector(".type-line2");
+let line3 = document.querySelector(".type-line3");
+
+typeWriter(line1,
+"Hidden Paradise:",
+70,
+function(){
+
+typeWriter(line2,
+"10 Undiscovered Destinations You Must Visit in 2026",
+40,
+function(){
+
+typeWriter(line3,
+'"Adventure Begins Where Plans End"',
+60);
+
+});
+
+});
+
+}
+
+
+</script>
 <body>
 
-    <div class="mag-loader">
-
-        <div class="mag mag1"></div>
-        <div class="mag mag2"></div>
-        <div class="mag mag3"></div>
-        <div class="mag mag4"></div>
-        
-        <h2 class="loading-text">Loading Travel Stories...</h2>
-        
-        </div>
-
+    
 <section class="travel-cover">
 
 <div class="overlay">
 
 <!-- MASTHEAD -->
-<h1 class="masthead">WANDERLUST WEEKLY</h1>
+<h1 class="masthead">WANDER WEEKLY</h1>
 <p class="tagline">Explore More. Travel Better. Live Fully.</p>
 
 <div class="cover-grid">
@@ -384,10 +464,14 @@ height:120px;
 
 <!-- CENTER CONTENT -->
 <div class="center-content">
-<h2>Hidden Paradise:</h2>
-<h3>10 Undiscovered Destinations You Must Visit in 2026</h3>
-<span class="quote">"Adventure Begins Where Plans End"</span>
-</div>
+
+    <h2 class="type-line1"></h2>
+    
+    <h3 class="type-line2"></h3>
+    
+    <span class="quote type-line3"></span>
+    
+    </div>
 
 <!-- RIGHT SIDE -->
 <div class="right-content">
@@ -414,7 +498,7 @@ height:120px;
     <div class="article-container">
     
     <div class="article-img">
-    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    <img src="./bali.webp">
     </div>
     
     <div class="article-content">
@@ -446,12 +530,12 @@ height:120px;
         
         <div class="slide-track">
         
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
-        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+        <img src="./bali.webp">
+        <img src="./image2.webp">
+        <img src="./image3.webp">
+        <img src="./image4.webp">
+        <img src="./image5.webp">
+        <img src="./image6.webp">
         
         </div>
         
@@ -460,28 +544,12 @@ height:120px;
         </section>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Magazine Advanced</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* GLOBAL */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
 
-body{
-background:#f4f4f4;
-overflow-x:hidden;
-}
 
 /* ===============================
    1️⃣ ANIMATED DESTINATION CARDS
@@ -659,7 +727,7 @@ height:350px;
 <div class="card-container">
 
 <div class="card reveal">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+<img src="./bali.webp">
 <div class="card-content">
 <h3>Maldives</h3>
 <p>Crystal clear waters & luxury villas</p>
@@ -667,7 +735,7 @@ height:350px;
 </div>
 
 <div class="card reveal">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<img src="./image3.webp">
 <div class="card-content">
 <h3>Switzerland</h3>
 <p>Snow mountains & scenic beauty</p>
@@ -675,7 +743,7 @@ height:350px;
 </div>
 
 <div class="card reveal">
-<img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+<img src="./image1.webp">
 <div class="card-content">
 <h3>Thailand</h3>
 <p>Beaches, nightlife & culture</p>
@@ -695,22 +763,20 @@ height:350px;
 <div class="blog-container">
 
 <div class="blog-img">
-<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+<img src="./image2.webp">
 </div>
 
 <div class="blog-text">
-<h2>Bali – Island of Gods</h2>
+<h2>Thailand – Island of Gods</h2>
 <p>
-Bali offers breathtaking beaches, stunning temples,
+Thailand  offers breathtaking beaches, stunning temples,
 vibrant culture, and unforgettable sunsets.
 </p>
 <p>
-Explore waterfalls, volcano trekking, and traditional
-Balinese art villages during your visit.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, magnam.
 </p>
 <p>
-This paradise is perfect for honeymooners, adventure
-seekers, and solo travelers alike.
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, recusandae.
 </p>
 </div>
 
@@ -747,8 +813,174 @@ reveals[i].classList.add("active");
 
 </script>
 
-</body>
-</html>
+<!-- ================= MAGAZINE CHECKLIST SECTION ================= -->
+
+<section class="magazine-row">
+
+    <!-- LEFT PAGE -->
+    
+    <div class="mag-page" onclick="go404()">
+    
+    <h2>Travelling <br><span>Check Lists</span></h2>
+    
+    <div class="checklist">
+    
+    <div>
+    <h3>01</h3>
+    <p>Make photocopies of important documents.</p>
+    </div>
+    
+    <div>
+    <h3>02</h3>
+    <p>Always carry a reusable water bottle.</p>
+    </div>
+    
+    <div>
+    <h3>03</h3>
+    <p>Download offline maps in phone.</p>
+    </div>
+    
+    <div>
+    <h3>04</h3>
+    <p>Travel with multi adapter charger.</p>
+    </div>
+    
+    <div>
+    <h3>05</h3>
+    <p>Wear your heaviest clothes on plane.</p>
+    </div>
+    
+    <div>
+    <h3>06</h3>
+    <p>Notify your bank of travel plans.</p>
+    </div>
+    
+    </div>
+    
+    <div class="circle-img"></div>
+    
+    <p class="quote">
+    Take photos, but don’t forget to <span>be present in the moment.</span>
+    </p>
+    
+    </div>
+    
+    
+    <!-- RIGHT PAGE -->
+    
+    <div class="mag-page" onclick="go404()">
+    
+    <div class="big-img"></div>
+    
+    <h2 class="meet">
+    Travel far enough to <br>
+    <span>Meet yourself.</span>
+    </h2>
+    
+    <p>
+    Traveling introduces you to new cultures, perspectives, and stories.
+    Every destination teaches something unforgettable and inspires
+    personal growth.
+    </p>
+    
+    <p>
+    Let every journey be a step toward discovering your true self.
+    Adventure awaits beyond your comfort zone.
+    </p>
+    
+    </div>
+    
+    </section>
+
+    <style>
+
+    .magazine-row{
+        display:flex;
+        gap:40px;
+        padding:60px 5%;
+        background:#f5f5f5;
+        flex-wrap:wrap;
+        }
+        
+        .mag-page{
+        flex:1;
+        min-width:320px;
+        background:#fff;
+        padding:30px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.1);
+        cursor:pointer;
+        transition:0.4s;
+        position:relative;
+        overflow:hidden;
+        }
+        
+        .mag-page:hover{
+        transform:scale(1.02);
+        }
+        
+        .checklist{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        margin-top:20px;
+        }
+        
+        .checklist h3{
+        color:#ff9800;
+        }
+        
+        .circle-img{
+        width:180px;
+        height:180px;
+        background:url('./image6.webp') center/cover;
+        border-radius:50%;
+        margin:20px auto;
+        }
+        
+        .quote span{
+        /* background:#ff9800; */
+        padding:2px 8px;
+        }
+        
+        .big-img{
+        width:100%;
+        height:260px;
+        background:url('./image5.webp') center/cover;
+        margin-bottom:20px;
+        }
+        
+        .meet span{
+        background:#ff9800;
+        padding:2px 8px;
+        }
+        
+        
+        /* ================= RESPONSIVE ================= */
+        
+        @media(max-width:768px){
+        
+        .magazine-row{
+        flex-direction:column;
+        }
+        
+        .circle-img{
+        width:140px;
+        height:140px;
+        }
+        
+        .big-img{
+        height:200px;
+        }
+        
+        }
+
+        </style>
+
+        <script>
+            function go404(){
+window.location.href="404.html";
+}
+        </script>
 
 <script>
     

@@ -1,0 +1,1028 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Magazines  </title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./style1.css">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+
+<body>
+
+  
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <a href="home2.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- div class="logo">Tech<span>Solutions</span></div> -->
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-links" >
+
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+                
+                    <ul class="dropdown-content">
+                        <li><a href="./index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                
+
+                <li><a href="./travelblog.html">Travel blog</a></li>
+                <li><a href="./404.html">About</a></li>
+                <li><a href="./404.html">places </a></li>
+                <li><a href="./contact1.html">contact</a></li>
+                
+
+            </ul>
+        </nav>
+
+        <!-- Toggle -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>4
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+body{
+margin:0;
+font-family: 'Segoe UI', sans-serif;
+background:#dcdcdc;
+}
+
+h2{
+margin:15px 0;
+}
+
+p{
+line-height:1.6;
+color:#555;
+}
+
+/* ================= MAGAZINE CONTAINER ================= */
+
+.magazine{
+max-width:1300px;
+margin:50px auto;
+display:flex;
+flex-direction:column;
+gap:50px;
+padding:0 20px;
+}
+
+/* ================= SPREAD (2 PAGES IN ROW) ================= */
+
+.spread{
+display:flex;
+gap:0;
+background:#ccc;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* ================= PAGE STYLE ================= */
+
+.page{
+flex:1;
+background:#fff;
+padding:40px;
+min-height:600px;
+position:relative;
+cursor:pointer;
+transition:0.3s;
+}
+
+.page:hover{
+transform:scale(1.01);
+}
+
+/* ================= PAGE 1 ================= */
+
+.editor-img{
+width:100%;
+height:280px;
+background:url('./bali.webp')
+center/cover no-repeat;
+margin-bottom:20px;
+}
+
+.signature{
+margin-top:30px;
+color:#ff9800;
+font-weight:bold;
+}
+
+/* ================= PAGE 2 ================= */
+
+.journey-img{
+width:100%;
+height:200px;
+background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')
+center/cover;
+margin-bottom:20px;
+}
+
+.highlight{
+height:4px;
+width:80px;
+background:#ff9800;
+margin:15px 0;
+}
+
+/* ================= PAGE 3 ================= */
+
+.small-img{
+width:100%;
+height:150px;
+background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470')
+center/cover;
+margin-bottom:20px;
+}
+
+.camel-img{
+width:100%;
+height:200px;
+background:url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1')
+center/cover;
+margin-top:20px;
+}
+
+/* ================= PAGE 4 FULL IMAGE ================= */
+
+.desert{
+padding:0;
+background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')
+center/cover;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:#fff;
+text-align:center;
+}
+
+.overlay h1{
+font-size:55px;
+letter-spacing:2px;
+}
+
+.overlay p{
+font-size:18px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+
+.spread{
+flex-direction:column;
+}
+
+.page{
+min-height:auto;
+}
+
+.overlay h1{
+font-size:40px;
+}
+
+}
+
+@media(max-width:600px){
+
+.page{
+padding:20px;
+}
+
+.overlay h1{
+font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- ================= TRAVEL INFLUENCER ================= -->
+    
+    <section class="influencer reveal">
+    
+        <div class="influencer-card" onclick="go404()">
+        
+        <img src="./sana.webp">
+        
+        <h3>Emily Stone</h3>
+        <p>Travel Influencer</p>
+        
+        <div class="social">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-facebook"></i>
+        </div>
+        
+        </div>
+        
+        <div class="bio">
+        <h2>Traveler of the Month</h2>
+        <p>
+        Emily has traveled to 45+ countries sharing stories,
+        culture and travel experiences across the globe Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+         Sint totam alias quia blanditiis temporibus, reiciendis, 
+        voluptate nulla libero sunt velit impedit quam quo mollitia! Ut modi eaque eum temporibus dicta!
+        </p>
+        </div>
+        
+        </section>
+    
+
+<div class="magazine">
+
+<!-- ================= FIRST SPREAD ================= -->
+
+<div class="spread">
+
+<!-- LEFT PAGE -->
+<div class="page" onclick="go404()">
+
+<div class="editor-img"></div>
+
+<h2>Editors Message</h2>
+
+<p>
+Travel is more than discovering destinations. It’s about exploring stories,
+culture, and experiences that redefine how we see the world.
+</p>
+
+<p>
+Every journey brings new adventures and unforgettable memories.
+Let this magazine inspire your next destination.
+</p>
+
+<div class="signature">
+<i class="fa-solid fa-signature"></i> Isabella Linton
+</div>
+
+</div>
+
+<!-- RIGHT PAGE -->
+<div class="page" onclick="go404()">
+
+<div class="journey-img"></div>
+
+<h2>A Journey Begins With Every Story</h2>
+
+<div class="highlight"></div>
+
+<p>
+Discover hidden beaches, vibrant cities and scenic mountains across the globe.
+Traveling allows you to create unforgettable memories.
+</p>
+
+<p>
+This magazine guides you to the best places for your next dream vacation.
+</p>
+
+</div>
+
+</div>
+
+<!-- ================= SECOND SPREAD ================= -->
+
+<div class="spread">
+
+<!-- LEFT PAGE -->
+<div class="page" onclick="go404()">
+
+<h2>Explore It</h2>
+
+<div class="small-img"></div>
+
+<p>
+Adventure awaits in every corner of the planet. From serene deserts
+to breathtaking mountain landscapes and hidden natural wonders.
+</p>
+
+<div class="camel-img"></div>
+
+</div>
+
+<!-- RIGHT PAGE (FULL IMAGE) -->
+<div class="page desert" onclick="go404()">
+
+<div class="overlay">
+<h1>Explore</h1>
+<p>The World Is Your Playground</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function go404(){
+window.location.href="404.html";
+}
+</script>
+
+<!-- ================= AUTO SLIDER ================= -->
+
+<section class="mag-slider">
+
+    <h2 class="slider-title">Featured Travel Stories</h2>
+    
+    <div class="slider">
+    
+    <div class="slides">
+    
+    <div class="slide" onclick="go404()">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    <div class="slide-content">
+    <h3>Maldives Escape</h3>
+    <p>Relax on the crystal beaches</p>
+    </div>
+    </div>
+    
+    <div class="slide" onclick="go404()">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div class="slide-content">
+    <h3>Desert Adventure</h3>
+    <p>Explore golden dunes</p>
+    </div>
+    </div>
+    
+    <div class="slide" onclick="go404()">
+    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1">
+    <div class="slide-content">
+    <h3>Mountain Views</h3>
+    <p>Feel the nature</p>
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    <style>
+        .mag-slider{
+padding:80px 20px;
+text-align:center;
+background:#f5f5f5;
+overflow:hidden;
+}
+
+.slider{
+width:100%;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+animation:slide 12s infinite;
+}
+
+.slide{
+min-width:100%;
+position:relative;
+cursor:pointer;
+}
+
+.slide img{
+width:100%;
+height:400px;
+object-fit:cover;
+}
+
+.slide-content{
+position:absolute;
+bottom:20px;
+left:20px;
+color:#fff;
+background:rgba(0,0,0,0.5);
+padding:10px;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+33%{transform:translateX(-100%);}
+66%{transform:translateX(-200%);}
+100%{transform:translateX(0);}
+}
+
+@media(max-width:768px){
+.slide img{height:250px;}
+}
+    </style>
+
+
+<!-- ================= AWARDS ================= -->
+
+<!-- <section class="awards">
+
+    <h2>Travel Awards</h2>
+    
+    <div class="award-container">
+    
+    <div class="award-card" onclick="go404()">
+    <i class="fa-solid fa-trophy"></i>
+    <h3>Best Destination</h3>
+    <p>Bali 2025</p>
+    </div>
+    
+    <div class="award-card" onclick="go404()">
+    <i class="fa-solid fa-medal"></i>
+    <h3>Top Beach</h3>
+    <p>Maldives</p>
+    </div>
+    
+    <div class="award-card" onclick="go404()">
+    <i class="fa-solid fa-star"></i>
+    <h3>Luxury Stay</h3>
+    <p>Dubai</p>
+    </div>
+    
+    </div>
+    
+    </section> -->
+
+    <style>
+        .awards{
+padding:80px 20px;
+text-align:center;
+background:#fff3e0;
+}
+
+.award-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.award-card{
+background:#fff;
+padding:20px;
+width:250px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.award-card i{
+font-size:40px;
+color:#ff9800;
+margin-bottom:10px;
+}
+
+.award-card:hover{
+transform:translateY(-10px);
+}
+
+@media(max-width:768px){
+.award-card{width:100%;}
+}
+
+
+/* ================= GLOSSY PAGE EFFECT ================= */
+
+.flip-page{
+position:relative;
+background:#fff;
+overflow:hidden;
+}
+
+/* SHINE LAYER */
+
+.flip-page::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:60%;
+height:100%;
+background:linear-gradient(
+120deg,
+rgba(255,255,255,0) 0%,
+rgba(255,255,255,0.3) 50%,
+rgba(255,255,255,0) 100%
+);
+transform:skewX(-20deg);
+transition:0.8s;
+pointer-events:none;
+}
+
+/* HOVER SHINE */
+
+.flip-page:hover::before{
+left:120%;
+}
+
+/* PAGE GLOSS LIGHT */
+
+.flip-page::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+to bottom,
+rgba(255,255,255,0.25),
+rgba(255,255,255,0) 40%
+);
+pointer-events:none;
+}
+
+/* MAGAZINE SHADOW */
+
+#book{
+box-shadow:
+0 15px 40px rgba(0,0,0,0.3),
+inset 0 0 40px rgba(0,0,0,0.1);
+}
+
+/* PAGE EDGE LIGHT */
+
+.flip-page{
+box-shadow:
+inset -10px 0 20px rgba(0,0,0,0.15),
+inset 10px 0 20px rgba(255,255,255,0.3);
+}
+
+/* CENTER BIND */
+
+.flip-container{
+position:relative;
+}
+
+.flip-container::after{
+content:"";
+position:absolute;
+width:20px;
+height:100%;
+top:0;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(
+to right,
+rgba(0,0,0,0.2),
+rgba(255,255,255,0.2),
+rgba(0,0,0,0.2)
+);
+z-index:2;
+pointer-events:none;
+}
+    </style>
+
+
+<!-- ================= FEATURED DESTINATION ================= -->
+
+<section class="spotlight">
+
+    <div class="spotlight-img" onclick="go404()">
+    <div class="overlay">
+    <i class="fa-solid fa-plane"></i>
+    <h2>Featured Destination</h2>
+    <p>Explore the Beauty of Santorini</p>
+    </div>
+    </div>
+    
+    <div class="spotlight-content reveal">
+    
+    <h2><i class="fa-solid fa-location-dot"></i> Santorini, Greece</h2>
+    
+    <p>
+    Famous for whitewashed homes and blue domes,
+    Santorini offers breathtaking sunsets and romantic views.
+    </p>
+    
+    <div class="spot-icons">
+    
+    <span onclick="go404()">
+    <i class="fa-solid fa-calendar-days"></i> Best Time: April - June
+    </span>
+    
+    <span onclick="go404()">
+    <i class="fa-solid fa-coins"></i> Avg Budget: ₹70,000
+    </span>
+    
+    <span onclick="go404()">
+    <i class="fa-solid fa-utensils"></i> Local Food
+    </span>
+    
+    </div>
+    
+    </div>
+    
+    </section>
+    
+    <!-- ================= TRAVEL INFLUENCER ================= -->
+    
+    <!-- <section class="influencer reveal">
+    
+    <div class="influencer-card" onclick="go404()">
+    
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+    
+    <h3>Emily Stone</h3>
+    <p>Travel Influencer</p>
+    
+    <div class="social">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-facebook"></i>
+    </div>
+    
+    </div>
+    
+    <div class="bio">
+    <h2>Traveler of the Month</h2>
+    <p>
+    Emily has traveled to 45+ countries sharing stories,
+    culture and travel experiences across the globe.
+    </p>
+    </div>
+    
+    </section> -->
+
+    <style>
+        /* ================= SPOTLIGHT ================= */
+
+.spotlight{
+display:flex;
+flex-wrap:wrap;
+background:linear-gradient(to right,#ffecd2,#fcb69f);
+padding:60px 20px;
+gap:20px;
+}
+
+.spotlight-img{
+flex:1;
+min-height:350px;
+background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')
+center/cover;
+position:relative;
+cursor:pointer;
+overflow:hidden;
+}
+
+.spotlight-img::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.3);
+}
+
+.overlay{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:#fff;
+text-align:center;
+animation:float 3s infinite;
+}
+
+.overlay i{
+font-size:40px;
+}
+
+@keyframes float{
+0%{transform:translate(-50%,-60%);}
+50%{transform:translate(-50%,-40%);}
+100%{transform:translate(-50%,-60%);}
+}
+
+.spotlight-content{
+flex:1;
+padding:40px;
+}
+
+.spot-icons span{
+display:block;
+margin:10px 0;
+cursor:pointer;
+}
+
+.spot-icons i{
+color:#ff5722;
+margin-right:10px;
+}
+
+/* ================= INFLUENCER ================= */
+
+.influencer{
+display:flex;
+flex-wrap:wrap;
+padding:60px 20px;
+background:linear-gradient(135deg,
+rgba(255,126,95,0.8),
+rgba(254,180,123,0.7),
+rgba(106,17,203,0.6),
+rgba(37,117,252,0.7));
+gap:30px;
+}
+
+.influencer-card{
+background:#fff;
+padding:20px;
+text-align:center;
+width:250px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.influencer-card img{
+width:100%;
+border-radius:50%;
+}
+
+.influencer-card:hover{
+transform:scale(1.05);
+}
+
+.social i{
+font-size:20px;
+margin:10px;
+color:#ff9800;
+}
+
+.bio{
+flex:1;
+padding:20px;
+}
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.spotlight{
+flex-direction:column;
+}
+
+.influencer{
+flex-direction:column;
+align-items:center;
+}
+
+.influencer-card{
+width:100%;
+}
+
+}
+    </style>
+    <script>
+
+        function go404(){
+        window.location.href="404.html";
+        }
+        
+        window.addEventListener("scroll",()=>{
+        document.querySelectorAll(".reveal").forEach(el=>{
+        let top=el.getBoundingClientRect().top;
+        let win=window.innerHeight;
+        if(top<win-100){
+        el.classList.add("active");
+        }
+        });
+        });
+        
+        </script>
+
+
+<!-- ================= HOTEL DEALS SECTION ================= -->
+
+<section class="hotel-section">
+
+    <h2 class="mag-heading">Exclusive Hotel Deals</h2>
+    
+    <div class="hotel-container">
+    
+    <div class="hotel-card" onclick="go404()">
+    <img src="./bali.webp">
+    <div class="hotel-content">
+    <h3>Maldives Beach Resort</h3>
+    <p>Luxury stay with ocean view & private pool experience.</p>
+    <span class="price">$299 / Night</span>
+    </div>
+    </div>
+    
+    <div class="hotel-card" onclick="go404()">
+    <img src="./image3.webp">
+    <div class="hotel-content">
+    <h3>Swiss Alps Hotel</h3>
+    <p>Mountain view premium stay with snowfall adventure.</p>
+    <span class="price">$189 / Night</span>
+    </div>
+    </div>
+    
+    <div class="hotel-card" onclick="go404()">
+    <img src="./image5.webp">
+    <div class="hotel-content">
+    <h3>Bali Jungle Resort</h3>
+    <p>Nature surrounded eco-friendly luxury villas.</p>
+    <span class="price">$159 / Night</span>
+    </div>
+    </div>
+    
+    </div>
+    </section>
+    
+    
+    <!-- ================= DESTINATION VIDEO REEL ================= -->
+    
+    <section class="video-reel">
+    
+    <h2 class="mag-heading">Destination Video Reel</h2>
+    
+    <div class="video-container">
+    
+    <div class="video-card" onclick="go404()">
+    <video autoplay muted loop>
+    <source src="./global.mp4">
+    </video>
+    <div class="video-overlay">
+    <h3>Explore Maldives</h3>
+    </div>
+    </div>
+    
+    <div class="video-card" onclick="go404()">
+    <video autoplay muted loop>
+    <source src="./climate.mp4">
+    </video>
+    <div class="video-overlay">
+    <h3>Swiss Alps</h3>
+    </div>
+    </div>
+    
+    <div class="video-card" onclick="go404()">
+    <video autoplay muted loop>
+    <source src="./luxury.mp4">
+    </video>
+    <div class="video-overlay">
+    <h3>Bali Waterfall</h3>
+    </div>
+    </div>
+    
+    </div>
+    </section>
+
+    <style>
+
+
+    /* ================= HOTEL DEALS ================= */
+
+.hotel-section{
+padding:60px 5%;
+background:linear-gradient(135deg,#ffe0b2,#fff3e0);
+}
+
+.hotel-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.hotel-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+cursor:pointer;
+transition:0.5s;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hotel-card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.hotel-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.hotel-content{
+padding:20px;
+}
+
+.hotel-content h3{
+margin-bottom:10px;
+}
+
+.price{
+color:#ff5722;
+font-weight:bold;
+}
+
+
+/* ================= VIDEO REEL ================= */
+
+.video-reel{
+padding:60px 5%;
+background:#000;
+color:#fff;
+}
+
+.video-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.video-card{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+cursor:pointer;
+}
+
+.video-card video{
+width:100%;
+height:300px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.video-card:hover video{
+transform:scale(1.1);
+}
+
+.video-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.6);
+padding:20px;
+text-align:center;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.video-card video{
+height:200px;
+}
+
+.hotel-card img{
+height:180px;
+}
+
+}
+</style>
+</body>
+<script>
+    function go404(){
+window.location.href="404.html";
+}
+</script>
+</body>
+</html>
