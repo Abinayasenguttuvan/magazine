@@ -1,0 +1,196 @@
+<!-- ======= Traveller Magazine Auto-Flip Section ======= -->
+<section id="traveller-magazine-flip">
+    <h2 class="section-title">Traveller Magazine</h2>
+  
+    <div class="magazine-container">
+      <div class="magazine" id="magazine">
+        <!-- Page 1 -->
+        <div class="page page-front">
+          <div class="page-content">
+            <img src="paris.jpg" alt="Paris">
+            <h3>Paris: The City of Lights</h3>
+            <p>Romance, iconic landmarks, and hidden gems await.</p>
+          </div>
+        </div>
+        <!-- Page 2 -->
+        <div class="page page-back">
+          <div class="page-content">
+            <img src="bali.jpg" alt="Bali">
+            <h3>Bali: Tropical Paradise</h3>
+            <p>Discover serene beaches and vibrant culture.</p>
+          </div>
+        </div>
+        <!-- Page 3 -->
+        <div class="page page-front">
+          <div class="page-content">
+            <img src="iceland.jpg" alt="Iceland">
+            <h3>Iceland: Land of Fire & Ice</h3>
+            <p>Glaciers, volcanoes, and breathtaking landscapes.</p>
+          </div>
+        </div>
+        <!-- Page 4 -->
+        <div class="page page-back">
+          <div class="page-content">
+            <img src="kyoto.jpg" alt="Kyoto">
+            <h3>Kyoto: Serene Temples</h3>
+            <p>Experience cherry blossoms and Japanese tradition.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation -->
+      <div class="mag-nav">
+        <button id="prevPage">&laquo; Previous</button>
+        <button id="nextPage">Next &raquo;</button>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  #traveller-magazine-flip {
+    padding: 60px 20px;
+    background: #fdfdfd;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #222;
+    font-weight: bold;
+  }
+  
+  .magazine-container {
+    perspective: 1500px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .magazine {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    margin: 0 auto;
+  }
+  
+  .page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+  
+  .page-front {
+    background: #fff;
+  }
+  
+  .page-back {
+    background: #fff;
+    transform: rotateY(180deg);
+  }
+  
+  .page-content {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #222;
+  }
+  
+  .page-content img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .page-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+  }
+  
+  .page-content p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .mag-nav {
+    margin-top: 20px;
+  }
+  
+  .mag-nav button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  .mag-nav button:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .magazine { width: 220px; height: 300px; }
+    .page-content img { height: 140px; }
+  }
+  
+  @media (max-width: 480px) {
+    .magazine { width: 180px; height: 250px; }
+    .page-content img { height: 110px; }
+    .mag-nav button { padding: 8px 16px; font-size: 14px; }
+  }
+  </style>
+  
+  <script>
+  const magazine = document.getElementById('magazine');
+  const pages = document.querySelectorAll('.page');
+  let currentPage = 0;
+  let autoFlip;
+  
+  // Function to update magazine transform
+  function showPage(index){
+    magazine.style.transform = `rotateY(-${index * 180}deg)`;
+    currentPage = index;
+  }
+  
+  // Manual navigation
+  document.getElementById('nextPage').addEventListener('click', () => {
+    currentPage = (currentPage + 1) % pages.length;
+    showPage(currentPage);
+  });
+  
+  document.getElementById('prevPage').addEventListener('click', () => {
+    currentPage = (currentPage - 1 + pages.length) % pages.length;
+    showPage(currentPage);
+  });
+  
+  // Auto-flip every 3 seconds
+  function startAutoFlip(){
+    autoFlip = setInterval(() => {
+      currentPage = (currentPage + 1) % pages.length;
+      showPage(currentPage);
+    }, 3000);
+  }
+  
+  // Pause auto-flip on hover
+  magazine.addEventListener('mouseenter', () => clearInterval(autoFlip));
+  magazine.addEventListener('mouseleave', startAutoFlip);
+  
+  // Start auto-flip on load
+  window.addEventListener('load', startAutoFlip);
+  </script>
