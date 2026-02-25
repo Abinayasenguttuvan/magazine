@@ -241,102 +241,195 @@ height:200px;
 }
 
 
+/* ===== ABOUT AUTHOR SECTION ===== */
 
-/* ================= ABOUT AUTHOR ================= */
-
-.about-author{
-  width:100%;
-  padding:60px 8%;
-  background:#f8f8f8;
+.about-author {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
 }
 
-.author-container{
-  display:flex;
-  gap:40px;
-  align-items:center;
-  background:#fff;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  flex-wrap:wrap;
+.author-container {
+  width: 1200px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
 }
 
-.author-img{
-  flex:1;
-  min-width:250px;
-  overflow:hidden;
-  border-radius:10px;
+/* ===== LEFT IMAGE ===== */
+.author-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.author-img img{
-  width:100%;
-  transition:0.5s;
+.author-img img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
 }
 
-.author-img img:hover{
-  transform:scale(1.1);
+.author-img img:hover {
+  transform: scale(1.05);
 }
 
-.author-content{
-  flex:2;
-  min-width:280px;
+/* ===== RIGHT CONTENT ===== */
+.author-content {
+  flex: 1;
 }
 
-.author-content h2{
-  margin-bottom:10px;
+.author-content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #222;
 }
 
-.author-role{
-  color:gray;
-  margin-bottom:15px;
+.author-content h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: #111;
 }
 
-.author-bio{
-  line-height:1.7;
-  margin-bottom:20px;
+.author-role {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
 }
 
-.author-social a{
-  margin-right:10px;
-  font-size:18px;
-  color:#333;
-  transition:0.3s;
+.author-bio {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 25px;
 }
 
-.author-social a:hover{
-  color:#0077ff;
+/* ===== SOCIAL ICONS ===== */
+.author-social {
+  margin-bottom: 25px;
 }
 
-.author-btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 20px;
-  background:#0077ff;
-  color:#fff;
-  text-decoration:none;
-  border-radius:5px;
-  transition:0.3s;
+.author-social a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 18px;
+  color: #444;
+  transition: 0.3s;
 }
 
-.author-btn:hover{
-  background:#000;
+.author-social a:hover {
+  color: #007bff;
+  transform: translateY(-4px);
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-.author-container{
-  flex-direction:column;
-  text-align:center;
+/* ===== BUTTON ===== */
+.author-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-.author-social{
-  justify-content:center;
+.author-btn:hover {
+  background: #0056b3;
 }
 
+
+/* ===========================
+   RESPONSIVE BREAKPOINTS
+=========================== */
+
+
+/* ===== Laptop (1024px) ===== */
+@media (max-width: 1024px) {
+  .author-container {
+    gap: 40px;
+  }
+
+  .author-content h2 {
+    font-size: 28px;
+  }
 }
 
+
+/* ===== Tablet (768px) ===== */
+@media (max-width: 768px) {
+  .author-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-img img {
+    max-width: 300px;
+  }
+
+  .author-content {
+    margin-top: 30px;
+  }
+
+  .author-social a {
+    margin: 0 10px;
+  }
+}
+
+
+/* ===== Mobile (480px) ===== */
+@media (max-width: 480px) {
+  .about-author {
+    padding: 50px 15px;
+  }
+
+  .author-content h2 {
+    font-size: 22px;
+  }
+
+  .author-content h3 {
+    font-size: 18px;
+  }
+
+  .author-bio {
+    font-size: 14px;
+  }
+
+  .author-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ===== SCROLL ANIMATION START ===== */
+
+/* hidden initially */
+.fade-left,
+.fade-right {
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* LEFT animation */
+.fade-left {
+  transform: translateX(-80px);
+}
+
+/* RIGHT animation */
+.fade-right {
+  transform: translateX(80px);
+}
+
+/* when visible */
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 
 
@@ -347,43 +440,66 @@ height:200px;
 
     <!-- ================= ABOUT AUTHOR SECTION ================= -->
 
-<section class="about-author">
+    <section class="about-author">
 
-    <div class="author-container">
-  
-      <!-- LEFT SIDE IMAGE -->
-      <div class="author-img">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="author">
-      </div>
-  
-      <!-- RIGHT SIDE CONTENT -->
-      <div class="author-content">
-  
-        <h2>About The Author</h2>
-  
-        <h3>sana S</h3>
-        <p class="author-role">Content creater </p>
-  
-        <p class="author-bio">
-          Abinaya is a Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet quo delectus 
-          reiciendis dolores minus ab vero suscipit nulla atque nemo, quae quam explicabo necessitatibus facere!
-        </p>
-  
-        <!-- SOCIAL ICONS -->
-        <div class="author-social">
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
+      <div class="author-container">
+    
+        <!-- LEFT SIDE IMAGE -->
+        <div class="author-img fade-left">
+          <img src="./sana.webp" alt="author">
         </div>
-  
-        <a href="404.html" class="author-btn">View Profile</a>
-  
+    
+        <!-- RIGHT SIDE CONTENT -->
+        <div class="author-content fade-right">
+    
+          <h2>About The Author</h2>
+          <h3>Sana S</h3>
+          <p class="author-role">Content Creator</p>
+    
+          <p class="author-bio">
+            Abinaya is a Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Amet quo delectus reiciendis dolores minus ab vero suscipit nulla atque nemo.
+          </p>
+    
+          <div class="author-social">
+            <a href="./404.html"><i class="fa fa-facebook"></i></a>
+            <a href="./404.html"><i class="fa fa-instagram"></i></a>
+            <a href="./404.html"><i class="fa fa-linkedin"></i></a>
+            <a href="./404.html"><i class="fa fa-twitter"></i></a>
+          </div>
+    
+          <a href="404.html" class="author-btn">View Profile</a>
+    
+        </div>
+    
       </div>
-  
-    </div>
+    
+    </section>
   
   </section>
+  <script>
+    const faders = document.querySelectorAll('.fade-left, .fade-right');
+    
+    const appearOptions = {
+      threshold: 0.3
+    };
+    
+    const appearOnScroll = new IntersectionObserver(function(
+      entries,
+      appearOnScroll
+    ) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+    
+        entry.target.classList.add('show');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+    </script>
   
   <!-- FONT AWESOME -->
   <link rel="stylesheet"
@@ -398,13 +514,13 @@ height:200px;
             <h2>Trending News</h2>
           </div>
       
-          <!-- RIGHT SIDE -->
-          <!-- <div class="comment-ad">
+          <!-- RIGHT SIDE
+          <div class="comment-ad">
             <h2>Comments</h2>
             <h2>Advertisement</h2>
-          </div> -->
-      
-        </div>
+          </div>
+       
+        </div> -->
       
       </section>
 <!-- ================= LEFT NEWS ================= -->
@@ -412,7 +528,7 @@ height:200px;
 <div class="left-news">
 
 <div class="news-card">
-<img src="./global stock.webp">
+<img src="./globalstock.webp">
 <div class="overlay">
 <div>
 <h3>Global Economy</h3>
