@@ -1,1647 +1,3144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NEWZ/MAGAZINE</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="style.css" media="print"
-onload="this.media='all'">
-
-</head>
-
-<body>
-
-
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food delivery</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="./style.css">
     
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
     <header class="header">
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- div class="logo">Tech<span>Solutions</span></div> -->
 
-        <div class="navbar">
-      
-          <!-- LOGO -->
-          <!-- <div class="logo">Plexify</div> -->
-          <a href="index.html">
-            <img src="./white.webp" alt="Stackly Logo" style="height:60px;">
-          </a>
-          
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="nav-links" >
 
-      
-          <!-- NAV -->
-          <nav class="nav-menu" id="navMenu">
-            <ul>
-      
-              <li class="dropdown">
-                <a href="index.html">Home ▾</a>
-                <ul class="dropdown-menu">
-                  <li><a href="./index.html">Home 1</a></li>
-                  <li><a href="./home2.html">Home 2</a></li>
-                </ul>
-              </li>
-      
-              <!-- <li class="dropdown">
-                <a href="./worldnews.html"> Trending news</a> -->
-                <!-- <ul class="dropdown-menu">
-                  <li><a href="#">LIFESTYLE</a></li>
-                  <li><a href="#">ENTERTAINMENT</a></li>
-                  <li><a href="#">SPORTS</a></li>
-                </ul> -->
-              <!-- </li> -->
-      
-              <li><a href="./latest.html">Latest</a></li>
-              <li><a href="./worldnews.html"> Trending news</a> 
-              <li><a href="./about.html">About</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-              <li><a href="./dashboard.html">Dashboard</a></li>
-              <li><a href="./login.html">Login</a></li>
-              <li><a href="./signup.html">Signup</a></li>
-      
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-btn">Home <i class="fa-solid fa-caret-down"></i></a>
+                
+                    <ul class="dropdown-content">
+                        <li><a href="./index.html">Home 1</a></li>
+                        <li><a href="./home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                
+
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./order.html">order</a></li>
+                <li><a href="./contact.html">contact</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="./signup.html">Signup</a></li>
+                
+
             </ul>
-          </nav>
-          <!-- HAMBURGER -->
-          <div class="menu-toggle" id="menuToggle">☰</div>
-      
+        </nav>
+
+        <!-- Toggle -->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
         </div>
-      
-      </header>
-       <!-- ======== Magazine Preloader Section ======== -->
-<div id="preloader">
-  <div class="magazine" style="left:5%; animation-delay:0s; background-image:url('magaz1.webp');"></div>
-  <div class="magazine" style="left:25%; animation-delay:0.3s; background-image:url('magaz1.webp');"></div>
-  <div class="magazine" style="left:45%; animation-delay:0.6s; background-image:url('magaz1.webp');"></div>
-  <div class="magazine" style="left:65%; animation-delay:0.9s; background-image:url('magaz1.webp');"></div>
-  <div class="magazine" style="left:85%; animation-delay:1.2s; background-image:url('magaz1.webp');"></div>
-  <div id="preloader-text">Loading Magazines...</div>
-</div>
+
+    </header>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* ======== Preloader Styles ======== */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  overflow: hidden;
-  flex-direction: column;
+
+/* ================= HERO SECTION ================= */
+
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    overflow:hidden;
+    padding:20px;
 }
 
-.magazine {
-  width: 60px;
-  height: 80px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
-  position: absolute;
-  top: -100px;
-  animation: fall 2s linear infinite;
-  transform-origin: center;
+/* ===== Background Slider ===== */
+
+.slider{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-3;
 }
 
-/* Falling and rotating animation */
-@keyframes fall {
-  0% {
-    top: -120px;
-    transform: rotate(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    top: 100%;
-    transform: rotate(360deg);
-    opacity: 0;
-  }
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
 }
 
-#preloader-text {
-  position: absolute;
-  bottom: 40px;
-  font-size: 18px;
+.slide.active{
+    opacity:1;
+}
+
+/* Dark overlay */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+    z-index:-2;
+}
+
+/* ===== BIG Floating Image ===== */
+
+.big-floating-img{
+    position:absolute;
+    width:600px;
+    max-width:45%;
+    bottom:8%;
+    right:5%;
+    animation:floatBig 5s ease-in-out infinite;
+    z-index:-1;
+}
+
+@keyframes floatBig{
+    0%{ transform:translateY(0px);}
+    50%{ transform:translateY(-30px);}
+    100%{ transform:translateY(0px);}
+}
+
+/* ===== Content ===== */
+
+.hero-content{
+    max-width:650px;
+    animation:fadeUp 1s ease forwards;
+}
+
+.hero-content h1{
+    font-size:52px;
+    margin-bottom:20px;
+    opacity:0;
+    animation:fadeUp 1s forwards;
+    animation-delay:0.5s;
+}
+
+.hero-content p{
+    font-size:18px;
+    margin-bottom:30px;
+    opacity:0;
+    animation:fadeUp 1s forwards;
+    animation-delay:1s;
+}
+
+.location-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    opacity:0;
+    animation:fadeUp 1s forwards;
+    animation-delay:1.5s;
+}
+
+.location-box input{
+    padding:14px 18px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+    width:260px;
+}
+
+.location-box button{
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d4d;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.error{
+    margin-top:10px;
+    color:#ff4d4d;
+    font-size:14px;
+}
+
+/* ===== Fade Animation ===== */
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* ===== Wave ===== */
+
+.wave{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Laptop */
+@media(max-width:1200px){
+    .big-floating-img{
+        width:450px;
+    }
+}
+
+/* Tablet */
+@media(max-width:992px){
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .big-floating-img{
+        width:350px;
+        bottom:5%;
+        right:3%;
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+    .hero{
+        height:auto;
+        padding:60px 20px;
+    }
+
+    .hero-content h1{
+        font-size:28px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .location-box{
+        flex-direction:column;
+    }
+
+    .location-box input{
+        width:100%;
+    }
+
+    .big-floating-img{
+        width:250px;
+        position:relative;
+        margin-top:30px;
+        right:auto;
+        bottom:auto;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+  
+
+    <!-- Background Slider -->
+    <div class="slider">
+        <div class="slide active" style="background-image:url('./back2.webp');"></div>
+        <div class="slide" style="background-image:url('./back3.webp');"></div>
+        <div class="slide" style="background-image:url('./back4webp.webp');"></div>
+    </div>
+
+    <!-- Big Floating Food Image -->
+    <img src="./pizza.webp" class="big-floating-img">
+
+    <!-- Center Content -->
+    <div class="hero-content">
+        <h1>Fresh & Hot Food Delivered Fast</h1>
+        <p>Order your favorite meals anytime, anywhere.</p>
+    </div>
+
+
+    
+
+  
+
+</section>
+
+
+
+<script>
+/* Background Auto Slider */
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(()=>{
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+},4000);
+
+
+/* Location Validation (Fully Working) */
+function submitLocation(event){
+    event.preventDefault(); // prevent form refresh
+
+    let location = document.getElementById("location").value.trim();
+    let error = document.getElementById("error");
+
+    if(location === ""){
+        error.innerText = "Please fill the details!";
+        return false;
+    } else {
+        error.innerText = "";
+        window.location.href = "404.html"; 
+        return true;
+    }
+}
+</script>
+
+<!-- ================= ICON BASED CATEGORIES ================= -->
+
+<section class="categories">
+  <h2 class="section-title reveal">What's on your mind?</h2>
+
+  <div class="categories-wrapper">
+      <div class="categories-track">
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-bowl-food"></i></div>
+              <p>North Indian</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-utensils"></i></div>
+              <p>South Indian</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-drumstick-bite"></i></div>
+              <p>Biryani</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-snowflake"></i></div>
+              <p>Desserts</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-bowl-rice"></i></div>
+              <p>Chinese</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-cake-candles"></i></div>
+              <p>Cake</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-hotdog"></i></div>
+              <p>Rolls</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-ice-cream"></i></div>
+              <p>Ice Cream</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-mug-hot"></i></div>
+              <p>Coffee</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-cheese"></i></div>
+              <p>Pizza</p>
+          </a>
+
+          <a href="404.html" class="category-item reveal">
+              <div class="circle"><i class="fa-solid fa-burger"></i></div>
+              <p>Burger</p>
+          </a>
+
+      </div>
+  </div>
+</section>
+
+<style>
+  /* ================= ICON BASED CATEGORIES ================= */
+
+.categories{
+    padding:90px 5%;
+    background:#ffffff;
+    text-align:center;
+    overflow:hidden;
+}
+
+.section-title{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:60px;
+}
+
+.categories-wrapper{
+    overflow:hidden;
+}
+
+.categories-track{
+    display:flex;
+    gap:35px;
+    animation:scroll 30s linear infinite;
+}
+
+/* Pause sliding on hover */
+.categories-wrapper:hover .categories-track{
+    animation-play-state:paused;
+}
+
+.category-item{
+    min-width:140px;
+    text-decoration:none;
+    color:#222;
+    transition:0.3s ease;
+}
+
+/* Circular Icon */
+.circle{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#ff6a00,#ff3c3c);
+    color:#fff;
+    font-size:45px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+}
+
+/* Hover Effects */
+.category-item:hover .circle{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(255,60,60,0.4);
+}
+
+.category-item p{
+    margin-top:14px;
+    font-size:15px;
+    font-weight:500;
+}
+
+/* Auto Scroll */
+@keyframes scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+}
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+    .circle{
+        width:110px;
+        height:110px;
+        font-size:35px;
+    }
+}
+
+@media(max-width:600px){
+    .categories{
+        padding:60px 20px;
+    }
+
+    .section-title{
+        font-size:22px;
+    }
+
+    .circle{
+        width:80px;
+        height:80px;
+        font-size:28px;
+    }
+
+    .category-item p{
+        font-size:13px;
+    }
+}
+</style>
+
+<script>
+
+  /* Scroll Reveal Animation */
+  const reveals = document.querySelectorAll(".reveal");
+  
+  const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry, index)=>{
+          if(entry.isIntersecting){
+              setTimeout(()=>{
+                  entry.target.classList.add("active");
+              }, index * 150);
+          }
+      });
+  }, { threshold:0.2 });
+  
+  reveals.forEach(el=>{
+      observer.observe(el);
+  });
+  
+  </script>
+
+  
+  <!-- ================= FD ANIMATED WAVY CTA SECTION ================= -->
+
+<section class="fdcta-section">
+
+  <!-- WAVES -->
+  <div class="fdcta-waves">
+      <svg viewBox="0 0 1440 320">
+          <path fill="#ff4d4d" fill-opacity="1"
+              d="M0,192L60,176C120,160,240,128,360,122.7C480,117,600,139,720,160C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,0L0,0Z">
+          </path>
+      </svg>
+  </div>
+
+  <div class="fdcta-container">
+
+      <h2 class="fdcta-title">Craving Something Delicious?</h2>
+
+      <p class="fdcta-text">
+          Order now and get your favorite meals delivered hot and fresh to your doorstep in minutes.
+      </p>
+
+      <div class="fdcta-buttons">
+        <a href="./404.html">
+          <button class="fdcta-btn primary">Order Now</button>
+          <button class="fdcta-btn secondary">Explore Menu</button>
+        </a>
+      </div>
+
+  </div>
+
+</section>
+<style>
+
+/* ================= FD WAVY CTA ================= */
+
+.fdcta-section{
+    position:relative;
+    padding:140px 6% 120px;
+    background:#fff5f5;
+    overflow:hidden;
+    text-align:center;
+}
+
+/* WAVES */
+
+.fdcta-waves{
+   
+    position:absolute;
+    top:-1px;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    line-height:0;
+}
+
+.fdcta-waves svg{
+    width:200%;
+    animation:fdctaWaveMove 8s linear infinite;
+}
+
+@keyframes fdctaWaveMove{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
+
+/* CONTENT */
+
+.fdcta-container{
+    position:relative;
+    max-width:900px;
+    margin:auto;
+}
+
+.fdcta-title{
+    font-size:40px;
+    font-weight:700;
+    margin-bottom:20px;
+    opacity:0;
+}
+
+.fdcta-text{
+    font-size:18px;
+    color: black;
+    margin-bottom:40px;
+    opacity:0;
+}
+
+.fdcta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    opacity:0;
+}
+
+.fdcta-btn{
+    padding:14px 32px;
+    border-radius:50px;
+    font-size:16px;
+    cursor:pointer;
+    border:none;
+    transition:0.4s ease;
+}
+
+.fdcta-btn.primary{
+    background:linear-gradient(135deg,#ff6a00,#ff3c3c);
+    color:#fff;
+}
+
+.fdcta-btn.primary:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 10px 25px rgba(255,77,77,0.4);
+}
+
+.fdcta-btn.secondary{
+    background:#fff;
+    color:#ff4d4d;
+    border:2px solid #ff4d4d;
+}
+
+.fdcta-btn.secondary:hover{
+    background:linear-gradient(135deg,#ff6a00,#ff3c3c);
+    color:#fff;
+    transform:translateY(-5px);
+}
+
+/* ENTRY ANIMATIONS */
+
+.fdcta-show-title{
+    animation:fdctaSlideTop 0.8s forwards;
+}
+
+.fdcta-show-text{
+    animation:fdctaSlideLeft 0.8s forwards;
+}
+
+.fdcta-show-buttons{
+    animation:fdctaSlideRight 0.8s forwards;
+}
+
+@keyframes fdctaSlideTop{
+    from{opacity:0; transform:translateY(-60px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fdctaSlideLeft{
+    from{opacity:0; transform:translateX(-80px);}
+    to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes fdctaSlideRight{
+    from{opacity:0; transform:translateX(80px);}
+    to{opacity:1; transform:translateX(0);}
+}
+
+/* FLOATING EFFECT */
+
+.fdcta-title,
+.fdcta-text,
+.fdcta-buttons{
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+    .fdcta-title{
+        font-size:32px;
+    }
+}
+
+@media(max-width:768px){
+    .fdcta-section{
+        padding:100px 5% 100px;
+    }
+
+    .fdcta-title{
+        font-size:26px;
+    }
+
+    .fdcta-text{
+        font-size:15px;
+    }
+}
+
+@media(max-width:480px){
+    .fdcta-title{
+        font-size:22px;
+    }
+
+    .fdcta-btn{
+        width:100%;
+        max-width:280px;
+    }
+}
+</style>
+<script>
+
+  // Scroll Reveal
+  const fdctaSection = document.querySelector('.fdcta-section');
+  const fdctaTitle = document.querySelector('.fdcta-title');
+  const fdctaText = document.querySelector('.fdcta-text');
+  const fdctaButtons = document.querySelector('.fdcta-buttons');
+  
+  function fdctaReveal(){
+      const trigger = window.innerHeight - 100;
+      const sectionTop = fdctaSection.getBoundingClientRect().top;
+  
+      if(sectionTop < trigger){
+  
+          setTimeout(()=>{
+              fdctaTitle.classList.add('fdcta-show-title');
+          },200);
+  
+          setTimeout(()=>{
+              fdctaText.classList.add('fdcta-show-text');
+          },500);
+  
+          setTimeout(()=>{
+              fdctaButtons.classList.add('fdcta-show-buttons');
+          },800);
+  
+      }
+  }
+  
+  window.addEventListener('scroll', fdctaReveal);
+  fdctaReveal();
+  
+  </script>
+
+<section class="trending-restaurants-section">
+
+  <h2 class="trending-restaurants-title">Trending Restaurants - Mostly Booked for Dine-Out</h2>
+
+  <div class="trending-restaurants-wrapper">
+
+    <!-- LEFT SIDE - 4 Restaurants -->
+    <div class="trending-restaurants-left">
+      <div class="trending-restaurant-card" data-delay="0">
+        <img src="./dine1.webp" alt="Hotel 1">
+        <div class="trending-restaurant-info">
+          <h3>Hotel Aurora</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★★☆</span>
+            <span class="trending-restaurant-distance">1.2 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+
+      <div class="trending-restaurant-card" data-delay="100">
+        <img src="./dine2.webp" alt="Hotel 2">
+        <div class="trending-restaurant-info">
+          <h3>Spice Villa</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★★★</span>
+            <span class="trending-restaurant-distance">2.0 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+
+      <div class="trending-restaurant-card" data-delay="200">
+        <img src="./dine3.webp" alt="Hotel 3">
+        <div class="trending-restaurant-info">
+          <h3>Ocean Delight</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★★☆</span>
+            <span class="trending-restaurant-distance">1.8 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+
+      <div class="trending-restaurant-card" data-delay="300">
+        <img src="dine4.webp" alt="Hotel 4">
+        <div class="trending-restaurant-info">
+          <h3>Green Garden</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★☆☆</span>
+            <span class="trending-restaurant-distance">2.5 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE - 4 Restaurants -->
+    <div class="trending-restaurants-right">
+      <div class="trending-restaurant-card" data-delay="400">
+        <img src="./dine4.webp" alt="Hotel 5">
+        <div class="trending-restaurant-info">
+          <h3>Royal Feast</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★★★</span>
+            <span class="trending-restaurant-distance">1.5 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+
+      <div class="trending-restaurant-card" data-delay="500">
+        <img src="./dine3.webp" alt="Hotel 6">
+        <div class="trending-restaurant-info">
+          <h3>Spicy Hub</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★★☆</span>
+            <span class="trending-restaurant-distance">2.2 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+
+      <div class="trending-restaurant-card" data-delay="600">
+        <img src="./dine2.webp" alt="Hotel 7">
+        <div class="trending-restaurant-info">
+          <h3>Urban Tandoor</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★★☆</span>
+            <span class="trending-restaurant-distance">1.7 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+
+      <div class="trending-restaurant-card" data-delay="700">
+        <img src="./dine1.webp" alt="Hotel 8">
+        <div class="trending-restaurant-info">
+          <h3>Sunset Bistro</h3>
+          <div class="trending-restaurant-meta">
+            <span class="trending-restaurant-stars">★★★☆☆</span>
+            <span class="trending-restaurant-distance">3.0 km</span>
+          </div>
+          <a href="/404" class="trending-restaurant-book">Book</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* NON-CONFLICTING TRENDING RESTAURANTS SECTION */
+.trending-restaurants-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.trending-restaurants-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
   color: #333;
-  font-family: Arial, sans-serif;
 }
 
-/* ======== Responsive ======== */
-@media (max-width: 768px) {
-  .magazine {
-    width: 40px;
-    height: 55px;
+.trending-restaurants-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trending-restaurants-left,
+.trending-restaurants-right {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* RESTAURANT CARD */
+.trending-restaurant-card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGE SEMI-CIRCLE CORNERS */
+.trending-restaurant-card img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50% 0 50% 0;
+  transition: transform 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.trending-restaurant-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.trending-restaurant-card:hover img {
+  transform: scale(1.05);
+}
+
+/* RESTAURANT DETAILS */
+.trending-restaurant-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.trending-restaurant-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #f6b93b;
+  font-size: 0.9rem;
+}
+
+.trending-restaurant-meta .trending-restaurant-distance {
+  color: #555;
+}
+
+.trending-restaurant-book {
+  padding: 6px 15px;
+  background: #ff4d4d;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.trending-restaurant-book:hover {
+  background: #e63c3c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .trending-restaurants-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
-  #preloader-text {
-    font-size: 16px;
+  .trending-restaurant-card {
+    width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .magazine {
-    width: 30px;
-    height: 42px;
+@media (max-width: 600px) {
+  .trending-restaurant-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  #preloader-text {
-    font-size: 14px;
+  .trending-restaurant-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
   }
 }
 </style>
 
 <script>
-// Hide preloader after 2 seconds
-window.addEventListener('load', function() {
-  setTimeout(() => {
-    document.getElementById('preloader').style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }, 2000);
-});
+// STAGGERED SCROLL ANIMATION
+const trendingCards = document.querySelectorAll('.trending-restaurant-card');
+
+const trendingObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const delay = entry.target.getAttribute('data-delay');
+      setTimeout(() => {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }, delay);
+    }
+  });
+}, { threshold: 0.2 });
+
+trendingCards.forEach(card => trendingObserver.observe(card));
 </script>
 
-<section class="featured-news">
+<!-- ================= FD POPULAR HOTELS GRID ================= -->
 
-    <!-- TOP LIVE NEWS SCROLL -->
-  <div class="wns3-live-bar">
-    <div class="wns3-live-label">LIVE</div>
-    <div class="wns3-live-scroll">
-      <div class="wns3-live-track" id="wns3LiveTrack">
-        Breaking News: Global Markets Rising • Entertainment Awards Tonight • Business Summit 2026 • Tech Innovations Revealed •
+<section class="fdph-section">
+
+  <h2 class="fdph-title">Popular Dishes by Category</h2>
+
+  <div class="fdph-grid">
+
+      <!-- CARD 1 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./north.webp" class="fdph-img" alt="North Indian">
+          </div>
+          <div class="fdph-content">
+              <h3>North Indian</h3>
+              <p class="fdph-desc">Delicious curries, tandoori, and more.</p>
+              <span class="fdph-price">₹200 – ₹500</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
       </div>
-    </div>
-    <div class="wns3-live-time" id="wns3LiveTime"></div>
+
+      <!-- CARD 2 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./south.webp" class="fdph-img" alt="South Indian">
+          </div>
+          <div class="fdph-content">
+              <h3>South Indian</h3>
+              <p class="fdph-desc">Idli, dosa, and authentic flavors.</p>
+              <span class="fdph-price">₹150 – ₹400</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./biryani.webp" class="fdph-img" alt="Biryani">
+          </div>
+          <div class="fdph-content">
+              <h3>Biryani</h3>
+              <p class="fdph-desc">Fragrant and spicy biryani varieties.</p>
+              <span class="fdph-price">₹250 – ₹600</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./pizza.webp" class="fdph-img" alt="Pizza">
+          </div>
+          <div class="fdph-content">
+              <h3>Pizza</h3>
+              <p class="fdph-desc">Cheesy, loaded, and freshly baked pizzas.</p>
+              <span class="fdph-price">₹300 – ₹700</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./burger.webp" class="fdph-img" alt="Burger">
+          </div>
+          <div class="fdph-content">
+              <h3>Burger</h3>
+              <p class="fdph-desc">Juicy and flavorful burgers with toppings.</p>
+              <span class="fdph-price">₹150 – ₹350</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./chinese.webp" class="fdph-img" alt="Chinese">
+          </div>
+          <div class="fdph-content">
+              <h3>Chinese</h3>
+              <p class="fdph-desc">Fried rice, noodles, and Indo-Chinese favorites.</p>
+              <span class="fdph-price">₹200 – ₹500</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./dessert.webp" class="fdph-img" alt="Desserts">
+          </div>
+          <div class="fdph-content">
+              <h3>Desserts</h3>
+              <p class="fdph-desc">Sweet treats to satisfy your cravings.</p>
+              <span class="fdph-price">₹100 – ₹300</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./coffee.webp" class="fdph-img" alt="Coffee">
+          </div>
+          <div class="fdph-content">
+              <h3>Coffee</h3>
+              <p class="fdph-desc">Freshly brewed coffee and beverages.</p>
+              <span class="fdph-price">₹80 – ₹200</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="fdph-card">
+          <div class="fdph-img-wrapper">
+              <img src="./shawarma.webp" class="fdph-img" alt="Shawarma">
+          </div>
+          <div class="fdph-content">
+              <h3>Shawarma</h3>
+              <p class="fdph-desc">Grilled wraps with spicy and flavorful fillings.</p>
+              <span class="fdph-price">₹150 – ₹350</span>
+              <button class="fdph-btn">Place Order</button>
+          </div>
+      </div>
+
   </div>
+</section>
+<style>
+  
+/* Popular Dishes Section */
+/* .fdph-section {
+    padding: 80px 20px;
+    background: #fdfdfd;
+}
 
-    <div class="news-grid">
+.fdph-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #333;
+} */
+
+/* GRID LAYOUT */
+/* .fdph-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-items: center;
+} */
+
+/* CARD STYLING */
+/* .fdph-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 260px;
+}
+
+.fdph-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+} */
+
+/* IMAGE */
+.fdph-img-wrapper {
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.fdph-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.fdph-card:hover .fdph-img {
+    transform: scale(1.05);
+}
+
+/* CONTENT UNDER IMAGE */
+.fdph-content {
+    padding: 15px;
+}
+
+.fdph-content h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.fdph-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.fdph-price {
+    display: block;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.fdph-btn {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.fdph-btn:hover {
+    background: #e63c3c;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .fdph-img {
+        height: 140px;
+    }
+}
+
+@media(max-width: 480px) {
+    .fdph-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    .fdph-img {
+        height: 120px;
+    }
+}
+  </style>
+
+<!-- ================= LOADING OVERLAY ================= -->
+
+<div class="fdph-loader" id="fdphLoader">
+  <div class="fdph-scooter">🛵</div>
+  <p>Rider is on the way...</p>
+</div>
+
+<style>
+  /* ================= SECTION ================= */
+
+.fdph-section{
+    padding:100px 6%;
+    background:#f8f9fc;
+    text-align:center;
+}
+
+.fdph-title{
+    font-size:32px;
+    margin-bottom:60px;
+}
+
+.fdph-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+/* CARD */
+
+.fdph-card{
+    background:#fff;
+    border-radius:30px;
+    padding:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 0.6s ease;
+}
+
+.fdph-card.fdph-show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* IMAGE */
+
+.fdph-img-wrapper{
+    overflow:hidden;
+    border-radius:60px;
+}
+
+.fdph-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:60px;
+    transition:transform 0.6s ease;
+}
+
+/* Hover zoom in/out */
+.fdph-img-wrapper:hover .fdph-img{
+    transform:scale(1.1);
+}
+
+/* CONTENT */
+
+.fdph-content{
+    padding:15px 0;
+}
+
+.fdph-btn{
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d4d;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.fdph-btn:hover{
+    background:#e63e3e;
+}
+
+/* ================= LOADER ================= */
+
+.fdph-loader{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    visibility:hidden;
+    opacity:0;
+    transition:0.4s;
+    z-index:99999;
+}
+
+.fdph-loader.active{
+    visibility:visible;
+    opacity:1;
+}
+
+.fdph-scooter{
+    font-size:60px;
+    animation:fdphRide 2s linear infinite;
+}
+
+@keyframes fdphRide{
+    0%{transform:translateX(-200px);}
+    100%{transform:translateX(200px);}
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1024px){
+    .fdph-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .fdph-grid{
+        grid-template-columns:1fr;
+    }
+    .fdph-title{
+        font-size:24px;
+    }
+}
+</style>
+
+<script>
+
+  // Scroll Reveal One by One
+  const fdphCards = document.querySelectorAll('.fdph-card');
   
-      <!-- LEFT BIG VIDEO -->
-      <div class="news-card big-card" onclick="goTo404()">
-        <video autoplay muted loop playsinline class="zoom-video">
-          <source src="./global.mp4" type="video/mp4">
-        </video>
-        <div class="overlay">
-          <span class="tag">TOP NEWS </span>
-          <h2 class="news-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, quis!</h2>
-        </div>
+  function fdphReveal(){
+      const trigger = window.innerHeight - 100;
+  
+      fdphCards.forEach((card,index)=>{
+          const top = card.getBoundingClientRect().top;
+  
+          if(top < trigger){
+              setTimeout(()=>{
+                  card.classList.add('fdph-show');
+              }, index * 150);
+          }
+      });
+  }
+  
+  window.addEventListener('scroll', fdphReveal);
+  fdphReveal();
+  
+  
+  // Place Order Loader
+  document.querySelectorAll('.fdph-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+          const loader = document.getElementById('fdphLoader');
+          loader.classList.add('active');
+  
+          setTimeout(()=>{
+              window.location.href="404.html";
+          },3000);
+      });
+  });
+  
+  </script>
+
+
+<section class="fd-step-section">
+
+  <!-- Background Video -->
+  <video class="fd-bg-video" autoplay muted loop playsinline>
+      <source src="./cook.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay -->
+  <!-- <div class="fd-bg-overlay"></div> -->
+
+  <h2 class="fd-step-title">How Our Delivery Works</h2>
+
+  <div class="fd-step-wrapper">
+
+      <div class="fd-step-line"></div>
+      <div class="fd-step-scooter">🛵</div>
+
+      <div class="fd-step-card">
+          <div class="fd-step-icon">📍</div>
+          <h3>Enter Location</h3>
+          <p>Choose your delivery address easily.</p>
+      </div>
+
+      <div class="fd-step-card">
+          <div class="fd-step-icon">🍔</div>
+          <h3>Select Food</h3>
+          <p>Browse your favourite restaurants.</p>
+      </div>
+
+      <div class="fd-step-card">
+          <div class="fd-step-icon">💳</div>
+          <h3>Make Payment</h3>
+          <p>Secure and fast online payment.</p>
+      </div>
+
+      <div class="fd-step-card">
+          <div class="fd-step-icon">🏠</div>
+          <h3>Fast Delivery</h3>
+          <p>Get your order at your doorstep.</p>
+      </div>
+
+  </div>
+</section>
+
+<style>
+  /* ================= SECTION ================= */
+
+.fd-step-section{
+    padding:120px 20px;
+    /* background:#111; */
+    color:#fff;
+    text-align:center;
+    position:relative;
+}
+
+.fd-step-title{
+    font-size:36px;
+    margin-bottom:80px;
+}
+
+/* Wrapper */
+
+.fd-step-wrapper{
+    position:relative;
+    max-width:600px;
+    margin:auto;
+}
+
+/* Vertical Line */
+
+.fd-step-line{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:4px;
+    background:#ff4d4d;
+    top:0;
+    bottom:0;
+}
+
+/* Scooter */
+
+.fd-step-scooter{
+    position:absolute;
+    left:50%;
+    transform:translate(-50%,0);
+    font-size:40px;
+    transition:1s cubic-bezier(.77,0,.18,1);
+    z-index:10;
+}
+
+/* Cards */
+
+.fd-step-card{
+    position:relative;
+    background:rgb(246, 164, 134);
+    padding:30px;
+    margin-bottom:120px;
+    border-radius:15px;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    opacity:0;
+    transform:translateY(60px);
+    transition:0.8s ease;
+}
+
+.fd-step-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.fd-step-icon{
+    font-size:40px;
+    margin-bottom:15px;
+    color:#ff4d4d;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .fd-step-title{
+        font-size:26px;
+    }
+
+    .fd-step-card{
+        width:95%;
+        padding:20px;
+    }
+
+    .fd-step-scooter{
+        font-size:30px;
+    }
+}
+
+@media(max-width:480px){
+
+    .fd-step-line{
+        display:none;
+    }
+
+    .fd-step-scooter{
+        display:none; /* hide scooter for small devices */
+    }
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+
+.fd-step-section{
+    position:relative;
+    padding:120px 20px;
+    color:  black;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* Video */
+
+.fd-bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* Dark Overlay */
+
+.fd-bg-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
+    z-index:-1;
+}
+
+/* Make sure content stays above */
+
+.fd-step-section h2,
+.fd-step-wrapper{
+    position:relative;
+    z-index:2;
+}
+
+@media(max-width:768px){
+
+.fd-bg-video{
+    object-position:center;
+}
+
+}
+
+@media(max-width:480px){
+
+/* Optional: Hide video on small phones for performance */
+.fd-bg-video{
+    display:none;
+}
+
+.fd-step-section{
+    background:#111; /* fallback background */
+}
+
+}
+
+
+</style>
+
+<script>
+
+  const cards = document.querySelectorAll('.fd-step-card');
+  const scooter = document.querySelector('.fd-step-scooter');
+  
+  function moveScooter() {
+  
+      cards.forEach((card, index) => {
+  
+          const rect = card.getBoundingClientRect();
+          const trigger = window.innerHeight * 0.6;
+  
+          if (rect.top < trigger) {
+  
+              // Show card
+              card.classList.add('show');
+  
+              // Move scooter to this card
+              const wrapperTop = document.querySelector('.fd-step-wrapper').getBoundingClientRect().top;
+              const cardTop = card.getBoundingClientRect().top;
+  
+              const moveY = cardTop - wrapperTop - 50;
+  
+              scooter.style.top = moveY + "px";
+          }
+  
+      });
+  }
+  
+  window.addEventListener('scroll', moveScooter);
+  window.addEventListener('load', moveScooter);
+  
+  </script>
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= SECTION ================= */
+
+.hero-section{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 8%;
+}
+
+.hero-container{
+    width:100%;
+    max-width:1300px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.left-side{
+    flex:1;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    animation:fadeUp 1s ease forwards;
+    opacity:0;
+}
+
+.oval-bg{
+    width:420px;
+    height:420px;
+    background:white;
+    border-radius:50%;
+    position:absolute;
+    z-index:1;
+    animation:zoomIn 1s ease forwards;
+    opacity:0;
+}
+
+.basket-img{
+    width:450px;
+    position:relative;
+    z-index:2;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:0.5s;
+    opacity:0;
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.right-side{
+    flex:1;
+    animation:fadeRight 1s ease forwards;
+    opacity:0;
+    animation-delay:0.3s;
+}
+
+.small-heading{
+    color: black;
+    font-weight:500;
+    margin-bottom:10px;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:0.6s;
+    opacity:0;
+}
+
+.main-heading{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#1c1c1c;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:0.8s;
+    opacity:0;
+}
+
+.description{
+    color:#555;
+    line-height:1.6;
+    margin-bottom:30px;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:1s;
+    opacity:0;
+}
+
+/* PARTNER STATS */
+
+.partner-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.stat-box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    text-align:center;
+    transform:translateY(30px);
+    opacity:0;
+    animation:fadeUp 0.8s ease forwards;
+}
+
+.stat-box:nth-child(1){ animation-delay:1.2s; }
+.stat-box:nth-child(2){ animation-delay:1.4s; }
+.stat-box:nth-child(3){ animation-delay:1.6s; }
+.stat-box:nth-child(4){ animation-delay:1.8s; }
+
+.stat-number{
+    font-size:28px;
+    font-weight:700;
+    color:orangered;
+}
+
+.stat-text{
+    font-size:14px;
+    color:#666;
+    margin-top:5px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 30px;
+    background:#ff7a00;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+    animation:fadeUp 1s ease forwards;
+    animation-delay:2s;
+    opacity:0;
+}
+
+.btn:hover{
+    background:#ff5e00;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeUp{
+    from{
+        transform:translateY(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+@keyframes fadeRight{
+    from{
+        transform:translateX(40px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media(max-width:992px){
+    .hero-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .partner-stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .main-heading{
+        font-size:34px;
+    }
+
+    .oval-bg{
+        width:350px;
+        height:350px;
+    }
+
+    .basket-img{
+        width:380px;
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    .hero-section{
+        padding:40px 5%;
+    }
+
+    .main-heading{
+        font-size:26px;
+    }
+
+    .partner-stats{
+        grid-template-columns:1fr;
+    }
+
+    .oval-bg{
+        width:260px;
+        height:260px;
+    }
+
+    .basket-img{
+        width:280px;
+    }
+}
+
+</style>
+<section class="partner-network-block">
+
+  <div class="partner-network-wrapper">
+  
+      <!-- LEFT IMAGE -->
+      <div class="partner-img-area" data-animate="image">
+  
+          <div class="partner-oval-bg"></div>
+          <img src="./pizza.webp" class="partner-main-img" alt="Food">
+  
       </div>
   
-      <!-- RIGHT TOP -->
-      <div class="news-card" onclick="goTo404()">
-        <video autoplay muted loop playsinline class="zoom-video">
-          <source src="./disaster.mp4" type="video/mp4">
-        </video>
-        <div class="overlay">
-          <span class="tag">DISASTER</span>
-          <h3 class="news-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, adipisci.</h3>
-        </div>
+      <!-- RIGHT CONTENT -->
+      <div class="partner-content-area">
+  
+          <h4 data-animate="text">Our Growing Network</h4>
+  
+          <h1 data-animate="text">
+              5000+ Partners Connected <br>
+              With Our Delivery App
+          </h1>
+  
+          <p data-animate="text">
+              We collaborate with farms, organic suppliers, restaurants and local markets
+              to deliver the freshest vegetables and groceries directly to your doorstep.
+          </p>
+  
+          <div class="partner-stats-grid">
+  
+              <div class="partner-stat" data-animate="text">
+                  <span class="partner-number">1200+</span>
+                  <span class="partner-label">Organic Farms</span>
+              </div>
+  
+              <div class="partner-stat" data-animate="text">
+                  <span class="partner-number">850+</span>
+                  <span class="partner-label">Local Vendors</span>
+              </div>
+  
+              <div class="partner-stat" data-animate="text">
+                  <span class="partner-number">3000+</span>
+                  <span class="partner-label">Delivery Partners</span>
+              </div>
+  
+              <div class="partner-stat" data-animate="text">
+                  <span class="partner-number">75+</span>
+                  <span class="partner-label">Cities Covered</span>
+              </div>
+  
+          </div>
+  
+          <a href="#" class="partner-btn" data-animate="text">Become a Partner</a>
+  
       </div>
   
-      <!-- RIGHT BOTTOM LEFT -->
-      <div class="news-card" onclick="goTo404()">
-        <video autoplay muted loop playsinline class="zoom-video">
-          <source src="./climate.mp4" type="video/mp4">
-        </video>
-        <div class="overlay">
-          <span class="tag">CLIMATE</span>
-          <h3 class="news-title">19 People Share Their Weirdest Moments</h3>
-        </div>
-      </div>
-  
-      <!-- RIGHT BOTTOM RIGHT -->
-      <div class="news-card" onclick="goTo404()">
-        <video autoplay muted loop playsinline class="zoom-video">
-          <source src="./global.mp4" type="video/mp4">
-        </video>
-        <div class="overlay">
-          <span class="tag">GLOBAL</span>
-          <h3 class="news-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, impedit.</h3>
-        </div>
-      </div>
-  
-    </div>
+  </div>
   
   </section>
 
   <style>
-    /* LIVE BAR */
-.wns3-live-bar{
-  display:flex;
-  align-items:center;
-  background:#111;
-  color:#fff;
-  padding:10px;
-  margin-bottom:30px;
-  overflow:hidden;
-}
+    /* SECTION */
 
-.wns3-live-label{
-  background:red;
-  padding:5px 10px;
-  margin-right:10px;
-}
-
-.wns3-live-scroll{
-  flex:1;
-  overflow:hidden;
-}
-
-.wns3-live-track{
-  white-space:nowrap;
-  display:inline-block;
-  animation:wns3Scroll 15s linear infinite;
-}
-
-@keyframes wns3Scroll{
-  from{transform:translateX(100%)}
-  to{transform:translateX(-100%)}
-}
-
-.wns3-live-time{margin-left:10px;font-size:14px}
-
-@media(max-width:1024px){
-.wns3-container{grid-template-columns:1fr}
-}
-
-@media(max-width:768px){
-.wns3-card{flex-direction:column}
-.wns3-img{width:100%;height:200px}
-}
-    .featured-news{
-  width:100%;
-  padding:40px;
-}
-
-.news-grid{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  grid-template-rows:300px 300px;
-  gap:15px;
-}
-
-.big-card{
-  grid-row:1/3;
-}
-
-.news-card{
-  position:relative;
-  overflow:hidden;
-  cursor:pointer;
-  opacity:0;
-  transform:translateY(60px);
-  transition:0.6s ease;
-}
-
-.news-card.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.zoom-video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform 6s ease-in-out;
-}
-
-.news-card:hover .zoom-video{
-  transform:scale(1.2);
-}
-
-.overlay{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  padding:20px;
-  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
-}
-
-.tag{
-  background:#ff4d4d;
-  color:#fff;
-  padding:4px 8px;
-  font-size:12px;
-}
-
-.news-title{
-  color:#fff;
-  font-weight:bold;
-  margin-top:10px;
-  transition:0.3s;
-}
-
-.news-card:hover .news-title{
-  color:#ffd700;
-  letter-spacing:1px;
-  transform:scale(1.05);
-}
-
-@media(max-width:576px){
-
-.news-grid{
-  grid-template-columns:1fr;
-  grid-template-rows:auto;
-}
-
-.big-card{
-  grid-row:auto;
-  height:250px;
-}
-
-.news-card{
-  height:200px;
-}
-
-}
-
-@media(min-width:577px) and (max-width:768px){
-
-.news-grid{
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:250px 250px;
-}
-
-.big-card{
-  grid-column:1/3;
-}
-
-}
-
-@media(min-width:769px) and (max-width:1024px){
-
-.news-grid{
-  grid-template-columns:1.5fr 1fr 1fr;
-}
-
-}
-
-@media(min-width:1025px){
-
-.news-grid{
-  grid-template-columns:2fr 1fr 1fr;
-}
-
-}
-/* ===== MOSAIC GRID ===== */
-
-.wns-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-grid-auto-rows:180px;
-grid-gap:20px;
-}
-
-/* DEFAULT */
-.wns-card{
-position:relative;
+.partner-network-block{
+width:100%;
+padding:100px 8%;
+background:#ffffff;
 overflow:hidden;
 }
 
-/* BIG CARD */
-.wns-card:nth-child(1){
-grid-column:span 2;
-grid-row:span 2;
+.partner-network-wrapper{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:80px;
+flex-wrap:wrap;
 }
 
-/* TALL */
-.wns-card:nth-child(2){
-grid-row:span 2;
+/* LEFT IMAGE */
+
+.partner-img-area{
+position:relative;
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+transform:translateX(-120px);
+transition:1s ease;
 }
 
-/* WIDE */
-.wns-card:nth-child(3){
-grid-column:span 2;
+.partner-img-area.active{
+opacity:1;
+transform:translateX(0);
 }
 
-/* SMALL */
-.wns-card:nth-child(4){
-grid-row:span 1;
+.partner-oval-bg{
+position:absolute;
+width:380px;
+height:380px;
+border-radius:50%;
+background:linear-gradient(135deg,#ffe9d9,#fff4ec);
+filter:blur(50px);
 }
 
-/* PORTRAIT */
-.wns-card:nth-child(5){
-grid-row:span 2;
+.partner-main-img{
+width:420px;
+position:relative;
+z-index:2;
+animation:partnerFloat 6s ease-in-out infinite;
 }
 
-/* AUTO FIT MEDIA */
-.wns-media img,
-.wns-media video{
+/* FLOATING */
+
+@keyframes partnerFloat{
+
+0%{transform:translateX(-30px) translateY(0);}
+50%{transform:translateX(30px) translateY(-20px);}
+100%{transform:translateX(-30px) translateY(0);}
+
+}
+
+/* RIGHT CONTENT */
+
+.partner-content-area{
+flex:1;
+max-width:520px;
+}
+
+/* TEXT ANIMATION */
+
+.partner-content-area [data-animate="text"]{
+opacity:0;
+transform:translateY(40px);
+transition:0.7s ease;
+}
+
+.partner-content-area [data-animate="text"].active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* HEADINGS */
+
+.partner-content-area h4{
+color:#ff5a00;
+font-size:16px;
+margin-bottom:10px;
+}
+
+.partner-content-area h1{
+font-size:38px;
+margin-bottom:20px;
+}
+
+.partner-content-area p{
+color:#666;
+line-height:1.6;
+margin-bottom:30px;
+}
+
+/* STATS */
+
+.partner-stats-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+margin-bottom:30px;
+}
+
+.partner-stat{
+background:#fafafa;
+padding:18px;
+border-radius:10px;
+text-align:center;
+}
+
+.partner-number{
+font-size:22px;
+font-weight:700;
+color:#ff5a00;
+display:block;
+}
+
+.partner-label{
+font-size:14px;
+color:#555;
+}
+
+/* BUTTON */
+
+.partner-btn{
+display:inline-block;
+padding:14px 28px;
+background:#ff5a00;
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+
+@media (max-width:900px){
+
+.partner-network-wrapper{
+flex-direction:column;
+text-align:center;
+}
+
+.partner-main-img{
+width:320px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+.partner-network-block{
+padding:70px 20px;
+}
+
+.partner-content-area h1{
+font-size:26px;
+}
+
+.partner-stats-grid{
+grid-template-columns:1fr;
+}
+
+.partner-main-img{
+width:250px;
+}
+
+}
+  </style>
+
+<script>
+
+  const partnerObserver = new IntersectionObserver((entries)=>{
+  
+  entries.forEach((entry)=>{
+  
+  if(entry.isIntersecting){
+  
+  entry.target.classList.add("active");
+  
+  }
+  
+  });
+  
+  },{threshold:0.3});
+  
+  document.querySelectorAll(".partner-img-area").forEach((el)=>{
+  partnerObserver.observe(el);
+  });
+  
+  document.querySelectorAll('[data-animate="text"]').forEach((el)=>{
+  partnerObserver.observe(el);
+  });
+  
+  </script>
+
+
+
+
+
+
+
+
+  <!-- !-- ================= LIVE FOOD OFFERS + RESTAURANTS ================= --> 
+
+  <section class="fdliveSection">
+  
+    <div class="fdliveContainer">
+    
+    <h2 class="fdliveHeading">🔥 Live Food Offers</h2>
+    
+    
+    <!-- LIVE OFFERS SLIDER -->
+    
+    <div class="fdliveOffers">
+    
+    <div class="fdliveTrack">
+    
+    <div class="fdliveCard">
+    <img src="pizza.webp">
+    <div class="fdliveOfferText">
+    <h3>50% OFF Pizza</h3>
+    <p>Urban Pizza</p>
+    </div>
+    </div>
+    
+    <div class="fdliveCard">
+    <img src="burger.webp">
+    <div class="fdliveOfferText">
+    <h3>Buy 1 Get 1 Burger</h3>
+    <p>Burger Town</p>
+    </div>
+    </div>
+    
+    <div class="fdliveCard">
+    <img src="biryani.webp">
+    <div class="fdliveOfferText">
+    <h3>₹100 OFF Biryani</h3>
+    <p>Royal Biryani</p>
+    </div>
+    </div>
+    
+    <div class="fdliveCard">
+    <img src="dessert.webp">
+    <div class="fdliveOfferText">
+    <h3>Free Dessert</h3>
+    <p>Sweet Cravings</p>
+    </div>
+    </div>
+    
+    <div class="fdliveCard">
+    <img src="pasta.webp">
+    <div class="fdliveOfferText">
+    <h3>30% OFF Pasta</h3>
+    <p>Italian Kitchen</p>
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    
+
+
+  
+
+<style>
+  /* SECTION */
+
+.fdliveSection{
+padding:120px 8%;
+background:#f7fff7;
+overflow:hidden;
+}
+
+.fdliveHeading{
+font-size:40px;
+margin-bottom:40px;
+text-align:center;
+}
+
+
+/* OFFERS SLIDER */
+
+.fdliveOffers{
+overflow:hidden;
+margin-bottom:80px;
+}
+
+.fdliveTrack{
+display:flex;
+gap:30px;
+animation:liveSlide 20s linear infinite;
+}
+
+.fdliveCard{
+min-width:280px;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.fdliveCard img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.fdliveOfferText{
+position:absolute;
+bottom:0;
+background:rgba(0,0,0,0.6);
+color:#fff;
+width:100%;
+padding:15px;
+}
+
+@keyframes liveSlide{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
+
+/* RESTAURANTS */
+
+.fdRestaurantTitle{
+text-align:center;
+font-size:36px;
+margin-bottom:60px;
+}
+
+.fdRestaurantGrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+
+/* CARD */
+
+.fdRestaurantCard{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+transition:.4s;
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.fdRestaurantCard:hover{
+transform:translateY(-12px);
+}
+
+.fdRestaurantImage{
+position:relative;
+}
+
+.fdRestaurantImage img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.fdOfferBadge{
+position:absolute;
+top:15px;
+left:15px;
+background:#ff3d00;
+color:#fff;
+padding:6px 14px;
+border-radius:20px;
+font-size:13px;
+}
+
+
+/* CONTENT */
+
+.fdRestaurantContent{
+padding:20px;
+}
+
+.fdRestaurantContent h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.fdRestaurantMeta{
+font-size:14px;
+color:#777;
+margin-bottom:10px;
+}
+
+.fdOrderBtn{
+display:inline-block;
+margin-top:15px;
+background:#2e7d32;
+color:#fff;
+padding:10px 20px;
+border-radius:30px;
+text-decoration:none;
+}
+
+
+/* HOVER PREVIEW */
+
+.fdHoverPreview{
+position:absolute;
+inset:0;
+background:#ffffff;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:.4s;
+}
+
+.fdRestaurantCard:hover .fdHoverPreview{
+opacity:1;
+}
+
+.fdHoverPreview img{
+width:140px;
+height:140px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+.fdHoverPreview h4{
+margin-bottom:5px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.fdliveTrack{
+gap:20px;
+}
+
+}
+
+@media(max-width:768px){
+
+.fdliveHeading{
+font-size:28px;
+}
+
+.fdRestaurantTitle{
+font-size:26px;
+}
+
+}
+
+@media(max-width:500px){
+
+.fdliveCard{
+min-width:220px;
+}
+
+.fdRestaurantImage img{
+height:180px;
+}
+
+}
+</style>
+<script>
+
+
+const fdSection=document.querySelector(".fdliveSection")
+
+const fdObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show")
+}
+})
+})
+
+fdObserver.observe(fdSection)
+</script>
+
+
+
+<!-- ================= FOOD DELIVERY VIDEO REVIEW SECTION ================= -->
+
+<section class="fdx-review-section">
+
+  <div class="fdx-review-container">
+  
+  <!-- LEFT VIDEO -->
+  <div class="fdx-video-box">
+
+    <div class="fdx-video-thumbnail" id="fdxVideoTrigger">
+        
+        <img src="./back2.webp" class="fdx-video-img" alt="Video Thumbnail">
+  
+        <div class="fdx-play-btn">▶</div>
+  
+    </div>
+  
+  </div>
+  
+  
+  <!-- RIGHT REVIEWS -->
+  <div class="fdx-review-right">
+  
+  <h2 class="fdx-review-heading">What Customers Say</h2>
+  
+  <div class="fdx-review-slider">
+  
+  <!-- REVIEW 1 -->
+  <div class="fdx-review-card active">
+  
+  <div class="fdx-review-top">
+  
+  <img src="./sana.webp" class="fdx-user">
+  
+  <div>
+  <h4>Rahul Mehta</h4>
+  
+  <div class="fdx-google">
+  <img src="./google.webp">
+  <span>Google Review</span>
+  </div>
+  
+  <div class="fdx-stars">★★★★★</div>
+  
+  </div>
+  
+  <img src="./dine1.webp" class="fdx-restaurant-logo">
+  
+  </div>
+  
+  <p>
+  “Ordered butter chicken from Spice Hub and it was fantastic.
+  Hot, fresh and perfectly packed. This food delivery app is now my favourite!”
+  </p>
+  
+  <span class="fdx-dish">Dish: Butter Chicken</span>
+  
+  </div>
+  
+  
+  
+  <!-- REVIEW 2 -->
+  <div class="fdx-review-card">
+  
+  <div class="fdx-review-top">
+  
+  <img src="./nithiya.webp" class="fdx-user">
+  
+  <div>
+  <h4>Emily Carter</h4>
+  
+  <div class="fdx-google">
+  <img src="./google.webp">
+  <span>Google Review</span>
+  </div>
+  
+  <div class="fdx-stars">★★★★★</div>
+  
+  </div>
+  
+  <img src="./dine2.webp" class="fdx-restaurant-logo">
+  
+  </div>
+  
+  <p>
+  “The pizza from Urban Pizza was delicious and arrived in just 20 minutes.
+  Great service and super easy ordering experience.”
+  </p>
+  
+  <span class="fdx-dish">Dish: Pepperoni Pizza</span>
+  
+  </div>
+  
+  
+  
+  <!-- REVIEW 3 -->
+  <div class="fdx-review-card">
+  
+  <div class="fdx-review-top">
+  
+  <img src="./arjun.webp" class="fdx-user">
+  
+  <div>
+  <h4>Ananya Singh</h4>
+  
+  <div class="fdx-google">
+  <img src="./google.webp">
+  <span>Google Review</span>
+  </div>
+  
+  <div class="fdx-stars">★★★★★</div>
+  
+  </div>
+  
+  <img src="./dine3.webp" class="fdx-restaurant-logo">
+  
+  </div>
+  
+  <p>
+  “Desserts from Sweet Cravings were heavenly.  
+  Chocolate lava cake was warm and perfectly soft!”
+  </p>
+  
+  <span class="fdx-dish">Dish: Chocolate Lava Cake</span>
+  
+  </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  <!-- YOUTUBE POPUP -->
+  <div class="fdx-video-popup" id="fdxVideoPopup">
+  
+  <div class="fdx-video-content">
+  
+  <span class="fdx-close-video" id="fdxCloseVideo">✕</span>
+  
+  <iframe
+  id="fdxYoutubeFrame"
+  width="100%"
+  height="420"
+  src=""
+  frameborder="0"
+  allowfullscreen>
+  </iframe>
+  
+  </div>
+  
+  </div>
+  
+  </section>
+
+  <style>
+    /* VIDEO BOX */
+
+.fdx-video-box{
+width:100%;
+max-width:550px;
+margin:auto;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* THUMBNAIL */
+
+.fdx-video-thumbnail{
+position:relative;
+overflow:hidden;
+border-radius:18px;
+cursor:pointer;
+}
+
+/* IMAGE */
+
+.fdx-video-img{
+width:100%;
+display:block;
+border-radius:18px;
+
+/* ZOOM IN OUT ANIMATION */
+animation:fdxZoomAnim 6s ease-in-out infinite;
+}
+
+/* ZOOM ANIMATION */
+
+@keyframes fdxZoomAnim{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* PLAY BUTTON */
+
+.fdx-play-btn{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:70px;
+height:70px;
+border-radius:50%;
+background:#ff5a00;
+color:#fff;
+font-size:26px;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+/* PULSE ANIMATION */
+animation:fdxPulse 2s infinite;
+}
+
+/* PULSE EFFECT */
+
+@keyframes fdxPulse{
+
+0%{
+box-shadow:0 0 0 0 rgba(255,90,0,0.6);
+}
+
+70%{
+box-shadow:0 0 0 20px rgba(255,90,0,0);
+}
+
+100%{
+box-shadow:0 0 0 0 rgba(255,90,0,0);
+}
+
+}
+
+/* HOVER EFFECT */
+
+.fdx-video-thumbnail:hover .fdx-video-img{
+transform:scale(1.15);
+transition:0.5s;
+}
+
+/* =====================
+RESPONSIVE
+===================== */
+
+/* Laptop */
+
+@media (max-width:1200px){
+
+.fdx-video-box{
+max-width:480px;
+}
+
+.fdx-play-btn{
+width:65px;
+height:65px;
+font-size:24px;
+}
+
+}
+
+/* Tablet */
+
+@media (max-width:900px){
+
+.fdx-video-box{
+max-width:420px;
+}
+
+.fdx-play-btn{
+width:60px;
+height:60px;
+font-size:22px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+.fdx-video-box{
+max-width:100%;
+}
+
+.fdx-play-btn{
+width:55px;
+height:55px;
+font-size:20px;
+}
+
+}
+      /* SECTION */
+
+.fdx-review-section{
+padding:100px 10%;
+background:#f5fff5;
+font-family:Poppins;
+overflow:hidden;
+}
+
+/* LAYOUT */
+
+.fdx-review-container{
+display:flex;
+align-items:center;
+gap:70px;
+}
+
+
+/* VIDEO */
+
+.fdx-video-box{
+flex:1;
+opacity:0;
+transform:translateX(-80px);
+transition:1s;
+}
+
+.fdx-video-box.show{
+opacity:1;
+transform:translateX(0);
+}
+
+.fdx-video-thumbnail{
+position:relative;
+cursor:pointer;
+}
+
+.fdx-video-thumbnail img{
+width:100%;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.fdx-play-btn{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#ff3d00;
+color:#fff;
+font-size:30px;
+width:70px;
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+}
+
+
+/* RIGHT REVIEWS */
+
+.fdx-review-right{
+flex:1;
+opacity:0;
+transform:translateX(80px);
+transition:1s;
+}
+
+.fdx-review-right.show{
+opacity:1;
+transform:translateX(0);
+}
+
+.fdx-review-heading{
+font-size:34px;
+margin-bottom:30px;
+}
+
+
+/* REVIEW CARD */
+
+.fdx-review-card{
+display:none;
+background:#fff;
+padding:30px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+animation:fadeUp 1s;
+}
+
+.fdx-review-card.active{
+display:block;
+}
+
+
+/* TOP AREA */
+
+.fdx-review-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:15px;
+}
+
+.fdx-user{
+width:55px;
+height:55px;
+border-radius:50%;
+margin-right:10px;
+object-fit:cover;
+}
+
+.fdx-review-top div{
+flex:1;
+margin-left:10px;
+}
+
+.fdx-stars{
+color:#ffa000;
+}
+
+.fdx-restaurant-logo{
+width:55px;
+height:55px;
+object-fit:contain;
+}
+
+
+/* GOOGLE STYLE */
+
+.fdx-google{
+display:flex;
+align-items:center;
+gap:6px;
+font-size:12px;
+color:#666;
+}
+
+.fdx-google img{
+width:16px;
+}
+
+
+.fdx-dish{
+display:block;
+margin-top:10px;
+font-weight:600;
+color:#2e7d32;
+}
+
+
+/* VIDEO POPUP */
+
+.fdx-video-popup{
+position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-object-fit:cover;
-transition:0.6s;
-}
-@media(max-width:576px){
-
-.wns-grid{
-grid-template-columns:1fr;
-grid-auto-rows:220px;
+background:rgba(0,0,0,0.8);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
 }
 
-.wns-card:nth-child(1),
-.wns-card:nth-child(2),
-.wns-card:nth-child(3),
-.wns-card:nth-child(4),
-.wns-card:nth-child(5){
-grid-column:span 1 !important;
-grid-row:span 1 !important;
+.fdx-video-popup.show{
+display:flex;
 }
 
-}@media(min-width:577px) and (max-width:768px){
-
-.wns-grid{
-grid-template-columns:1fr 1fr;
-grid-auto-rows:180px;
+.fdx-video-content{
+position:relative;
+width:80%;
+max-width:800px;
 }
 
-.wns-card:nth-child(1){
-grid-column:span 2;
-grid-row:span 2;
+.fdx-close-video{
+position:absolute;
+top:-40px;
+right:0;
+color:#fff;
+font-size:28px;
+cursor:pointer;
 }
 
-}@media(min-width:769px) and (max-width:1024px){
 
-.wns-grid{
-grid-template-columns:repeat(2,1fr);
-grid-auto-rows:180px;
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-.wns-card:nth-child(1){
-grid-column:span 2;
-grid-row:span 2;
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+.fdx-review-container{
+flex-direction:column;
+gap:40px;
+}
+
+.fdx-review-heading{
+text-align:center;
 }
 
 }
-@media(min-width:1025px){
 
-.wns-grid{
-grid-template-columns:repeat(3,1fr);
-grid-auto-rows:200px;
+@media(max-width:600px){
+
+.fdx-review-card{
+padding:20px;
+}
+
+.fdx-play-btn{
+width:55px;
+height:55px;
+font-size:22px;
 }
 
 }
   </style>
   <script>
-    function goTo404(){
-  window.location.href="404.html";
-}
 
-window.addEventListener("load",()=>{
-  let cards=document.querySelectorAll(".news-card");
-
-  cards.forEach((card,index)=>{
-    setTimeout(()=>{
-      card.classList.add("show");
-    },index*400);
-  });
-});
-</script>
-
-
-
-<section class="wns-wrapper">
-
-    <div class="wns-flex-layout">
-    
-        <!-- LEFT GRID -->
-        <div class="wns-news-area">
-    
-            <h1 class="wns-title">World News</h1>
-            <p class="wns-sub">Stay updated with the latest world news.</p>
-    
-            <div class="wns-grid">
-
-
-                
-    
-                <!-- REPEAT THIS CARD 9 TIMES -->
-                <div class="wns-card" onclick="wnsGo404()">
-                    <div class="wns-media">
-                        <img src="./global stock.webp">
-                        <span class="wns-tag">LIFE</span>
-                    </div>
-                    <div class="wns-text">
-                        <h4>Global Events Reshaping the Future</h4>
-                        <p>Discover the most impactful world changes happening today.</p>
-                    </div>
-                </div>
-    
-                <div class="wns-card" onclick="wnsGo404()">
-                    <div class="wns-media">
-                        <video autoplay muted loop playsinline>
-                            <source src="./business.mp4">
-                        </video>
-                        <span class="wns-tag dark">VIDEO</span>
-                    </div>
-                    <div class="wns-text">
-                        <h4>Inside the biggest international summit</h4>
-                        <p>What leaders discussed behind the scenes.</p>
-                    </div>
-                </div>
-
-                <div class="wns-card" onclick="wnsGo404()">
-                    <div class="wns-media">
-                        <img src="./busi.webp">
-                        <span class="wns-tag">LIFE</span>
-                    </div>
-                    <div class="wns-text">
-                        <h4>Global Events Reshaping the Future</h4>
-                        <p>Discover the most impactful world changes happening today.</p>
-                    </div>
-                </div>
-    
-                <div class="wns-card" onclick="wnsGo404()">
-                    <div class="wns-media">
-                        <video autoplay muted loop playsinline>
-                            <source src="./climate.mp4">
-                        </video>
-                        <span class="wns-tag dark">VIDEO</span>
-                    </div>
-                    <div class="wns-text">
-                        <h4>Inside the biggest international summit</h4>
-                        <p>What leaders discussed behind the scenes.</p>
-                    </div>
-                </div>
-            </div>
-    
-        </div>
-    
-        <!-- STICKY SIDEBAR -->
-<div class="wns-sidebar">
-
-    <div class="wns-sticky">
-    
-    <h3>Subscribe to Email Updates</h3>
-    <p>Get daily updates directly to your inbox</p>
-    
-    <input type="email" id="wnsEmail" placeholder="Enter your email">
-    <button onclick="wnsSubscribe()">Subscribe</button>
-    <p id="wnsError"></p>
-    
-    <!-- HEADLINES -->
-    <div class="wns-headlines-box">
-    
-    <h4 class="wns-head-title">Headlines</h4>
-    
-    <div class="wns-head-slider">
-    
-        <!-- MAIN IMAGE -->
-        <div class="wns-head-main">
-            <img id="wnsMainImg" src="./ai2.webp">
-            <div class="wns-head-overlay">
-                <span>FEATURED</span>
-                <h5 id="wnsMainText">How thinking about future can build a happy life</h5>
-            </div>
-        </div>
-    
-        <!-- SIDE THUMBNAILS -->
-        <div class="wns-head-thumbs">
-    
-            <img src="./blogs.webp" onclick="wnsChangeSlide(0)">
-            <img src="./busi.webp" onclick="wnsChangeSlide(1)">
-            <img src="./cybersecurity.webp" onclick="wnsChangeSlide(2)">
-            <img src="./digi.webp" onclick="wnsChangeSlide(3)">
-            <img src="./tax.webp" onclick="wnsChangeSlide(4)">
-    
-        </div>
-    
-    </div>
-    
-    </div>
-    
-    </div>
-    </div></div></SECTION>
-    <STYLE>
-        /* ===== HEADLINES ===== */
-
-.wns-headlines-box{
-margin-top:30px;
-}
-
-.wns-head-title{
-border-bottom:2px solid red;
-padding-bottom:5px;
-margin-bottom:10px;
-}
-
-.wns-head-slider{
-display:flex;
-gap:10px;
-}
-
-/* MAIN */
-.wns-head-main{
-position:relative;
-flex:3;
-overflow:hidden;
-}
-
-.wns-head-main img{
-width:100%;
-height:220px;
-object-fit:cover;
-transition:0.4s;
-}
-
-.wns-head-overlay{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-padding:15px;
-background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
-color:#fff;
-}
-
-/* THUMB */
-.wns-head-thumbs{
-flex:1;
-display:flex;
-flex-direction:column;
-gap:8px;
-overflow-y:auto;
-max-height:220px;
-}
-
-.wns-head-thumbs img{
-width:100%;
-height:40px;
-object-fit:cover;
-cursor:pointer;
-transition:0.3s;
-}
-
-.wns-head-thumbs img:hover{
-transform:scale(1.05);
-border:2px solid red;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media(max-width:576px){
-.wns-head-slider{
-flex-direction:column;
-}
-.wns-head-thumbs{
-flex-direction:row;
-overflow-x:auto;
-max-height:none;
-}
-.wns-head-thumbs img{
-width:60px;
-height:60px;
-}
-}
-
-@media(min-width:577px) and (max-width:768px){
-.wns-head-slider{
-flex-direction:column;
-}
-.wns-head-thumbs{
-flex-direction:row;
-overflow-x:auto;
-max-height:none;
-}
-}
-
-@media(min-width:769px) and (max-width:1024px){
-.wns-head-main img{
-height:200px;
-}
-}
-    </STYLE>
-    <SCRIPT>
-        let wnsImages=[
-"blogs.webp",
-"busi.webp",
-"cybersecurity.webp",
-"digi.webp",
-"tax.webp"
-];
-
-let wnsTexts=[
-"How thinking about future can build a happy life",
-"Global warming impacts in 2026",
-"International summit highlights",
-"Latest tech revolution",
-"Space mission updates"
-];
-
-let wnsIndex=0;
-
-function wnsChangeSlide(i){
-wnsIndex=i;
-document.getElementById("wnsMainImg").src=wnsImages[i];
-document.getElementById("wnsMainText").innerText=wnsTexts[i];
-}
-
-/* AUTO SLIDER */
-setInterval(()=>{
-wnsIndex++;
-if(wnsIndex>=wnsImages.length){
-wnsIndex=0;
-}
-wnsChangeSlide(wnsIndex);
-},3000);
-    </SCRIPT>
     
 
+/* LOAD ANIMATION */
 
-    <STYLE>
-        /* ===== WORLD NEWS SAFE SECTION ===== */
+const fdxSection=document.querySelector(".fdx-review-section")
 
-.wns-wrapper{
-padding:40px;
-background:#f4f4f4;
-}
+const fdxObserver=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
 
-.wns-flex-layout{
-display:flex;
-gap:30px;
-}
+if(entry.isIntersecting){
 
-/* LEFT AREA */
-.wns-news-area{
-flex:3;
-}
-
-.wns-title{
-font-size:34px;
-margin-bottom:10px;
-}
-
-.wns-sub{
-margin-bottom:25px;
-color:#777;
-}
-
-/* 3x3 GRID */
-.wns-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-/* CARD */
-.wns-card{
-background:#fff;
-cursor:pointer;
-overflow:hidden;
-opacity:0;
-transform:translateY(60px);
-transition:0.4s;
-}
-
-.wns-card.wns-show{
-opacity:1;
-transform:translateY(0);
-}
-
-.wns-media{
-position:relative;
-overflow:hidden;
-}
-
-.wns-media img,
-.wns-media video{
-width:100%;
-height:200px;
-object-fit:cover;
-transition:0.6s;
-}
-
-.wns-card:hover img,
-.wns-card:hover video{
-transform:scale(1.2);
-}
-
-.wns-tag{
-position:absolute;
-top:10px;
-left:10px;
-background:#ff4d4d;
-color:#fff;
-padding:4px 8px;
-font-size:11px;
-}
-
-.dark{ background:#000; }
-
-.wns-text{
-padding:15px;
-}
-
-.wns-text h4{
-transition:0.3s;
-font-weight:bold;
-}
-
-.wns-card:hover h4{
-color:#ff4d4d;
-letter-spacing:1px;
-}
-
-/* ===== STICKY SIDEBAR ===== */
-.wns-sidebar{
-flex:1;
-}
-
-.wns-sticky{
-position:sticky;
-top:100px;
-background:#fff;
-padding:20px;
-}
-
-.wns-sticky input{
-width:100%;
-padding:10px;
-margin:10px 0;
-border:1px solid #ccc;
-}
-
-.wns-sticky button{
-width:100%;
-padding:10px;
-background:#ff4d4d;
-border:none;
-color:#fff;
-cursor:pointer;
-}
-
-#wnsError{
-color:red;
-}
-
-/* ===== RESPONSIVE ===== */
-
-/* MOBILE */
-@media(max-width:576px){
-.wns-flex-layout{
-flex-direction:column;
-}
-.wns-grid{
-grid-template-columns:1fr;
-}
-}
-
-/* TABLET */
-@media(min-width:577px) and (max-width:768px){
-.wns-flex-layout{
-flex-direction:column;
-}
-.wns-grid{
-grid-template-columns:1fr 1fr;
-}
-}
-
-/* LAPTOP */
-@media(min-width:769px) and (max-width:1024px){
-.wns-grid{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-/* DESKTOP */
-@media(min-width:1025px){
-.wns-grid{
-grid-template-columns:repeat(3,1fr);
-}
-}
-    </STYLE>
-    <SCRIPT>
-        function wnsGo404(){
-window.location.href="404.html";
-}
-
-function wnsSubscribe(){
-let email=document.getElementById("wnsEmail").value;
-let error=document.getElementById("wnsError");
-
-if(email===""){
-error.innerText="Please fill details";
-}
-else{
-window.location.href="404.html";
-}
-}
-
-/* Load Animation */
-window.addEventListener("load",()=>{
-let cards=document.querySelectorAll(".wns-card");
-cards.forEach((card,i)=>{
 setTimeout(()=>{
-card.classList.add("wns-show");
-},i*300);
-});
-});
-    </SCRIPT>
+document.querySelector(".fdx-video-box").classList.add("show")
+},200)
+
+setTimeout(()=>{
+document.querySelector(".fdx-review-right").classList.add("show")
+},600)
+
+}
+
+})
+})
+
+fdxObserver.observe(fdxSection)
 
 
-<section class="wns2-latest-wrap">
-    <div class="wns2-heading-wrap">
-        <h2 class="wns2-heading">Latest Videos</h2>
-      </div>
-    
 
-  <div class="wns2-container">
+/* REVIEW SLIDER */
 
-    <!-- LEFT BIG CARDS -->
-    <div class="wns2-left">
+let fdxIndex=0
+const fdxCards=document.querySelectorAll(".fdx-review-card")
 
-      <div class="wns2-big-card">
-        <div class="wns2-thumb">
-          <img src="./world.webp" alt="">
-          <a href="./404.html">
-          <span class="wns2-play">▶</span></a>
-          <span class="wns2-time">07:47</span>
-        </div>
-        <div class="wns2-content" onclick="wns2Go404()">
-          <h4>Hotel Horror Stories That Will Make You Glad You're Not Traveling</h4>
-          <p>We still haven't decided if these are creepy or awesome.</p>
-        </div>
-      </div>
+function fdxSlide(){
 
-      <div class="wns2-big-card">
-        <div class="wns2-thumb">
-          <img src="./corp1.webp" alt="">
-          <a href="./404.html">
-          <span class="wns2-play">▶</span></a>
-          <span class="wns2-watch">Watch</span>
-        </div>
-        <div class="wns2-content" onclick="wns2Go404()">
-          <h4>14 Places Vegans Should Put On Their Bucket Lists</h4>
-          <p>Explore the most beautiful destinations worldwide.</p>
-        </div>
-      </div>
+fdxCards.forEach(card=>card.classList.remove("active"))
 
-    </div>
+fdxIndex++
 
-    <!-- RIGHT LIST -->
-    <div class="wns2-right">
+if(fdxIndex>=fdxCards.length){
+fdxIndex=0
+}
 
-        <div class="wns2-list-card" onclick="wns2Go404()">
-          <span class="wns2-count">8</span>
-          <img src="./debate.webp" alt="news">
-          <h5>19 Times Women Were Total Bosses While Lifting Each Other Up</h5>
-        </div>
-      
-        <div class="wns2-list-card" onclick="wns2Go404()">
-          <span class="wns2-count">9</span>
-          <img src="./diet.webp" alt="news">
-          <h5>5 Breathtaking Hot Springs You Need To Visit</h5>
-        </div>
-      
-        <div class="wns2-list-card" onclick="wns2Go404()">
-          <span class="wns2-count">10</span>
-          <img src="./doctor.webp" alt="news">
-          <h5>Strange Human Behaviors Scientists Still Can't Explain</h5>
-        </div>
-      
-      </div>
-    </div>
+fdxCards[fdxIndex].classList.add("active")
 
-  </div>
+}
 
-</section>
-<script>
-    const wns2Cards = document.querySelectorAll(".wns2-list-card");
+setInterval(fdxSlide,5000)
 
-const wns2Observer = new IntersectionObserver(entries => {
-  entries.forEach((entry,index)=>{
-    if(entry.isIntersecting){
-      setTimeout(()=>{
-        entry.target.classList.add("show");
-      }, index*200);
-    }
-  });
-},{threshold:0.2});
 
-wns2Cards.forEach(card=>{
-  wns2Observer.observe(card);
-});
+
+/* YOUTUBE POPUP */
+
+const trigger=document.getElementById("fdxVideoTrigger")
+const popup=document.getElementById("fdxVideoPopup")
+const close=document.getElementById("fdxCloseVideo")
+const frame=document.getElementById("fdxYoutubeFrame")
+
+trigger.onclick=()=>{
+popup.classList.add("show")
+frame.src="./cook.mp4"
+}
+
+close.onclick=()=>{
+popup.classList.remove("show")
+frame.src=""
+}
+
+
 </script>
 
 
-<style>
 
-    /* RIGHT SIDE LIST */
-.wns2-right{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
 
-/* CARD */
-.wns2-list-card{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  cursor:pointer;
-  opacity:0;
-  transform:translateY(40px);
-  transition:.6s ease;
-}
-
-/* IMAGE SMALL SIZE */
-.wns2-list-card img{
-  width:80px;
-  height:65px;
-  object-fit:cover;
-  border-radius:6px;
-  transition:.4s;
-}
-
-/* HOVER ZOOM */
-.wns2-list-card:hover img{
-  transform:scale(1.08);
-}
-
-/* TEXT */
-.wns2-list-card h5{
-  font-size:14px;
-  line-height:1.3;
-}
-
-/* COUNT BADGE */
-.wns2-count{
-  background:#ff3d3d;
-  color:#fff;
-  padding:5px 8px;
-  font-size:12px;
-  border-radius:3px;
-}
-
-/* SHOW ANIMATION */
-.wns2-list-card.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* TABLET */
-@media(max-width:1024px){
-  .wns2-list-card img{
-    width:70px;
-    height:60px;
-  }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .wns2-list-card img{
-    width:60px;
-    height:55px;
-  }
-
-  .wns2-list-card h5{
-    font-size:13px;
-  }
-
-}
-
-/* SMALL MOBILE */
-@media(max-width:480px){
-
-  .wns2-list-card img{
-    width:55px;
-    height:50px;
-  }
-
-}
-.wns2-latest-wrap *{
-  box-sizing:border-box;
-}
-
-.wns2-latest-wrap *{
-  box-sizing:border-box;
-}
-
-.wns2-heading-wrap{
-  margin-bottom:20px;
-  border-top:4px solid #ff2a2a;
-  padding-top:10px;
-}
-
-.wns2-heading{
-  font-size:24px;
-  font-weight:700;
-  color:#ff2a2a;
-}
-
-.wns2-container{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:20px;
-}
-
-.wns2-left{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.wns2-big-card{
-  background:#fff;
-  overflow:hidden;
-}
-
-.wns2-thumb{
-  position:relative;
-  overflow:hidden;
-}
-
-.wns2-thumb img{
-  width:100%;
-  display:block;
-  transition:transform .5s ease;
-}
-
-.wns2-thumb:hover img{
-  animation:wns2Zoom 1s infinite alternate;
-}
-
-@keyframes wns2Zoom{
-  from{transform:scale(1)}
-  to{transform:scale(1.1)}
-}
-
-.wns2-play{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:#fff;
-  border-radius:50%;
-  padding:12px 16px;
-}
-
-.wns2-time{
-  position:absolute;
-  right:10px;
-  bottom:10px;
-  background:#000;
-  color:#fff;
-  padding:4px 8px;
-  font-size:12px;
-}
-
-.wns2-watch{
-  position:absolute;
-  right:10px;
-  bottom:10px;
-  background:red;
-  color:#fff;
-  padding:5px 10px;
-}
-
-.wns2-content{
-  padding:10px;
-  cursor:pointer;
-}
-
-.wns2-right{
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-
-.wns2-list-card{
-  position:relative;
-  cursor:pointer;
-}
-
-.wns2-list-card img{
-  width:100%;
-  transition:transform .4s ease;
-}
-
-.wns2-list-card:hover img{
-  transform:scale(1.1);
-}
-
-.wns2-count{
-  position:absolute;
-  left:0;
-  top:0;
-  background:#ff2a2a;
-  color:#fff;
-  padding:5px 10px;
-}
-
-@media(max-width:1024px){
-.wns2-container{
-  grid-template-columns:1fr;
-}
-}
-
-@media(max-width:768px){
-.wns2-left{
-  grid-template-columns:1fr;
-}
-}
-</style>
-
-
-<script>
-function wns2Go404(){
-  window.location.href="404.html";
-}
-</script>
-
-
-<section class="wns3-news-section">
-
-  
-
-  <h2 class="wns3-main-heading">Trending Stories</h2>
-
-  <div class="wns3-container">
-
-    <!-- LEFT CONTENT -->
-    <div class="wns3-left">
-
-      <div class="wns3-card" onclick="wns3Go404()">
-        <div class="wns3-img shape1">
-          <img src="./busi.webp">
-        </div>
-        <div class="wns3-content">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, autem eum animi corrupti porro ullam culpa dicta distinctio aliquid maxime!</p>
-          <span class="wns3-tag business">Business</span>
-        </div>
-      </div>
-
-      <div class="wns3-card" onclick="wns3Go404()">
-        <div class="wns3-img shape2">
-          <img src="./jogging.webp">
-        </div>
-        <div class="wns3-content">
-          <h3>Lorem ipsum, dolor sit amet consectetur adipisicing.</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, consequuntur illo at labore perspiciatis placeat, odit, dolor ut praesentium exercitationem corrupti assumenda sunt rerum. Excepturi..</p>
-          <span class="wns3-tag entertainment">Entertainment</span>
-        </div>
-      </div>
-
-      <div class="wns3-card" onclick="wns3Go404()">
-        <div class="wns3-img shape3">
-          <img src="./digi.webp">
-        </div>
-        <div class="wns3-content">
-          <h3>Lorem ipsum dolor sit amet consectetur </h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fugit iste consequatur, atque maxime nobis fuga iure distinctio suscipit temporibus fugiat tempora porro voluptate necessitatibus?</p>
-          <span class="wns3-tag latest">Latest</span>
-        </div>
-      </div>
-
-      <div class="wns3-card" onclick="wns3Go404()">
-        <div class="wns3-img shape3">
-          <img src="./diet.webp">
-        </div>
-        <div class="wns3-content">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quae, et mollitia dolorem sit alias ipsam deleniti accusantium nisi quam sint labore? Accusantium, modi pariatur!</p>
-          <span class="wns3-tag latest">Healthy</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- RIGHT SIDEBAR -->
-    <div class="wns3-right">
-      <h3 class="wns3-side-heading">Weekly Popular</h3>
-
-      <div class="wns3-side-card" onclick="wns3Go404()">
-        <div class="wns3-img shape4">
-          <img src="./ai rename.webp">
-        </div>
-        <h4>19 Ridiculous Animal Memes That Prove We're the Lesser Species</h4>
-        <span class="wns3-tag most">Most Viewed</span>
-      </div>
-
-      <div class="wns3-side-card" onclick="wns3Go404()">
-        <div class="wns3-img shape2">
-          <img src="./ai2.webp">
-        </div>
-        <h4>15 Classic Princess Fairytales That Are Way More Hardcore</h4>
-        <span class="wns3-tag entertainment">Entertainment</span>
-      </div>
-
-      
-
-    </div>
-
-  </div>
-
-</section>
-<style>
-    /* ================= RIGHT SIDEBAR ================= */
-
-.wns3-right{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  gap:25px;
-}
-
-.wns3-side-heading{
-  font-size:20px;
-  font-weight:700;
-  border-bottom:3px solid #2b7cff;
-  padding-bottom:8px;
-}
-
-/* CARD */
-.wns3-side-card{
-  cursor:pointer;
-  transition:.3s;
-}
-
-.wns3-side-card:hover{
-  transform:translateY(-5px);
-}
-
-/* IMAGE BOX */
-.wns3-img{
-  width:100%;
-  height:190px;
-  overflow:hidden;
-  position:relative;
-}
-
-/* IMAGE ZOOM */
-.wns3-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s ease;
-}
-
-.wns3-side-card:hover img{
-  transform:scale(1.1);
-}
-
-/* DIFFERENT SHAPES */
-
-/* SLANTED CUT */
-.shape2{
-  clip-path:polygon(0 0,100% 0,100% 85%,0 100%);
-}
-
-/* 4 CORNER SLIT */
-.shape4{
-  clip-path:polygon(
-    10% 0%, 90% 0%, 
-    100% 10%, 100% 90%, 
-    90% 100%, 10% 100%, 
-    0% 90%, 0% 10%
-  );
-}
-
-/* CONTENT */
-.wns3-side-card h4{
-  font-size:15px;
-  margin-top:10px;
-  line-height:1.4;
-}
-
-/* TAGS */
-.wns3-tag{
-  display:inline-block;
-  margin-top:6px;
-  padding:4px 10px;
-  font-size:12px;
-  border-radius:3px;
-  color:#fff;
-}
-
-.most{background:#ff3d3d;}
-.entertainment{background:#2b7cff;}
-
-/* ================= RESPONSIVE ================= */
-
-/* TABLET */
-@media(max-width:1024px){
-  .wns3-img{
-    height:160px;
-  }
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .wns3-right{
-    margin-top:40px;
-  }
-
-  .wns3-img{
-    height:150px;
-  }
-
-  .wns3-side-card h4{
-    font-size:14px;
-  }
-
-}
-
-/* SMALL MOBILE */
-@media(max-width:480px){
-
-  .wns3-img{
-    height:130px;
-  }
-
-  .wns3-side-heading{
-    font-size:18px;
-  }
-
-}
-.wns3-news-section *{box-sizing:border-box}
-.wns3-news-section{padding:40px 20px;font-family:Arial}
-
-.wns3-main-heading{font-size:28px;margin-bottom:20px}
-
-.wns3-container{
-  display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:30px;
-}
-
-.wns3-card{
-  display:flex;
-  gap:20px;
-  margin-bottom:30px;
-  cursor:pointer;
-}
-
-.wns3-img{overflow:hidden;flex:0 0 220px}
-.wns3-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .5s ease;
-}
-
-.wns3-img:hover img{
-  animation:wns3Zoom 1s infinite alternate;
-}
-
-@keyframes wns3Zoom{
-  from{transform:scale(1)}
-  to{transform:scale(1.1)}
-}
-
-/* DIFFERENT SHAPES */
-.shape1{border-radius:20px}
-.shape2{clip-path:polygon(0 0,100% 0,90% 100%,0% 100%)}
-.shape3{clip-path:polygon(10% 0,100% 0,100% 90%,0 100%)}
-.shape4{border-radius:50%}
-
-.wns3-content h3{margin:0 0 10px}
-.wns3-content p{color:#555}
-
-.wns3-tag{
-  display:inline-block;
-  margin-top:10px;
-  padding:5px 10px;
-  font-size:12px;
-  color:#fff;
-}
-
-.business{background:#007bff}
-.entertainment{background:#ff2a2a}
-.latest{background:#28a745}
-.most{background:#ff9800}
-
-/* SIDEBAR */
-.wns3-side-heading{margin-bottom:15px}
-.wns3-side-card{margin-bottom:25px;cursor:pointer}
-
-/* LIVE BAR */
-.wns3-live-bar{
-  display:flex;
-  align-items:center;
-  background:#111;
-  color:#fff;
-  padding:10px;
-  margin-bottom:30px;
-  overflow:hidden;
-}
-
-.wns3-live-label{
-  background:red;
-  padding:5px 10px;
-  margin-right:10px;
-}
-
-.wns3-live-scroll{
-  flex:1;
-  overflow:hidden;
-}
-
-.wns3-live-track{
-  white-space:nowrap;
-  display:inline-block;
-  animation:wns3Scroll 15s linear infinite;
-}
-
-@keyframes wns3Scroll{
-  from{transform:translateX(100%)}
-  to{transform:translateX(-100%)}
-}
-
-.wns3-live-time{margin-left:10px;font-size:14px}
-
-@media(max-width:1024px){
-.wns3-container{grid-template-columns:1fr}
-}
-
-@media(max-width:768px){
-.wns3-card{flex-direction:column}
-.wns3-img{width:100%;height:200px}
-}
-</style>
-
-
-<script>
-function wns3Go404(){
-  window.location.href="404.html";
-}
-
-function wns3UpdateTime(){
-  const now=new Date();
-  document.getElementById("wns3LiveTime").innerHTML=
-  now.toLocaleDateString()+" "+now.toLocaleTimeString();
-}
-setInterval(wns3UpdateTime,1000);
-wns3UpdateTime();
-</script>
-<script src="./script.js"></script>
 <!-- <footer> -->
-    <footer class="footer">
-        <div class="footer-container">
-    
-            <!-- Logo / About -->
-            <div class="footer-box">
-                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
-   
-               
-                <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
-    
-                <!-- Social Icons -->
-                <div class="footer-social">
-                    <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
-                </div>
+  <footer class="footer">
+    <div class="footer-container">
+
+        <!-- Logo / About -->
+        <div class="footer-box">
+            <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+           
+            <!-- <p>We deliver secure, scalable and innovative IT services for global businesses.</p><br> -->
+
+            <!-- Social Icons -->
+            <div class="footer-social">
+                <a href="./404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-instagram"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="./404.html"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-    
-            <!-- Quick Links -->
-            <div class="footer-box">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="./latest.html">Latest</a></li>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
               <li><a href="./about.html">About</a></li>
-              <li><a href="./contact.html">Contact</a></li>
+              <li><a href="./order.html">order</a></li>
+              <li><a href="./contact.html">contact</a></li>
               <li><a href="./dashboard.html">Dashboard</a></li>
-                </ul>
-            </div>
-    
-            <!-- Address -->
-            <div class="footer-box">
-                <h3>Our Address</h3>
-                <p>
-                    MMR complex.<br>
-                    chinna tirupathi kovil street,<br>
-                    salem,Tamil nadu-636008<br>
-                    <!-- Bengaluru, Karnataka – 560066<br> -->
-                    India<br><br>
-    
-                    <strong>Phone:</strong> +91 98765 43210<br>
-                    <strong>Email:</strong> support@thestackly.com
-                </p>
-            </div>
-    
-            <!-- Google Map -->
-            <div class="footer-box">
-                <h3>Location</h3>
-                <iframe 
-                src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-    
+              <li><a href="./login.html">Login</a></li>
+              <li><a href="./signup.html">Signup</a></li>
+              
+            </ul>
         </div>
-    
-        <div class="footer-bottom">
-            <p>© 2025 stackly | All Rights Reserved</p>
+
+        <!-- Address -->
+        <div class="footer-box">
+            <h3>Our Address</h3>
+            <p>
+                MMR complex.<br>
+                chinna tirupathi kovil street,<br>
+                salem,Tamil nadu-636008<br>
+                <!-- Bengaluru, Karnataka – 560066<br> -->
+                India<br><br>
+
+                <strong>Phone:</strong> +91 98765 43210<br>
+                <strong>Email:</strong> support@thestackly.com
+            </p>
         </div>
-    </footer>
-  
-  
+
+        <!-- Google Map -->
+        <div class="footer-box">
+            <h3>Location</h3>
+            <iframe 
+            src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 stackly | All Rights Reserved</p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
