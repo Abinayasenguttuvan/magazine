@@ -21,10 +21,7 @@
   .header {
     width: 100%;
     padding: 18px 40px;
-    background: linear-gradient(135deg,
-    rgba(255, 212, 95, 0.8),
-    rgba(207, 104, 25, 0.7));
-   
+    background: black;
    
     color: #fff;
     display: flex;
@@ -71,7 +68,7 @@
     position: absolute;
     top: 38px;
     left: 0;
-    background: orange;
+    background: blac;
     width: 160px;
     border-radius: 8px;
     padding: 10px 0;
@@ -85,7 +82,7 @@
   }
   
   .dropdown-content li a:hover {
-    background: orange;
+    background: black;
   }
   
   /* Toggle */
@@ -103,9 +100,7 @@
   
   /* ================= FOOTER ================= */
   .footer {
-    background: linear-gradient(135deg,
-    rgba(255, 212, 95, 0.8),
-    rgba(207, 104, 25, 0.7));
+    background: black;
    
    
     padding-top: 40px;
@@ -153,10 +148,8 @@
   
   .footer-bottom {
     text-align: center;
-    background: linear-gradient(135deg,
-    rgba(255, 212, 95, 0.8),
-    rgba(207, 104, 25, 0.7));
-   
+    background: black;
+   color:white;
     padding: 15px 0;
   }
   
@@ -196,9 +189,7 @@
     .nav-links {
         display: none;
         flex-direction: column;
-        background: linear-gradient(135deg,
-        rgba(255, 212, 95, 0.8),
-        rgba(234, 140, 69, 0.7));
+        background: black;
        
         position: absolute;
         top: 70px;
