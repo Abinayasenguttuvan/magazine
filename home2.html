@@ -444,54 +444,386 @@ typeWriter(line3,
 <body>
 
     
-<section class="travel-cover">
+<!-- =========================================
+     TRAVEL MAGAZINE DESTINATIONS SECTION
+========================================= -->
 
-<div class="overlay">
 
-<!-- MASTHEAD -->
-<h1 class="masthead">WANDER WEEKLY</h1>
-<p class="tagline">Explore More. Travel Better. Live Fully.</p>
 
-<div class="cover-grid">
+<Style>
+    .tmg-location{
+    font-size:15px;
+    margin-bottom:12px;
+    opacity:.95;
+}
 
-<!-- LEFT SIDE -->
-<div class="left-content">
-<p>Solo Travel Guide 2026</p>
-<p>Top 7 Budget Friendly Countries</p>
-<p>Adventure Trekking Spots</p>
-<p>Luxury Eco Resorts</p>
-</div>
+.tmg-desc{
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:15px;
+    opacity:.9;
+    max-width:500px;
+}
 
-<!-- CENTER CONTENT -->
-<div class="center-content">
+.tmg-meta{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    font-size:14px;
+    font-weight:500;
+}
 
-    <h2 class="type-line1"></h2>
-    
-    <h3 class="type-line2"></h3>
-    
-    <span class="quote type-line3"></span>
-    
-    </div>
+.tmg-meta span{
+    background:rgba(255,255,255,.15);
+    padding:8px 14px;
+    border-radius:30px;
+    backdrop-filter:blur(10px);
+}
+</Style>
 
-<!-- RIGHT SIDE -->
-<div class="right-content">
-<p>Beach Escapes</p>
-<p>Food & Travel</p>
-<p>Weekend Getaways</p>
-<p>Cultural Trails</p>
-</div>
+<section class="tmg-intro">
 
-</div>
+    <span class="tmg-badge">
+        TRAVEL MAGAZINE 2026
+    </span>
 
-<!-- BOTTOM -->
-<div class="bottom-bar">
-<p>Special Edition: Travel Smart in the Digital Era</p>
-<span>FEBRUARY 2026 EDITION</span>
-</div>
+    <h1>
+        Discover Extraordinary Destinations
+        Across The Globe
+    </h1>
 
-</div>
+    <p>
+        Explore breathtaking landscapes, hidden gems,
+        cultural experiences, luxury escapes, and
+        unforgettable adventures curated by travel
+        experts from around the world.
+    </p>
 
 </section>
+
+<section class="tmg-section">
+
+    <div class="tmg-heading-wrap">
+        <h2 class="tmg-heading">Featured Destinations</h2>
+        <a href="./404.html" class="tmg-view-all">ALL DESTINATIONS</a>
+    </div>
+
+    <div class="tmg-grid">
+
+        <!-- BIG CARD -->
+        <div class="tmg-card tmg-large" onclick="tmgGo404()">
+
+            <img src="./china.webp" alt="Paris">
+
+            <div class="tmg-overlay">
+                <span>EUROPE</span>
+                <h3>lorem</h3>
+                <p>Paris, France · 24 Trips</p>
+            </div>
+
+        </div>
+
+        <!-- BIG CARD -->
+        <div class="tmg-card tmg-large" onclick="tmgGo404()">
+
+            <img src="./bali.webp" alt="Maldives">
+
+            <div class="tmg-overlay">
+                <span>TROPICAL</span>
+                <h3>Pryde Mountains</h3>
+                <p>Maldives · 100 Trips</p>
+            </div>
+
+        </div>
+
+        <!-- SMALL CARD -->
+        <div class="tmg-card" onclick="tmgGo404()">
+
+            <img src="./russia.webp" alt="Forest">
+
+            <div class="tmg-overlay">
+                <span>NATURE</span>
+                <h3>Rainforest Escape</h3>
+            </div>
+
+        </div>
+
+        <!-- SMALL CARD -->
+        <div class="tmg-card" onclick="tmgGo404()">
+
+            <img src="./tsunami.webp" alt="Temple">
+
+            <div class="tmg-overlay">
+                <span>CULTURE</span>
+                <h3>Thailand Heritage</h3>
+            </div>
+
+        </div>
+
+        <!-- SMALL CARD -->
+        <div class="tmg-card" onclick="tmgGo404()">
+
+            <img src="./envir.webp" alt="Island">
+
+            <div class="tmg-overlay">
+                <span>ADVENTURE</span>
+                <h3>Hidden Island</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+    .tmg-intro{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 60px;
+}
+
+.tmg-badge{
+    background:#0d6efd;
+    color:#fff;
+    padding:10px 20px;
+    border-radius:30px;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.tmg-intro h1{
+    font-size:60px;
+    margin:25px 0;
+    color:#111;
+    line-height:1.2;
+}
+
+.tmg-intro p{
+    font-size:18px;
+    line-height:1.8;
+    color:#666;
+}
+
+@media(max-width:768px){
+
+.tmg-intro h1{
+    font-size:32px;
+}
+
+.tmg-intro p{
+    font-size:15px;
+}
+
+}
+/* =========================================
+   TRAVEL MAGAZINE SECTION
+========================================= */
+
+.tmg-section{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:80px 5%;
+    background:#fff;
+    overflow:hidden;
+}
+
+.tmg-heading-wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.tmg-heading{
+    font-size:48px;
+    font-weight:700;
+    color:#111;
+}
+
+.tmg-view-all{
+    color:#111;
+    font-weight:600;
+    border-bottom:2px solid #111;
+    text-decoration:none;
+    font-size:15px;
+}
+
+/* GRID */
+
+.tmg-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:25px;
+}
+
+.tmg-large{
+    grid-column:span 1;
+    height:500px;
+}
+
+.tmg-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    cursor:pointer;
+    height:300px;
+
+    opacity:0;
+    transform:translateY(80px);
+    transition:
+    transform .6s ease,
+    opacity .6s ease;
+}
+
+.tmg-card.tmg-show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.tmg-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s ease;
+}
+
+.tmg-card:hover img{
+    transform:scale(1.1);
+}
+
+.tmg-overlay{
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+    to top,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.1)
+    );
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:30px;
+    color:#fff;
+}
+
+.tmg-overlay span{
+    width:max-content;
+    background:#0d6efd;
+    padding:8px 14px;
+    font-size:12px;
+    letter-spacing:1px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.tmg-overlay h3{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.tmg-overlay p{
+    font-size:16px;
+    opacity:.9;
+}
+
+/* ======================
+   TABLET
+====================== */
+
+@media(max-width:991px){
+
+.tmg-heading{
+    font-size:36px;
+}
+
+.tmg-grid{
+    grid-template-columns:1fr 1fr;
+}
+
+.tmg-large{
+    height:420px;
+}
+
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media(max-width:768px){
+
+.tmg-heading-wrap{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+}
+
+.tmg-heading{
+    font-size:28px;
+}
+
+.tmg-grid{
+    grid-template-columns:1fr;
+}
+
+.tmg-large{
+    height:350px;
+}
+
+.tmg-card{
+    height:280px;
+}
+
+.tmg-overlay h3{
+    font-size:24px;
+}
+
+.tmg-overlay p{
+    font-size:14px;
+}
+
+}
+</style>
+
+
+<script>
+    
+
+/* 404 Redirect */
+
+function tmgGo404(){
+    window.location.href = "./404.html";
+}
+
+/* Scroll Animation */
+
+const tmgObserver = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("tmg-show");
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+document.querySelectorAll(".tmg-card").forEach(card=>{
+tmgObserver.observe(card);
+});
+
+</script>
+
+
+
+
 
 <section class="travel-article">
 
@@ -816,83 +1148,426 @@ reveals[i].classList.add("active");
 
 <!-- ================= MAGAZINE CHECKLIST SECTION ================= -->
 
-<section class="magazine-row">
+<section class="nxpnews-section">
 
-    <!-- LEFT PAGE -->
-    
-    <div class="mag-page" onclick="go404()">
-    
-    <h2>Travelling <br><span>Check Lists</span></h2>
-    
-    <div class="checklist">
-    
-    <div>
-    <h3>01</h3>
-    <p>Make photocopies of important documents.</p>
+    <div class="nxpnews-container">
+  
+        <!-- LEFT NEWS -->
+  
+        <div class="nxpnews-left">
+  
+            <article class="nxpnews-card nxpnews-reveal">
+  
+                <div class="nxpnews-image">
+                    <img src="./bali.webp" alt="">
+                </div>
+  
+                <div class="nxpnews-content">
+  
+                    <span class="nxpnews-tag nxpnews-tag-travel">
+                        TRAVEL
+                    </span>
+  
+                    <h2>
+                        Will The Democrats Be Able To Reverse
+                        The Online Gambling Ban
+                    </h2>
+  
+                    <p>
+                        Aliquam erat volutpat. Nam ut bibendum eros.
+                        Nam vel nulla est. Quisque fermentum sapien.
+                    </p>
+  
+                    <span class="nxpnews-author">
+                        By Amachea Jajah
+                    </span>
+  
+                </div>
+  
+            </article>
+  
+            <article class="nxpnews-card nxpnews-reveal">
+  
+                <div class="nxpnews-image">
+                    <img src="./busi.webp" alt="">
+                </div>
+  
+                <div class="nxpnews-content">
+  
+                    <span class="nxpnews-tag nxpnews-tag-science">
+                        SCIENCE
+                    </span>
+  
+                    <h2>
+                        Old Fashioned Recipe For Preventing
+                        Allergies And Chemical Sensitivities
+                    </h2>
+  
+                    <p>
+                        Cras sit amet maximus odio. Integer sed
+                        volutpat mi in ultrices tellus.
+                    </p>
+  
+                    <span class="nxpnews-author">
+                        By Amachea Jajah
+                    </span>
+  
+                </div>
+  
+            </article>
+  
+        </div>
+  
+        <!-- RIGHT SIDEBAR -->
+  
+        <aside class="nxpnews-sidebar">
+  
+            <div class="nxpnews-advertisement nxpnews-reveal">
+  
+                <img src="./diet.webp" alt="Advertisement">
+  
+            </div>
+  
+            <div class="nxpnews-newsletter nxpnews-reveal">
+  
+                <div class="nxpnews-icon">
+                    ✈
+                </div>
+  
+                <h3>
+                    Subscribe To Our Weekly Newsletter
+                </h3>
+  
+                <p>
+                    No spam, notifications only about
+                    new products and updates.
+                </p>
+  
+                <input
+                    type="email"
+                    id="nxpnewsEmail"
+                    placeholder="Enter Email Address">
+  
+                <small id="nxpnewsError"></small>
+  
+                <button onclick="nxpnewsSubscribe()">
+                    SUBSCRIBE
+                </button>
+  
+            </div>
+  
+        </aside>
+  
     </div>
-    
-    <div>
-    <h3>02</h3>
-    <p>Always carry a reusable water bottle.</p>
-    </div>
-    
-    <div>
-    <h3>03</h3>
-    <p>Download offline maps in phone.</p>
-    </div>
-    
-    <div>
-    <h3>04</h3>
-    <p>Travel with multi adapter charger.</p>
-    </div>
-    
-    <div>
-    <h3>05</h3>
-    <p>Wear your heaviest clothes on plane.</p>
-    </div>
-    
-    <div>
-    <h3>06</h3>
-    <p>Notify your bank of travel plans.</p>
-    </div>
-    
-    </div>
-    
-    <div class="circle-img"></div>
-    
-    <p class="quote">
-    Take photos, but don’t forget to <span>be present in the moment.</span>
-    </p>
-    
-    </div>
-    
-    
-    <!-- RIGHT PAGE -->
-    
-    <div class="mag-page" onclick="go404()">
-    
-    <div class="big-img"></div>
-    
-    <h2 class="meet">
-    Travel far enough to <br>
-    <span>Meet yourself.</span>
-    </h2>
-    
-    <p>
-    Traveling introduces you to new cultures, perspectives, and stories.
-    Every destination teaches something unforgettable and inspires
-    personal growth.
-    </p>
-    
-    <p>
-    Let every journey be a step toward discovering your true self.
-    Adventure awaits beyond your comfort zone.
-    </p>
-    
-    </div>
-    
-    </section>
-
+  
+  </section>
+  
+  <Style>
+    /* ===================================
+     NEWSPAPER SECTION
+  =================================== */
+  
+  .nxpnews-section{
+      width:100%;
+      padding:80px 5%;
+      background:#f5f5f5;
+      font-family:'Poppins',sans-serif;
+  }
+  
+  .nxpnews-container{
+      max-width:1400px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:40px;
+  }
+  
+  /* LEFT */
+  
+  .nxpnews-left{
+      display:flex;
+      flex-direction:column;
+      gap:35px;
+  }
+  
+  .nxpnews-card{
+      background:#fff;
+      display:flex;
+      gap:30px;
+      overflow:hidden;
+      transition:.4s ease;
+  }
+  
+  .nxpnews-card:hover{
+      transform:translateY(-8px);
+  }
+  
+  .nxpnews-image{
+      width:320px;
+      flex-shrink:0;
+  }
+  
+  .nxpnews-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+  }
+  
+  .nxpnews-content{
+      padding:25px;
+  }
+  
+  .nxpnews-tag{
+      display:inline-block;
+      padding:8px 14px;
+      color:#fff;
+      font-size:12px;
+      font-weight:600;
+  }
+  
+  .nxpnews-tag-travel{
+      background:#2d7ff9;
+  }
+  
+  .nxpnews-tag-science{
+      background:#4bb9ff;
+  }
+  
+  .nxpnews-content h2{
+      font-size:2rem;
+      margin:20px 0;
+      color:#111;
+      line-height:1.4;
+  }
+  
+  .nxpnews-content p{
+      color:#666;
+      line-height:1.8;
+      margin-bottom:20px;
+  }
+  
+  .nxpnews-author{
+      color:#888;
+  }
+  
+  /* SIDEBAR */
+  
+  .nxpnews-sidebar{
+      display:flex;
+      flex-direction:column;
+      gap:30px;
+  }
+  
+  .nxpnews-advertisement{
+      background:#fff;
+      overflow:hidden;
+  }
+  
+  .nxpnews-advertisement img{
+      width:100%;
+      display:block;
+  }
+  
+  .nxpnews-newsletter{
+      background:#fff;
+      padding:35px;
+  }
+  
+  .nxpnews-icon{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background:#ffe9ef;
+      color:#ff4d72;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      margin-bottom:20px;
+  }
+  
+  .nxpnews-newsletter h3{
+      font-size:2rem;
+      color:#111;
+      margin-bottom:15px;
+  }
+  
+  .nxpnews-newsletter p{
+      color:#666;
+      line-height:1.8;
+      margin-bottom:25px;
+  }
+  
+  .nxpnews-newsletter input{
+      width:100%;
+      height:55px;
+      border:1px solid #ddd;
+      padding:0 15px;
+      margin-bottom:10px;
+  }
+  
+  .nxpnews-newsletter button{
+      background:#ff4d72;
+      color:#fff;
+      border:none;
+      padding:15px 35px;
+      cursor:pointer;
+      font-weight:600;
+      transition:.3s;
+  }
+  
+  .nxpnews-newsletter button:hover{
+      transform:translateY(-3px);
+  }
+  
+  #nxpnewsError{
+      display:block;
+      color:red;
+      margin-bottom:10px;
+  }
+  
+  /* SCROLL ANIMATION */
+  
+  .nxpnews-reveal{
+      opacity:0;
+      transform:translateY(100px);
+      transition:all .8s ease;
+  }
+  
+  .nxpnews-show{
+      opacity:1;
+      transform:translateY(0);
+  }
+  
+  /* TABLET */
+  
+  @media(max-width:992px){
+  
+      .nxpnews-container{
+          grid-template-columns:1fr;
+      }
+  
+  }
+  
+  /* MOBILE */
+  
+  @media(max-width:768px){
+  
+      .nxpnews-card{
+          flex-direction:column;
+      }
+  
+      .nxpnews-image{
+          width:100%;
+      }
+  
+      .nxpnews-image img{
+          height:250px;
+      }
+  
+      .nxpnews-content h2{
+          font-size:1.5rem;
+      }
+  
+      .nxpnews-newsletter{
+          padding:25px;
+      }
+  
+  }
+  
+  /* SMALL MOBILE */
+  
+  @media(max-width:480px){
+  
+      .nxpnews-section{
+          padding:60px 20px;
+      }
+  
+      .nxpnews-content h2{
+          font-size:1.25rem;
+      }
+  
+  }
+  </Style>
+  
+  <Script>
+    /* ==========================
+     SCROLL REVEAL
+  ========================== */
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  
+  const nxpnewsItems =
+  document.querySelectorAll(".nxpnews-reveal");
+  
+  const nxpnewsObserver =
+  new IntersectionObserver((entries)=>{
+  
+      entries.forEach(entry=>{
+  
+          if(entry.isIntersecting){
+  
+              entry.target.classList.add("nxpnews-show");
+  
+          }
+  
+      });
+  
+  },{
+      threshold:0.15
+  });
+  
+  nxpnewsItems.forEach(item=>{
+  
+      nxpnewsObserver.observe(item);
+  
+  });
+  
+  });
+  
+  
+  /* ==========================
+  EMAIL VALIDATION
+  ========================== */
+  
+  function nxpnewsSubscribe(){
+  
+  const email =
+  document.getElementById("nxpnewsEmail");
+  
+  const error =
+  document.getElementById("nxpnewsError");
+  
+  const pattern =
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  if(email.value.trim()===""){
+  
+      error.innerHTML =
+      "Please enter your email address";
+  
+      return;
+  
+  }
+  
+  if(!pattern.test(email.value)){
+  
+      error.innerHTML =
+      "Please enter a valid email address";
+  
+      return;
+  
+  }
+  
+  error.innerHTML = "";
+  
+  window.location.href = "./404.html";
+  
+  }
+  </Script>
+  
+  
     <style>
 
     .magazine-row{
