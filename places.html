@@ -965,8 +965,8 @@ font-weight:bold;
 
 .video-reel{
 padding:60px 5%;
-background:#000;
-color:#fff;
+background:rgb(233, 211, 154);
+color:white;
 }
 
 .video-container{
@@ -1090,7 +1090,103 @@ window.location.href="404.html";
         </div>
     </footer>
   
-  
+    <style>
+        .dropdown{
+    position:relative;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:180px;
+    background:black;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    z-index:999;
+}
+
+.dropdown-content li{
+    list-style:none;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px 15px;
+    color:#333;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+      </style>
+
+      <script>
+        
+document.addEventListener("DOMContentLoaded", function(){
+
+    const dropBtn = document.querySelector(".dropdown-btn");
+
+    dropBtn.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document
+        .querySelector(".dropdown-content")
+        .classList.toggle("show-menu");
+
+    });
+
+});
+</script><style>
+    .dropdown{
+position:relative;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+min-width:180px;
+background:black;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+z-index:999;
+}
+
+.dropdown-content li{
+list-style:none;
+}
+
+.dropdown-content a{
+display:block;
+padding:12px 15px;
+color:#333;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+  </style>
+
+  <script>
+    
+document.addEventListener("DOMContentLoaded", function(){
+
+const dropBtn = document.querySelector(".dropdown-btn");
+
+dropBtn.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    document
+    .querySelector(".dropdown-content")
+    .classList.toggle("show-menu");
+
+});
+
+});
+</script>
     
 <script src="./script1.js"></script>
 </body>
