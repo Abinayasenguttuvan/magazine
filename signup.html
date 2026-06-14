@@ -1,150 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Signup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Magazine - Premium Signup</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-/* RESET */
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
-/* BACKGROUND */
+html{
+scroll-behavior:smooth;
+}
 
 body{
 min-height:100vh;
-background:url("./magaz1.webp") no-repeat center/cover;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+overflow-x:hidden;
+overflow-y:auto;
+color:#fff;
+position:relative;
 }
 
-body::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
+/* VIDEO BACKGROUND */
+
+.bg-video{
+position:fixed;
 top:0;
 left:0;
-z-index:-1;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
 }
 
-/* BACK HOME */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+z-index:-2;
+}
 
-.top-home{
+/* TOP BAR */
+
+.top-bar{
 position:absolute;
-top:20px;
-left:20px;
+top:0;
+left:0;
+width:100%;
+padding:25px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:10;
+}
+
+.home-btn{
 color:#fff;
 text-decoration:none;
-font-size:18px;
+font-size:16px;
+font-weight:600;
 }
 
-/* CONTAINER */
+.home-btn:hover{
+color:red;
+}
+
+/* MAIN WRAPPER */
+
+.page-wrapper{
+max-width:1400px;
+margin:auto;
+padding:120px 40px 60px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:60px;
+}
+
+/* LEFT NEWS SECTION */
+
+.news-side{
+flex:1;
+max-width:700px;
+animation:leftFade 1s ease;
+}
+
+@keyframes leftFade{
+from{
+opacity:0;
+transform:translateX(-60px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+.news-badge{
+display:inline-block;
+padding:10px 18px;
+background:rgba(255,255,255,.12);
+border-radius:30px;
+font-size:14px;
+margin-bottom:20px;
+backdrop-filter:blur(8px);
+}
+
+.news-title{
+font-size:58px;
+font-weight:800;
+line-height:1.2;
+margin-bottom:20px;
+}
+
+.news-title span{
+color: red;
+}
+
+.news-desc{
+font-size:17px;
+line-height:1.8;
+color:#ddd;
+margin-bottom:30px;
+}
+
+.news-ticker{
+width:100%;
+overflow:hidden;
+background:rgba(255,255,255,.08);
+border-radius:12px;
+padding:14px;
+margin-bottom:30px;
+backdrop-filter:blur(10px);
+}
+
+.ticker-track{
+display:inline-block;
+white-space:nowrap;
+animation:tickerMove 18s linear infinite;
+font-weight:600;
+}
+
+@keyframes tickerMove{
+from{
+transform:translateX(100%);
+}
+to{
+transform:translateX(-100%);
+}
+}
+
+/* IMAGE GRID */
+
+.image-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.image-grid img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:20px;
+transition:.4s;
+animation:floatImage 5s ease-in-out infinite;
+box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.image-grid img:hover{
+transform:scale(1.05);
+}
+
+@keyframes floatImage{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-12px);
+}
+}
+
+/* SIGNUP CARD */
 
 .signup-container{
-width:400px;
-background:#fff;
+width:450px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
 padding:40px;
-border-radius:10px;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+animation:rightFade 1s ease;
+}
+
+@keyframes rightFade{
+from{
+opacity:0;
+transform:translateX(60px);
+}
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/* LOGO */
+
+.logo-box{
 text-align:center;
+margin-bottom:20px;
 }
 
-.signup-container input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:1px solid #ccc;
+.logo-box img{
+width:130px;
+animation:logoFloat 3s ease-in-out infinite;
 }
 
-/* PASSWORD */
+@keyframes logoFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-8px);
+}
+}
 
-.password-box{
+.signup-title{
+font-size:34px;
+font-weight:700;
+text-align:center;
+margin-bottom:8px;
+}
+
+.signup-subtitle{
+text-align:center;
+color:#ddd;
+margin-bottom:25px;
+}
+
+/* INPUTS */
+
+.input-box{
 position:relative;
+margin-bottom:18px;
+}
+
+.input-box input{
+width:100%;
+padding:15px 45px;
+border:none;
+outline:none;
+border-radius:12px;
+background:rgba(255,255,255,.1);
+color:#fff;
+font-size:15px;
+}
+
+.input-box input::placeholder{
+color:#ccc;
+}
+
+.input-box i.left-icon{
+position:absolute;
+left:15px;
+top:50%;
+transform:translateY(-50%);
+color:#ddd;
 }
 
 .eye-icon{
 position:absolute;
-right:10px;
+right:15px;
 top:50%;
 transform:translateY(-50%);
 cursor:pointer;
+color:#ddd;
 }
 
 /* BUTTON */
 
-button{
+.signup-btn{
 width:100%;
-padding:12px;
-background:#000;
-color:#fff;
+padding:15px;
 border:none;
-margin:10px 0;
+border-radius:12px;
+background: red;
+color:#111;
+font-size:16px;
+font-weight:700;
 cursor:pointer;
+transition:.3s;
 }
+
+.signup-btn:hover{
+transform:translateY(-3px);
+}
+
+/* LINKS */
+
+.extra-links{
+display:flex;
+justify-content:space-between;
+margin:18px 0;
+}
+
+.extra-links a{
+color:#fff;
+font-size:14px;
+text-decoration:none;
+}
+
+.extra-links a:hover{
+color:#ffcc00;
+}
+
+/* ERROR */
 
 #error{
-color:red;
+text-align:center;
+color:#ff6b6b;
 font-size:14px;
+margin-top:12px;
+font-weight:600;
 }
 
-/* SOCIAL */
+/* OR */
+
+.or{
+text-align:center;
+margin:20px 0;
+color:#ddd;
+}
+
+/* SOCIAL BUTTONS */
 
 .social-btn{
-background:#444;
-margin:5px 0;
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+background:rgba(255,255,255,.1);
+color:#fff;
+margin-bottom:10px;
+cursor:pointer;
+transition:.3s;
 }
 
-/* LOGOS */
-
-.logos{
-display:flex;
-justify-content:center;
-gap:10px;
-margin-top:20px;
-flex-wrap:wrap;
+.social-btn:hover{
+background:#fff;
+color:#111;
 }
 
-.logos img{
-width:40px;
-opacity:0;
-transform:translateY(30px);
-transition:.5s;
+.social-btn i{
+margin-right:10px;
 }
 
-.logos img.show{
-opacity:1;
-transform:translateY(0);
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+.news-title{
+font-size:48px;
 }
 
-/* TABLET */
+.page-wrapper{
+gap:40px;
+}
+
+}
 
 @media(max-width:1024px){
-.signup-container{
-width:70%;
-}
+
+.page-wrapper{
+flex-direction:column;
+padding:120px 25px 50px;
 }
 
-/* MOBILE */
+.signup-container{
+width:100%;
+max-width:550px;
+}
+
+.news-side{
+max-width:100%;
+text-align:center;
+}
+
+.image-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
 
 @media(max-width:768px){
+
+.top-bar{
+padding:15px;
+}
+
+.page-wrapper{
+padding:100px 15px 40px;
+}
+
+.news-title{
+font-size:36px;
+}
+
+.news-desc{
+font-size:15px;
+}
+
 .signup-container{
-width:90%;
+padding:25px;
+}
+
+.image-grid{
+grid-template-columns:1fr;
+}
+
+.image-grid img{
+height:220px;
+}
+
+}
+
+@media(max-width:480px){
+
+.logo-box img{
+width:90px;
+}
+
+.signup-title{
+font-size:28px;
+}
+
+.signup-container{
 padding:20px;
 }
+
+.input-box input{
+padding:14px 42px;
+}
+
+.social-btn,
+.signup-btn{
+padding:13px;
+}
+
+.news-title{
+font-size:30px;
+}
+
 }
 
 </style>
@@ -152,118 +474,271 @@ padding:20px;
 
 <body>
 
-<!-- BACK HOME -->
-<a href="index.html" class="top-home">
+<video autoplay muted loop playsinline class="bg-video">
+<source src="./business.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div class="top-bar">
+
+<a href="index.html" class="home-btn">
 <i class="fa fa-home"></i> Home
 </a>
 
-<div class="signup-container">
-
-<h2>Create Account</h2>
-
-<input type="text" id="name" placeholder="Enter Full Name">
-<input type="email" id="email" placeholder="Enter Mail ID">
-
-<div class="password-box">
-<input type="password" id="password" placeholder="Enter Password">
-<i class="fa-solid fa-eye-slash eye-icon"
-onclick="togglePassword('password',this)"></i>
 </div>
 
-<div class="password-box">
-<input type="password" id="confirm" placeholder="Confirm Password">
+<div class="page-wrapper">
+
+<!-- LEFT SIDE -->
+
+<div class="news-side">
+
+<div class="news-badge">
+📰 PREMIUM DIGITAL NEWS PLATFORM
+</div>
+
+<h1 class="news-title">
+Join <span>Stackly Magazine</span>
+Today
+</h1>
+
+<p class="news-desc">
+Create your account to access breaking news,
+exclusive interviews, business insights,
+technology updates, entertainment stories,
+and premium magazine content from around the world.
+</p>
+
+<div class="news-ticker">
+<div class="ticker-track">
+BREAKING NEWS • BUSINESS • TECHNOLOGY • POLITICS • SPORTS • ENTERTAINMENT • LIFESTYLE • WORLD NEWS •
+</div>
+</div>
+
+<div class="image-grid">
+    <img src="./tsunami.webp">
+    <img src="./tax.webp">
+    <img src="./politics15.webp">
+    <img src="./politics12.webp">
+
+</div>
+
+</div>
+
+<!-- SIGNUP CARD -->
+
+<div class="signup-container">
+
+<div class="logo-box">
+<img src="./white.webp" alt="Logo">
+</div>
+
+<h2 class="signup-title">
+Create Account
+</h2>
+
+<p class="signup-subtitle">
+Join Stackly Magazine Community
+</p>
+
+<div class="input-box">
+
+<i class="fa fa-user left-icon"></i>
+
+<input
+type="text"
+id="name"
+placeholder="Enter Full Name">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa fa-envelope left-icon"></i>
+
+<input
+type="email"
+id="email"
+placeholder="Enter Mail ID">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa fa-lock left-icon"></i>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
 <i class="fa-solid fa-eye-slash eye-icon"
-onclick="togglePassword('confirm',this)"></i>
+onclick="togglePassword('password',this)">
+</i>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa fa-lock left-icon"></i>
+
+<input
+type="password"
+id="confirm"
+placeholder="Confirm Password">
+
+<i class="fa-solid fa-eye-slash eye-icon"
+onclick="togglePassword('confirm',this)">
+</i>
+
+</div>
+
+<button
+class="signup-btn"
+onclick="signup()">
+
+SIGN UP
+
+</button>
+
+<div class="extra-links">
+
+<a href="login.html">
+Already Login?
+</a>
+
+<a href="404.html">
+Forgot Password?
+</a>
+
 </div>
 
 <p id="error"></p>
 
-<button onclick="signup()">SIGN UP</button>
+<div class="or">
+OR
+</div>
 
-<div class="or">OR</div>
+<button
+class="social-btn"
+onclick="window.location.href='404.html'">
 
-<button class="social-btn">
-<i class="fab fa-google"></i> Connect with Google
+<i class="fab fa-google"></i>
+Connect with Google
+
 </button>
 
-<button class="social-btn">
-<i class="fab fa-facebook"></i> Connect with Facebook
+<button
+class="social-btn"
+onclick="window.location.href='404.html'">
+
+<i class="fab fa-facebook-f"></i>
+Connect with Facebook
+
 </button>
 
-<button class="social-btn">
-<i class="fab fa-apple"></i> Connect with Apple
-</button>
+<button
+class="social-btn"
+onclick="window.location.href='404.html'">
 
-<p>
-Already have an account?
-<a href="login.html">Login</a>
-</p>
+<i class="fab fa-apple"></i>
+Connect with Apple
+
+</button>
 
 </div>
 
-<div class="logos">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732221.png">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png">
-<img src="https://cdn-icons-png.flaticon.com/512/888/888879.png">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968852.png">
-<img src="https://cdn-icons-png.flaticon.com/512/732/732229.png">
 </div>
 
 <script>
-
-/* SHOW PASSWORD */
 
 function togglePassword(id,icon){
 
 let input=document.getElementById(id);
 
 if(input.type==="password"){
+
 input.type="text";
-icon.classList.replace("fa-eye-slash","fa-eye");
+
+icon.classList.replace(
+"fa-eye-slash",
+"fa-eye"
+);
+
 }else{
+
 input.type="password";
-icon.classList.replace("fa-eye","fa-eye-slash");
-}
+
+icon.classList.replace(
+"fa-eye",
+"fa-eye-slash"
+);
 
 }
 
-/* SIGNUP */
+}
 
 function signup(){
 
-let name=document.getElementById("name").value.trim();
-let email=document.getElementById("email").value.trim();
-let pass=document.getElementById("password").value.trim();
-let confirm=document.getElementById("confirm").value.trim();
-let error=document.getElementById("error");
+let name=
+document.getElementById("name").value.trim();
 
-if(name==="" || email==="" || pass==="" || confirm===""){
-error.innerText="Please fill all details";
+let email=
+document.getElementById("email").value.trim();
+
+let pass=
+document.getElementById("password").value.trim();
+
+let confirm=
+document.getElementById("confirm").value.trim();
+
+let error=
+document.getElementById("error");
+
+let emailPattern=
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if(
+name==="" ||
+email==="" ||
+pass==="" ||
+confirm===""
+){
+
+error.innerHTML=
+"Please fill details correctly";
+
 return;
+
 }
 
-if(pass!==confirm){
-error.innerText="Password not match";
+if(
+!emailPattern.test(email)
+){
+
+error.innerHTML=
+"Please enter valid email";
+
 return;
-}
-
-window.location.href="404.html";
 
 }
 
-/* ICON ANIMATION */
+if(
+pass!==confirm
+){
 
-window.addEventListener("load",()=>{
+error.innerHTML=
+"Passwords do not match";
 
-let icons=document.querySelectorAll(".logos img");
+return;
 
-icons.forEach((icon,index)=>{
-setTimeout(()=>{
-icon.classList.add("show");
-},index*500);
-});
+}
 
-});
+window.location.href=
+"404.html";
+
+}
 
 </script>
 

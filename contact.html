@@ -58,402 +58,98 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </div>
       
       </header>
-        </div>
-<section class="contact-hero">
-    <div class="hero-overlay">
-      <h1>Contact Our Team</h1>
-      <p>We are here to assist you anytime</p>
-    </div>
-  </section>
-
-<!-- CONTACT SECTION -->
-<section class="contact-section">
-    <div class="contact-container">
-  
-      <!-- Header -->
+      
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+      *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+      body{background:#f5f7fb}
+      .contact-hero{position:relative;height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+      .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+      .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+      .hero-content{position:relative;z-index:2;padding:20px}
+      .hero-badge{display:inline-block;padding:10px 20px;background:rgba(255,255,255,.15);border-radius:30px;margin-bottom:20px}
+      .hero-content h1{font-size:64px}
+      .hero-content p{max-width:700px;margin:15px auto;line-height:1.8}
+      .news-ticker{background:#111;color:#fff;padding:12px 0;overflow:hidden;white-space:nowrap}
+      .ticker-track{display:inline-block;padding-left:100%;animation:ticker 20s linear infinite}
+      @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+      .contact-section{padding:80px 8%}
+      .contact-header{text-align:center;margin-bottom:50px}
+      .contact-header h2{font-size:42px}.contact-header span{color:#0ea5e9}
+      .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+      .contact-card,.contact-form{background:#fff;border-radius:18px;padding:25px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+      .contact-card{display:flex;gap:15px;margin-bottom:15px}
+      .contact-icon{width:50px;height:50px;background:#e0f2fe;border-radius:12px;display:flex;align-items:center;justify-content:center}
+      .contact-map{height:300px;border-radius:18px;overflow:hidden}
+      .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+      input,select,textarea{width:100%;padding:14px;border:1px solid #ddd;border-radius:10px;margin-top:6px}
+      textarea{height:130px}
+      .contact-submit{width:100%;padding:15px;background:#0ea5e9;color:#fff;border:none;border-radius:10px;cursor:pointer}
+      #error{color:red;margin:10px 0}
+      @media(max-width:1024px){.contact-grid{grid-template-columns:1fr}}
+      @media(max-width:768px){.hero-content h1{font-size:40px}.form-grid{grid-template-columns:1fr}}
+      </style>
+      </head>
+      <body>
+      <section class="contact-hero">
+      <video autoplay muted loop playsinline class="hero-video">
+      <source src="./business.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+      <div class="hero-badge">📰 NEWSROOM SUPPORT</div>
+      <h1>Contact Us</h1>
+      <p>Have a news tip, editorial inquiry, advertising request, or subscription issue? Our newsroom team is available to assist you anytime.</p>
+      </div>
+      </section>
+      
+      <div class="news-ticker"><div class="ticker-track">BREAKING NEWS • LATEST HEADLINES • EDITORIAL UPDATES • SUBSCRIPTION SUPPORT • ADVERTISE WITH US •</div></div>
+      
+      <section class="contact-section">
       <div class="contact-header">
-        <h2>Contact Us</h2>
-        
+      <h2>Contact <span>Stackly newz</span></h2>
+      <p>Whether you're a reader, journalist, advertiser, or business partner, our team is here to answer your questions.</p>
       </div>
-  
-      <!-- Contact Info -->
-      <div class="contact-info-grid">
-  
-        <!-- Email -->
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fa-regular fa-envelope"></i>
-          </div>
-          <h4>Email Address</h4>
-          <p>hello@yourcompany.com</p>
-          <p>support@yourcompany.com</p>
-        </div>
-  
-        <!-- Phone -->
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fa-solid fa-phone"></i>
-          </div>
-          <h4>Phone Number</h4>
-          <p>+91 98765 43210</p>
-          <p>+91 91234 56789</p>
-        </div>
-  
-        <!-- Location -->
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-          <h4>Office Location</h4>
-          <p>salem, Tamil Nadu</p>
-          <p>India</p>
-        </div>
-  
-        <!-- Work Time -->
-        <div class="contact-card">
-          <div class="contact-icon">
-            <i class="fa-regular fa-clock"></i>
-          </div>
-          <h4>Working Hours</h4>
-          <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
-          <p>Sat: 9:00 AM – 1:00 PM</p>
-          <p>Sun: 9:00 AM – 1:00 PM</p>
-        </div>
-  
+      
+      <div class="contact-grid">
+      <div>
+      <div class="contact-card"><div class="contact-icon"><i class="fa-solid fa-building"></i></div><div><h4>Editorial Office</h4><p>chinna tirupathi<br>salem, Tamil Nadu 600002</p></div></div>
+      <div class="contact-card"><div class="contact-icon"><i class="fa-solid fa-phone"></i></div><div><h4>News Desk</h4><p>+91 98765 43210<br>+91 91234 56789</p></div></div>
+      <div class="contact-card"><div class="contact-icon"><i class="fa-solid fa-envelope"></i></div><div><h4>Email Support</h4><p>editor@thestackly.com<br>newsdesk@thestackly.com</p></div></div>
+      <div class="contact-card"><div class="contact-icon"><i class="fa-solid fa-bullhorn"></i></div><div><h4>Advertising</h4><p>ads@thestackly.com<br>marketing@thestackly.com</p></div></div>
+      <div class="contact-map"><iframe src="https://maps.google.com/maps?q=salem%20tamil%20nadu&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0"></iframe></div>
       </div>
-    </div>
-  </section>
-  
-  <!-- CONTACT FORM SECTION -->
-  <section class="contact-form-section">
-    <div class="contact-wrapper">
-  
-      <!-- LEFT CONTENT -->
-      <div class="contact-left">
-        
-        <span class="contact-tag">CONTACT</span>
-        <h2>Get In Touch With Us</h2>
-        
-  <form class="contact-form" id="contactForm" novalidate>
-  
-    <div class="form-row">
-      <div class="field">
-        <input type="text" id="name" placeholder="Name">
-        <small class="error"></small>
+      
+      <div class="contact-form">
+      <h3>Send News Inquiry</h3><br>
+      <form id="contactForm">
+      <div class="form-grid">
+      <div><label>Full Name *</label><input id="name"></div>
+      <div><label>Email *</label><input id="email"></div>
+      </div><br>
+      <div class="form-grid">
+      <div><label>Phone *</label><input id="phone"></div>
+      <div><label>Inquiry Type</label><select id="service"><option>Select Inquiry</option><option>Submit News Tip</option><option>Advertising Inquiry</option></select></div>
+      </div><br>
+      <div><label>Subject *</label><input id="subject"></div><br>
+      <div><label>Message *</label><textarea id="message"></textarea></div>
+      <p id="error"></p>
+      <button class="contact-submit" type="submit">Send Message</button>
+      </form>
       </div>
-  
-      <div class="field">
-        <input type="email" id="email" placeholder="Email">
-        <small class="error"></small>
       </div>
-    </div>
-  
-    <div class="form-row">
-      <div class="field">
-        <input type="text" id="phone" placeholder="Phone Number">
-        <small class="error"></small>
-      </div>
-  
-      <div class="field">
-        <input type="text" id="subject" placeholder="Subject">
-        <small class="error"></small>
-      </div>
-    </div>
-  
-    <div class="field">
-      <textarea id="message" placeholder="Message"></textarea>
-      <small class="error"></small>
-    </div>
-  
-    <button type="submit">Send Message</button>
-  </form>
-      </div>
-  
-      <!-- RIGHT IMAGE -->
-      <div class="contact-right">
-        <div class="image-box">
-          <img src="./corp1.webp" alt="Contact Team">
-        </div>
-      </div>
-  
-    </div>
-  
-    <div class="map-box">
-    <iframe
-      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-
-    
-  </div>
-  </section>
-  <style>
-    *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-/* HERO SECTION */
-
-.contact-hero{
-width:100%;
-height:65vh;
-background-size:cover;
-background-position:center;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-transition:1s;
-}
-
-.hero-overlay{
-width:100%;
-height:100%;
-/* background:rgba(0,0,0,0.6); */
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:#fff;
-padding:20px;
-}
-
-.hero-overlay h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-.hero-overlay p{
-font-size:18px;
-}
-
-/* CONTACT SECTION */
-
-.contact-section{
-padding:60px 20px;
-}
-
-.contact-header{
-text-align:center;
-margin-bottom:40px;
-}
-
-.contact-header h2{
-font-size:32px;
-margin-bottom:10px;
-}
-
-.contact-info-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.contact-card{
-background:#f5f5f5;
-padding:20px;
-text-align:center;
-border-radius:10px;
-}
-
-.contact-icon{
-font-size:30px;
-margin-bottom:10px;
-}
-
-/* CONTACT FORM */
-
-.contact-form-section{
-padding:60px 20px;
-}
-
-.contact-wrapper{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.contact-left{
-flex:1;
-position:relative;
-}
-
-.contact-left h2{
-margin:10px 0;
-}
-
-.contact-right{
-flex:1;
-}
-
-.contact-right img{
-width:100%;
-border-radius:10px;
-}
-
-/* FLOATING IMAGE */
-
-.floating-img{
-width:150px;
-position:absolute;
-top:50px;
-right:-50px;
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-}
-
-/* FORM */
-
-.form-row{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.field{
-flex:1;
-display:flex;
-flex-direction:column;
-}
-
-.contact-form input,
-.contact-form textarea{
-padding:10px;
-margin:10px 0;
-border:1px solid #ccc;
-}
-
-.contact-form button{
-padding:12px;
-background:#000;
-color:#fff;
-border:none;
-cursor:pointer;
-}
-
-/* MAP */
-
-.map-box iframe{
-width:100%;
-height:300px;
-border:0;
-margin-top:30px;
-}
-
-/* TABLET VIEW */
-
-@media(max-width:1024px){
-
-.contact-info-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.contact-wrapper{
-flex-direction:column;
-}
-
-.floating-img{
-right:0;
-}
-
-}
-
-/* MOBILE VIEW */
-
-@media(max-width:768px){
-
-.hero-overlay h1{
-font-size:28px;
-}
-
-.hero-overlay p{
-font-size:14px;
-}
-
-.contact-info-grid{
-grid-template-columns:1fr;
-}
-
-.form-row{
-flex-direction:column;
-}
-
-.floating-img{
-position:static;
-margin:20px auto;
-display:block;
-}
-
-.contact-hero{
-height:40vh;
-}
-
-}
-
-/* SMALL MOBILE */
-
-@media(max-width:480px){
-
-.hero-overlay h1{
-font-size:22px;
-}
-
-.hero-overlay p{
-font-size:12px;
-}
-
-}
-  </style>
-
-  <script>
-    const hero=document.querySelector(".contact-hero");
-
-const images=[
-"./ai2.webp",
-"./debate.webp",
-"./digi.webp"
-];
-
-let i=0;
-
-setInterval(()=>{
-hero.style.backgroundImage=`url(${images[i]})`;
-i=(i+1)%images.length;
-},3000);
-
-document.getElementById("contactForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-let name=document.getElementById("name").value.trim();
-let email=document.getElementById("email").value.trim();
-let phone=document.getElementById("phone").value.trim();
-let subject=document.getElementById("subject").value.trim();
-let message=document.getElementById("message").value.trim();
-
-if(name==="" || email==="" || phone==="" || subject==="" || message===""){
-
-alert("Please fill all details");
-
-}else{
-
-window.location.href="404.html";
-
-}
-
-});
-  </script>
+      </section>
+      
+      <script>
+      document.getElementById('contactForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      let ids=['name','email','phone','subject','message'];
+      for(let id of ids){if(document.getElementById(id).value.trim()===''){document.getElementById('error').innerText='Please fill details correctly';return;}}
+      window.location.href='404.html';
+      });
+      </script>
+      
   <script src="./script.js"></script>
 
   
